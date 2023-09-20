@@ -22,10 +22,12 @@ class PostResource extends Resource
     public static function form(Form $form): Form
     {
         return $form
+            ->columns(1)
             ->schema([
+                Forms\Components\Select::make('category_id')->relationship('categories', 'name')->multiple(true)->required(),
                 Forms\Components\TextInput::make('title')->required()->maxLength(255),
-                Forms\Components\TextInput::make('summary')->maxLength(600),
-                Forms\Components\Textarea::make('content')->required(),
+                Forms\Components\RichEditor::make('summary')->maxLength(600),
+                Forms\Components\RichEditor::make('content')->required(),
                 Forms\Components\TextInput::make('slug')->nullable(),
                 Forms\Components\DateTimePicker::make('published_at')->required(),
                 Forms\Components\Select::make('author_id')->relationship('author', 'name')->required(),

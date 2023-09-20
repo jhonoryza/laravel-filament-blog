@@ -23,7 +23,9 @@ class CategoryResource extends Resource
     public static function form(Form $form): Form
     {
         return $form
+            ->columns(1)
             ->schema([
+                Forms\Components\Select::make('posts')->relationship('posts', 'title')->multiple(true),
                 Forms\Components\TextInput::make('name')->required()->maxLength(255),
                 Forms\Components\TextInput::make('slug')->nullable(),
                 Forms\Components\DateTimePicker::make('published_at')->required(),

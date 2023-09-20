@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Post;
 use App\Models\User;
-use App\Repositories\PostRepository;
+use App\Repositories\PostMarkdownRepository;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -13,7 +13,7 @@ class PostSeeder extends Seeder
     /**
      * Run the database seeds.
      */
-    public function run(PostRepository $postRepository): void
+    public function run(PostMarkdownRepository $postRepository): void
     {
         $user = User::first();
         $posts = $postRepository->getAllPosts();

@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use SplFileInfo;
 
-class PostRepository
+class PostMarkdownRepository
 {
     public function getAllPosts(): Collection
     {

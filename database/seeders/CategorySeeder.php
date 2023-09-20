@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Category;
-use App\Repositories\PostRepository;
+use App\Repositories\PostMarkdownRepository;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
@@ -13,7 +13,7 @@ class CategorySeeder extends Seeder
     /**
      * Run the database seeds.
      */
-    public function run(PostRepository $postRepository): void
+    public function run(PostMarkdownRepository $postRepository): void
     {
         $categories = [
             'mixed',

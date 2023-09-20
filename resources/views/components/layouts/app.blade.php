@@ -22,12 +22,13 @@
 <body class="antialiased font-quicksand">
     <x-navigation />
 
-    <main>
+    <main class="p-4">
         {{ $slot }}
     </main>
 
     @filamentScripts
     @vite('resources/js/app.js')
+    @stack('scripts')
 </body>
 
 </html>

@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\Post;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Collection;
 
@@ -18,6 +19,17 @@ class PostRepository
             ->whereNotNull('published_at')
             ->orderBy('published_at', 'desc')
             ->simplePaginate($pageSize, ['*'], 'page', $pageNumber);
+    }
+
+    public function search(string $search = ''): Collection
+    {
+        return $this->post->query()
+            ->when(!empty($search), function (Builder $query) use ($search) {
+                return $query->where('title', 'ILIKE', '%' . $search . '%');
+            })
+            ->whereNotNull('published_at')
+            ->orderBy('published_at', 'desc')
+            ->get();
     }
 
     public function getWithNoImage(): Collection

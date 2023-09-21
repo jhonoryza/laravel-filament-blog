@@ -13,6 +13,7 @@ class HomePage extends Component
     public Collection $data;
 
     public int $page = 1;
+    public string $search = '';
 
     public $listeners = [
         'load-more' => 'loadMore'
@@ -25,9 +26,11 @@ class HomePage extends Component
 
     public function loadMore(PostRepository $postRepository): void
     {
-        $this->page++;
-        $posts = $postRepository->paginate(pageSize: 10, pageNumber: $this->page);
-        $this->data = $this->data->merge($posts->collect());
+        if ($this->search === '') {
+            $this->page++;
+            $posts = $postRepository->paginate(pageSize: 10, pageNumber: $this->page);
+            $this->data = $this->data->merge($posts->collect());
+        }
     }
 
     public function render(PostRepository $postRepository)
@@ -38,5 +41,13 @@ class HomePage extends Component
         return view('livewire.home-page', [
             'posts' => $this->data
         ]);
+    }
+
+    public function updated($key, $value, PostRepository $postRepository)
+    {
+        if ($key === 'search' && !empty($value)) {
+            $posts = $postRepository->search(search: $value);
+            $this->data = $posts->collect();
+        }
     }
 }

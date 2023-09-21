@@ -2,11 +2,16 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Resources\CategoryResource;
+use App\Filament\Resources\PostResource;
 use Filament\FontProviders\SpatieGoogleFontProvider;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
+use Filament\Navigation\NavigationBuilder;
+use Filament\Navigation\NavigationItem;
 use Filament\Pages;
+use Filament\Pages\Dashboard;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
@@ -28,8 +33,22 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->font('Quicksand', provider: SpatieGoogleFontProvider::class)
+            ->topNavigation()
+            ->navigation(function (NavigationBuilder $builder): NavigationBuilder {
+                return $builder->items([
+                    NavigationItem::make('Preview')
+                        ->icon('heroicon-o-cloud')
+                        ->url(fn (): string => route('home'), shouldOpenInNewTab: true),
+                    NavigationItem::make('Dashboard')
+                        ->icon('heroicon-o-home')
+                        ->isActiveWhen(fn (): bool => request()->routeIs('filament.admin.pages.dashboard'))
+                        ->url(fn (): string => Dashboard::getUrl()),
+                    ...CategoryResource::getNavigationItems(),
+                    ...PostResource::getNavigationItems(),
+                ]);
+            })
             ->login()
-            ->sidebarCollapsibleOnDesktop(true)
+            // ->sidebarCollapsibleOnDesktop(true)
             ->colors([
                 'primary' => Color::Amber,
             ])

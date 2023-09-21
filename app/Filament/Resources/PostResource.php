@@ -3,15 +3,16 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\PostResource\Pages;
-use App\Filament\Resources\PostResource\RelationManagers;
+// use App\Filament\Resources\PostResource\RelationManagers;
 use App\Models\Post;
 use Filament\Forms;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
+// use Illuminate\Database\Eloquent\Builder;
+// use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class PostResource extends Resource
 {
@@ -24,6 +25,7 @@ class PostResource extends Resource
         return $form
             ->columns(1)
             ->schema([
+                SpatieMediaLibraryFileUpload::make('image')->collection(Post::IMAGE),
                 Forms\Components\Select::make('category_id')->relationship('categories', 'name')->multiple(true)->required(),
                 Forms\Components\TextInput::make('title')->required()->maxLength(255),
                 Forms\Components\RichEditor::make('summary')->maxLength(600),

@@ -25,7 +25,7 @@ class PostResource extends Resource
         return $form
             ->columns(1)
             ->schema([
-                SpatieMediaLibraryFileUpload::make('image')->collection(Post::IMAGE),
+                SpatieMediaLibraryFileUpload::make('image')->collection(Post::IMAGE)->disk(config('media-library.disk_name')),
                 Forms\Components\Select::make('category_id')->relationship('categories', 'name')->multiple(true)->required(),
                 Forms\Components\TextInput::make('title')->required()->maxLength(255),
                 Forms\Components\RichEditor::make('summary')->maxLength(600),

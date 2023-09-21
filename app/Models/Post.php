@@ -30,7 +30,9 @@ class Post extends Model implements HasMedia
     {
         $this
             ->addMediaConversion('thumbnail')
-            ->fit(Manipulations::FIT_FILL, 500, 300);
+            ->height(500)
+            ->width(300);
+            // ->fit(Manipulations::FIT_MAX, 500, 300);
     }
 
     protected $casts = [

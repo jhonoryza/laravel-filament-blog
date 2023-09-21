@@ -30,6 +30,12 @@ return [
 
     'disks' => [
 
+        'assets' => [
+            'driver' => 'local',
+            'root' => storage_path('assets'),
+            'throw' => false,
+        ],
+
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app'),
@@ -50,6 +56,7 @@ return [
             'secret' => env('AWS_SECRET_ACCESS_KEY'),
             'region' => env('AWS_DEFAULT_REGION'),
             'bucket' => env('AWS_BUCKET'),
+            'root' => env('AWS_BUCKET_ROOT', 'storage'),
             'url' => env('AWS_URL'),
             'endpoint' => env('AWS_ENDPOINT'),
             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),

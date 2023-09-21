@@ -1,7 +1,7 @@
 <div class="flex flex-row flex-wrap justify-center">
     @foreach ($posts as $post)
         <article class="m-4 rounded-lg overflow-hidden w-3/12 border">
-            <img src="https://source.unsplash.com/350x150/?{{ $post->categories->first()?->name ?? 'random' }}"
+            <img class="max-h-30 w-full" src="https://source.unsplash.com/500x300/?{{ $post->categories->first()?->name ?? 'random' }}"
                 alt="{{ $post->title }}">
             <div class="p-4">
                 <a href="{{ route('posts.show', $post) }}" wire:navigate

@@ -1,0 +1,36 @@
+{
+  "node_modules/@fontsource/quicksand/files/quicksand-latin-400-normal.woff": {
+    "file": "assets/quicksand-latin-400-normal-a368715e.woff",
+    "src": "node_modules/@fontsource/quicksand/files/quicksand-latin-400-normal.woff"
+  },
+  "node_modules/@fontsource/quicksand/files/quicksand-latin-400-normal.woff2": {
+    "file": "assets/quicksand-latin-400-normal-e3616551.woff2",
+    "src": "node_modules/@fontsource/quicksand/files/quicksand-latin-400-normal.woff2"
+  },
+  "node_modules/@fontsource/quicksand/files/quicksand-latin-ext-400-normal.woff": {
+    "file": "assets/quicksand-latin-ext-400-normal-6ed17db0.woff",
+    "src": "node_modules/@fontsource/quicksand/files/quicksand-latin-ext-400-normal.woff"
+  },
+  "node_modules/@fontsource/quicksand/files/quicksand-latin-ext-400-normal.woff2": {
+    "file": "assets/quicksand-latin-ext-400-normal-bb022ef8.woff2",
+    "src": "node_modules/@fontsource/quicksand/files/quicksand-latin-ext-400-normal.woff2"
+  },
+  "node_modules/@fontsource/quicksand/files/quicksand-vietnamese-400-normal.woff": {
+    "file": "assets/quicksand-vietnamese-400-normal-dbac1e1c.woff",
+    "src": "node_modules/@fontsource/quicksand/files/quicksand-vietnamese-400-normal.woff"
+  },
+  "node_modules/@fontsource/quicksand/files/quicksand-vietnamese-400-normal.woff2": {
+    "file": "assets/quicksand-vietnamese-400-normal-b2e021dc.woff2",
+    "src": "node_modules/@fontsource/quicksand/files/quicksand-vietnamese-400-normal.woff2"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-99bc8e59.css",
+    "isEntry": true,
+    "src": "resources/css/app.css"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-dbe23e4c.js",
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  }
+}

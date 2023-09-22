@@ -1,5 +1,5 @@
     <div class="flex flex-col">
-        <input type="text" wire:model.live.debounce.150ms="search" placeholder="... Search"
+        <input type="text" wire:model.live.debounce.350ms="search" placeholder="... Search"
             class="my-2 rounded-xl shadow-xl border bg-white p-2 focus:outline-none self-center">
 
         <div class="flex flex-row flex-wrap justify-center">

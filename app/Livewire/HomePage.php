@@ -20,11 +20,6 @@ class HomePage extends Component
         'load-more' => 'loadMore'
     ];
 
-    public function mount()
-    {
-        $this->data = collect([]);
-    }
-
     public function loadMore(PostRepository $postRepository): void
     {
         if ($this->search === '') {
@@ -35,12 +30,16 @@ class HomePage extends Component
         }
     }
 
-    public function render(PostRepository $postRepository)
+    public function mount(PostRepository $postRepository)
     {
+        $this->data = collect([]);
         $posts = $postRepository->paginate(pageSize: 10, pageNumber: $this->page);
         $this->hasMore = $posts->hasMorePages();
         $this->data = $this->data->merge($posts->collect());
+    }
 
+    public function render()
+    {
         return view('livewire.home-page', [
             'posts' => $this->data
         ]);

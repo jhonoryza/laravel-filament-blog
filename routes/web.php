@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', App\Livewire\HomePage::class)->name('home');
+Route::get('posts/{post}', App\Livewire\PostDetailPage::class)->name('posts.show');
+Route::get('projects', App\Livewire\ProjectsPage::class)->name('projects');

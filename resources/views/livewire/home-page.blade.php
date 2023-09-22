@@ -11,10 +11,9 @@
                     <div class="p-4 flex-initial w-64">
                         <a href="{{ route('posts.show', $post) }}" wire:navigate
                             class="text-base md:text-xl font-bold hover:text-rose-500">{{ $post->title }}</a>
-                        <p class="text-sm">published
-                            {{ $post->published_at->diffForHumans() }}, by
-                            {{ $post->author->name }}</p>
-                        <p class="mt-2 text-sm prose prose-slate prose-base max-w-none">{{ $post->summary }}</p>
+                        <p class="text-sm">published {{ $post->published_at->diffForHumans() }} </p>
+                        <p class="text-sm"> by {{ $post->author->name }}</p>
+                        <div class="mt-2 text-sm prose prose-slate prose-base max-w-none">{!! $post->summary !!}</div>
                     </div>
                 </article>
             @endforeach

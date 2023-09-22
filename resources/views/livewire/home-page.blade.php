@@ -4,26 +4,37 @@
 
         <div class="flex flex-row flex-wrap justify-center">
             @foreach ($posts as $post)
-                <article class="m-4 rounded-lg overflow-hidden w-3/4 sm:w-1/2 md:w-1/2 lg:w-3/12 border shadow-xl">
-                    <img class="h-30 lg:h-[170px] xl:h-[200px] w-full" src="{{ $post->getImageUrl() }}" alt="{{ $post->title }}">
-                    <div class="p-4">
+                <article class="m-2 rounded-lg overflow-hidden border shadow-xl">
+                    <div class="flex-initial w-64">
+                        <img class="w-full h-40" src="{{ $post->getImageUrl() }}" alt="{{ $post->title }}">
+                    </div>
+                    <div class="p-4 flex-initial w-64">
                         <a href="{{ route('posts.show', $post) }}" wire:navigate
                             class="text-base md:text-xl font-bold hover:text-rose-500">{{ $post->title }}</a>
-                        <p class="text-sm font-semibold">published {{ $post->published_at->diffForHumans() }}, by
+                        <p class="text-sm">published
+                            {{ $post->published_at->diffForHumans() }}, by
                             {{ $post->author->name }}</p>
-                        <p class="text-sm mt-4 font-normal">{{ $post->summary }}</p>
+                        <p class="mt-2 text-sm prose prose-slate prose-base max-w-none">{{ $post->summary }}</p>
                     </div>
                 </article>
             @endforeach
         </div>
+
+        @if ($hasMore)
+            <div class="mt-4 self-center">
+                <button wire:click="loadMore"
+                    class="p-2 border border-slate-500 bg-white text-slate-500 hover:bg-slate-200 rounded shadow font-semibold">More
+                    ... </button>
+            </div>
+        @endif
     </div>
 
     @push('scripts')
         <script type="text/javascript">
-            window.onscroll = function(ev) {
-                if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-                    @this.dispatch('load-more');
-                }
-            };
+            //window.onscroll = function(ev) {
+            //  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+            //    @this.dispatch('load-more');
+            //}
+            //};
         </script>
     @endpush

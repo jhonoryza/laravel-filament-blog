@@ -32,10 +32,9 @@ class HomePage extends Component
 
     public function mount(PostRepository $postRepository)
     {
-        $this->data = collect([]);
         $posts = $postRepository->paginate(pageSize: 10, pageNumber: $this->page);
         $this->hasMore = $posts->hasMorePages();
-        $this->data = $this->data->merge($posts->collect());
+        $this->data = $posts->collect();
     }
 
     public function render()
@@ -50,6 +49,10 @@ class HomePage extends Component
         if ($key === 'search' && !empty($value)) {
             $posts = $postRepository->search(search: $value);
             $this->hasMore = false;
+            $this->data = $posts->collect();
+        } else if ($key === 'search' && empty($value)) {
+            $posts = $postRepository->paginate(pageSize: 10, pageNumber: $this->page);
+            $this->hasMore = $posts->hasMorePages();
             $this->data = $posts->collect();
         }
     }

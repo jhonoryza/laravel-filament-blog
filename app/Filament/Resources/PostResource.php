@@ -11,6 +11,7 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+// use Illuminate\Support\Str;
 // use Illuminate\Database\Eloquent\Builder;
 // use Illuminate\Database\Eloquent\SoftDeletingScope;
 
@@ -26,12 +27,12 @@ class PostResource extends Resource
             ->columns(1)
             ->schema([
                 SpatieMediaLibraryFileUpload::make('image')->collection(Post::IMAGE)->disk(config('media-library.disk_name')),
-                Forms\Components\Select::make('category_id')->relationship('categories', 'name')->multiple(true)->required(),
+                Forms\Components\Select::make('category_id')->relationship('categories', 'name')->required()->multiple(true),
                 Forms\Components\TextInput::make('title')->required()->maxLength(255),
                 Forms\Components\RichEditor::make('summary')->maxLength(600),
                 Forms\Components\RichEditor::make('content')->required(),
                 Forms\Components\TextInput::make('slug')->nullable(),
-                Forms\Components\DateTimePicker::make('published_at')->required(),
+                Forms\Components\DateTimePicker::make('published_at')->nullable(),
                 Forms\Components\Select::make('author_id')->relationship('author', 'name')->required(),
             ]);
     }
@@ -56,7 +57,7 @@ class PostResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
-            ]);
+            ])->defaultSort('published_at', 'desc');
     }
 
     public static function getRelations(): array

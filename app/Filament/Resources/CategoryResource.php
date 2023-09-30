@@ -12,7 +12,6 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Illuminate\Support\Str;
 
 class CategoryResource extends Resource
 {
@@ -25,30 +24,13 @@ class CategoryResource extends Resource
         return $form
             ->columns(1)
             ->schema([
-                Forms\Components\Select::make('posts')->relationship('posts', 'title')->multiple(true),
+                Forms\Components\Select::make('posts')->relationship('posts', 'title')->nullable()->multiple(true),
                 Forms\Components\TextInput::make('name')->required()->maxLength(255),
                 Forms\Components\TextInput::make('slug')->nullable(),
-                Forms\Components\DateTimePicker::make('published_at')->required(),
+                Forms\Components\DateTimePicker::make('published_at')->nullable(),
             ]);
     }
 
-    protected function mutateFormDataBeforeCreate(array $data): array
-    {
-        if ($data['slug'] === null) {
-            $data['slug'] = Str::slug($data['name']);
-        }
-
-        return $data;
-    }
-
-    protected function mutateFormDataBeforeSave(array $data): array
-    {
-        if ($data['slug'] === null) {
-            $data['slug'] = Str::slug($data['name']);
-        }
-
-        return $data;
-    }
 
     protected function getRedirectUrl(): string
     {
@@ -72,7 +54,7 @@ class CategoryResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
-            ]);
+            ])->defaultSort('published_at', 'desc');
     }
 
     public static function getRelations(): array

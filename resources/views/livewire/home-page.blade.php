@@ -6,7 +6,7 @@
         <div class="grid md:grid-cols-2">
             @foreach ($posts as $post)
                 <article>
-                    <div class="flex flex-row justify-between text-sm mx-2">
+                    <div class="flex flex-col sm:flex-row justify-between text-sm mx-2">
                         <a href="{{ route('posts.show', $post) }}" wire:navigate
                             class="font-bold text-slate-600 hover:text-teal-600">{{ strtolower($post->title) }}</a>
                         <p class="text-slate-600">{{ $post->author->name }}: {{ $post->published_at->format('d F Y') }}</p>

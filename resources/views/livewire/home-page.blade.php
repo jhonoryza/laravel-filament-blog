@@ -1,26 +1,27 @@
     <div class="flex flex-col">
-        <input type="text" wire:model.live.debounce.350ms="search" placeholder="... Search"
-            class="my-2 rounded-xl shadow-xl border bg-white p-2 focus:outline-none self-center">
+        <div wire:loading>
+            <p>searching data ...</p>
+        </div>
 
-        <div class="flex flex-row flex-wrap justify-center">
+        <div class="grid md:grid-cols-2">
             @foreach ($posts as $post)
-                <article class="m-2 rounded-lg overflow-hidden border shadow-xl">
-                    <div class="flex-initial w-64">
-                        <img class="w-full h-40" src="{{ $post->getImageUrl() }}" alt="{{ $post->title }}">
-                    </div>
-                    <div class="p-4 flex-initial w-64">
+                <article>
+                    <div class="flex flex-row justify-between text-sm mx-2">
                         <a href="{{ route('posts.show', $post) }}" wire:navigate
-                            class="text-base md:text-xl font-bold hover:text-rose-500">{{ $post->title }}</a>
-                        <p class="text-sm">published {{ $post->published_at->diffForHumans() }} </p>
-                        <p class="text-sm"> by {{ $post->author->name }}</p>
-                        <div class="mt-2 text-sm prose prose-slate prose-base max-w-none">{!! $post->summary !!}</div>
+                            class="font-bold text-slate-600 hover:text-teal-600">{{ strtolower($post->title) }}</a>
+                        <p class="text-slate-600">{{ $post->author->name }}: {{ $post->published_at->format('d F Y') }}</p>
                     </div>
+                    <hr>
+{{--                        <div class="mt-2 text-xs prose prose-slate prose-base max-w-none">{!! $post->summary !!}</div>--}}
                 </article>
             @endforeach
         </div>
 
         @if ($hasMore)
             <div class="mt-4 self-center">
+                <div wire:loading wire:target="loadMore">
+                    loading data ...
+                </div>
                 <button wire:click="loadMore"
                     class="p-2 border border-slate-500 bg-white text-slate-500 hover:bg-slate-200 rounded shadow font-semibold">More
                     ... </button>

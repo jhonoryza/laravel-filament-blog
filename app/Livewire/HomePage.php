@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Repositories\PostRepository;
 use Illuminate\Support\Collection;
+use Livewire\Attributes\On;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -16,25 +17,23 @@ class HomePage extends Component
     public string $search = '';
     public bool $hasMore = true;
 
+    private int $defaultPageSize = 10 * 4;
+
     public $listeners = [
         'load-more' => 'loadMore'
     ];
 
-    public function loadMore(PostRepository $postRepository): void
+    public function loadMore(): void
     {
         if ($this->search === '') {
             $this->page++;
-            $posts = $postRepository->paginate(pageSize: 10, pageNumber: $this->page);
-            $this->hasMore = $posts->hasMorePages();
-            $this->data = $this->data->merge($posts->collect());
+            $this->refreshLoadMore('');
         }
     }
 
-    public function mount(PostRepository $postRepository)
+    public function mount()
     {
-        $posts = $postRepository->paginate(pageSize: 10, pageNumber: $this->page);
-        $this->hasMore = $posts->hasMorePages();
-        $this->data = $posts->collect();
+        $this->refresh('');
     }
 
     public function render()
@@ -44,16 +43,34 @@ class HomePage extends Component
         ]);
     }
 
-    public function updated($key, $value, PostRepository $postRepository)
+    #[On('search')]
+    public function listenSearchEvent($message)
     {
-        if ($key === 'search' && !empty($value)) {
-            $posts = $postRepository->search(search: $value);
-            $this->hasMore = false;
-            $this->data = $posts->collect();
-        } else if ($key === 'search' && empty($value)) {
-            $posts = $postRepository->paginate(pageSize: 10, pageNumber: $this->page);
-            $this->hasMore = $posts->hasMorePages();
-            $this->data = $posts->collect();
-        }
+        $this->search = $message;
+        $this->refresh($message);
+    }
+
+    private function refresh($search): void
+    {
+        $posts = !empty($search) ?
+            PostRepository::new()->search(search: $search)
+            : PostRepository::new()->paginate(pageSize: $this->defaultPageSize, pageNumber: $this->page);
+        $this->hasMore = !empty($search) ? false : $posts->hasMorePages();
+        $this->data = $posts->collect();
+    }
+
+    private function refreshLoadMore($search): void
+    {
+        $posts = !empty($search) ?
+            PostRepository::new()->search(search: $search)
+            : PostRepository::new()->paginate(pageSize: $this->defaultPageSize, pageNumber: $this->page);
+        $this->hasMore = !empty($search) ? false : $posts->hasMorePages();
+        $this->data = $this->data->merge($posts->collect());
+    }
+
+    public function updated($key, $value)
+    {
+        if ($key == 'search')
+            $this->refresh($value);
     }
 }

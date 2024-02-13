@@ -13,6 +13,11 @@ class PostRepository
     {
 
     }
+
+    public static function new(): self
+    {
+        return new self(new Post());
+    }
     public function paginate(int $pageSize, int $pageNumber): Paginator
     {
         return $this->post->query()

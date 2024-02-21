@@ -134,6 +134,28 @@ return [
     */
 
     'recorders' => [
+        \EuSonLito\LaravelPulse\AppsLoad\Recorders\AppsLoadRecorder::class => [
+            'enabled' => env('PULSE_APPS_LOAD_ENABLED', true),
+            'sample_rate' => env('PULSE_APPS_LOAD_SAMPLE_RATE', 1),
+            'limit' => env('PULSE_APPS_LOAD_LIMIT', 10),
+            'ignore' => [
+                '#^/pulse$#', // Pulse dashboard...
+            ],
+        ],
+        \Denniseilander\LogFiles\Recorders\LogFiles::class => [],
+        \PauloHortelan\RequestsGraphPulse\Recorders\RequestsGraphRecorder::class => [
+            'enabled' => env('PULSE_REQUESTS_GRAPH_ENABLED', true),
+            'sample_rate' => env('PULSE_REQUESTS_GRAPH_SAMPLE_RATE', 1),
+            'record_informational' => env('PULSE_REQUESTS_GRAPH_RECORD_INFORMATIONAL', false),
+            'record_successful' => env('PULSE_REQUESTS_GRAPH_RECORD_SUCCESSFUL', true),
+            'record_redirection' => env('PULSE_REQUESTS_GRAPH_RECORD_REDIRECTION', false),
+            'record_client_error' => env('PULSE_REQUESTS_GRAPH_RECORD_CLIENT_ERROR', true),
+            'record_server_error' => env('PULSE_REQUESTS_GRAPH_RECORD_SERVER_ERROR', true),
+            'ignore' => [
+                '#^/pulse$#', // Pulse dashboard...
+            ],
+        ],
+        \Vcian\Pulse\PulseActiveSessions\Recorders\PulseActiveSessionRecorder::class => [],
         Recorders\CacheInteractions::class => [
             'enabled' => env('PULSE_CACHE_INTERACTIONS_ENABLED', true),
             'sample_rate' => env('PULSE_CACHE_INTERACTIONS_SAMPLE_RATE', 1),

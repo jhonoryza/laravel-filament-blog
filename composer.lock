@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "88701086d4d8e3912b2eb15763f99f86",
+    "content-hash": "9c9fb91dba7fe0ad84266e4dead46cd5",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -599,6 +599,75 @@
                 }
             ],
             "time": "2024-01-21T14:53:34+00:00"
+        },
+        {
+            "name": "denniseilander/pulse-log-files",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/denniseilander/pulse-log-files.git",
+                "reference": "9a2c394fb761bd421e764e8b40f8467e7c4e9b75"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/denniseilander/pulse-log-files/zipball/9a2c394fb761bd421e764e8b40f8467e7c4e9b75",
+                "reference": "9a2c394fb761bd421e764e8b40f8467e7c4e9b75",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^10.0",
+                "laravel/pulse": "^1.0@beta",
+                "php": "^8.1",
+                "spatie/laravel-package-tools": "^1.14.0"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.0",
+                "nunomaduro/collision": "^7.8",
+                "nunomaduro/larastan": "^2.0.1",
+                "orchestra/testbench": "^8.8",
+                "pestphp/pest": "^2.20",
+                "pestphp/pest-plugin-arch": "^2.0",
+                "pestphp/pest-plugin-laravel": "^2.0",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan-deprecation-rules": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Denniseilander\\LogFiles\\LogFilesServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Denniseilander\\LogFiles\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dennis Eilander",
+                    "email": "eilander.dennis@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A lightweight Laravel Pulse package for effortlessly viewing available log files in your current project.",
+            "homepage": "https://github.com/denniseilander/pulse-log-files",
+            "keywords": [
+                "Dennis Eilander",
+                "laravel",
+                "pulse-log-files"
+            ],
+            "support": {
+                "issues": "https://github.com/denniseilander/pulse-log-files/issues",
+                "source": "https://github.com/denniseilander/pulse-log-files/tree/0.1.0"
+            },
+            "time": "2023-12-06T21:18:55+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
@@ -1366,6 +1435,56 @@
                 }
             ],
             "time": "2023-10-06T06:47:41+00:00"
+        },
+        {
+            "name": "eusonlito/laravel-pulse-apps-load",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/eusonlito/LaravelPulse-AppsLoad.git",
+                "reference": "c3f1d69f5ec8d9fc75b5eaa69d10d2c4c1d064bc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/eusonlito/LaravelPulse-AppsLoad/zipball/c3f1d69f5ec8d9fc75b5eaa69d10d2c4c1d064bc",
+                "reference": "c3f1d69f5ec8d9fc75b5eaa69d10d2c4c1d064bc",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "*",
+                "laravel/pulse": "^1.0.0@beta",
+                "php": "^8.1"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "EuSonLito\\LaravelPulse\\AppsLoad\\AppsLoadServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "EuSonLito\\LaravelPulse\\AppsLoad\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Lito",
+                    "email": "lito@eordes.com"
+                }
+            ],
+            "description": "A Laravel Pulse card to show Memory and CPU usage",
+            "support": {
+                "issues": "https://github.com/eusonlito/LaravelPulse-AppsLoad/issues",
+                "source": "https://github.com/eusonlito/LaravelPulse-AppsLoad/tree/master"
+            },
+            "time": "2024-02-05T12:37:59+00:00"
         },
         {
             "name": "filament/actions",
@@ -4623,6 +4742,86 @@
                 }
             ],
             "time": "2024-01-09T09:30:37+00:00"
+        },
+        {
+            "name": "paulo-hortelan/requests-graph-pulse",
+            "version": "v1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/paulo-hortelan/requests-graph-pulse.git",
+                "reference": "43d343d4b28eb4a6971cabcffd14917f26271fc5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/paulo-hortelan/requests-graph-pulse/zipball/43d343d4b28eb4a6971cabcffd14917f26271fc5",
+                "reference": "43d343d4b28eb4a6971cabcffd14917f26271fc5",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^10.0",
+                "laravel/pulse": "^1.0@beta",
+                "php": "^8.1",
+                "spatie/laravel-package-tools": "^1.14.0"
+            },
+            "require-dev": {
+                "larastan/larastan": "^2.0.1",
+                "laravel/pint": "^1.0",
+                "nunomaduro/collision": "^7.8",
+                "orchestra/testbench": "^8.8",
+                "pestphp/pest": "^2.20",
+                "pestphp/pest-plugin-arch": "^2.0",
+                "pestphp/pest-plugin-laravel": "^2.0",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan-deprecation-rules": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "spatie/laravel-ray": "^1.26"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "PauloHortelan\\RequestsGraphPulse\\RequestsGraphServiceProvider"
+                    ],
+                    "aliases": {
+                        "RequestsGraphPulse": "PauloHortelan\\RequestsGraphPulse\\Facades\\RequestsGraphPulse"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PauloHortelan\\RequestsGraphPulse\\": "src/",
+                    "PauloHortelan\\RequestsGraphPulse\\Database\\Factories\\": "database/factories/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Paulo Hortelan",
+                    "email": "paulohincar@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "This is my package requests-graph-pulse",
+            "homepage": "https://github.com/paulo-hortelan/requests-graph-pulse",
+            "keywords": [
+                "Paulo Hortelan",
+                "laravel",
+                "requests-graph-pulse"
+            ],
+            "support": {
+                "issues": "https://github.com/paulo-hortelan/requests-graph-pulse/issues",
+                "source": "https://github.com/paulo-hortelan/requests-graph-pulse/tree/v1.0.5"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/paulo.hortelan",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-01-10T11:43:48+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -8511,6 +8710,68 @@
             "time": "2023-12-08T13:03:43+00:00"
         },
         {
+            "name": "vcian/pulse-active-sessions",
+            "version": "v1.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vcian/pulse-active-sessions.git",
+                "reference": "38b71ea0e2a31045fc41eb30de6f66cbc915702e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vcian/pulse-active-sessions/zipball/38b71ea0e2a31045fc41eb30de6f66cbc915702e",
+                "reference": "38b71ea0e2a31045fc41eb30de6f66cbc915702e",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "*",
+                "laravel/pulse": "^1.0.0@beta",
+                "php": "^8.1",
+                "predis/predis": "^2.2"
+            },
+            "require-dev": {
+                "pestphp/pest": "^2.20",
+                "pestphp/pest-plugin-arch": "^2.0",
+                "pestphp/pest-plugin-laravel": "^2.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Vcian\\Pulse\\PulseActiveSessions\\PulseActiveSessionsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Vcian\\Pulse\\PulseActiveSessions\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vcian - ViitorCloud",
+                    "homepage": "https://github.com/vcian"
+                }
+            ],
+            "description": "A Laravel Pulse card to show active user sessions",
+            "homepage": "https://github.com/vcian/pulse-active-sessions",
+            "keywords": [
+                "laravel",
+                "laravel-pulse",
+                "pulse",
+                "pulse-active-sessions"
+            ],
+            "support": {
+                "issues": "https://github.com/vcian/pulse-active-sessions/issues",
+                "source": "https://github.com/vcian/pulse-active-sessions/tree/v1.5.0"
+            },
+            "time": "2024-01-09T06:22:20+00:00"
+        },
+        {
             "name": "vlucas/phpdotenv",
             "version": "v5.6.0",
             "source": {
@@ -11157,7 +11418,10 @@
     ],
     "aliases": [],
     "minimum-stability": "beta",
-    "stability-flags": [],
+    "stability-flags": {
+        "eusonlito/laravel-pulse-apps-load": 20,
+        "laravel/pulse": 10
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+    frankenphp-filament-blog:
+        build:
+            context: .
+            dockerfile: production.Dockerfile
+        image: "filamentblog"
+        environment:
+          SERVER_NAME: ":80"
+        volumes:
+            - ./env:/app/.env
+            - ./default.Caddyfile:/etc/caddy/Caddyfile
+        networks:
+          - tunnel_default
+          - postgres
+          - redis_default
+
+networks:
+  tunnel_default:
+    external: true
+  postgres:
+    external: true
+  redis_default:
+    external: true

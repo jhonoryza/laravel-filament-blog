@@ -7,6 +7,8 @@ services:
         image: "filamentblog"
         ports:
             - "80:80"
+        environment:
+          SERVER_NAME: ":80"
         volumes:
             - .:/app
-            - ./Caddyfile:/etc/caddy/Caddyfile
+            - ./default.Caddyfile:/etc/caddy/Caddyfile

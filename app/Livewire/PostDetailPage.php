@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Post;
+use Butschster\Head\Facades\Meta;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Infolists\Components\Actions\Action;
@@ -14,6 +15,7 @@ use Filament\Infolists\Contracts\HasInfolists;
 use Filament\Infolists\Infolist;
 use Filament\Support\Colors\Color;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Str;
 use Livewire\Component;
 
 class PostDetailPage extends Component implements HasInfolists, HasForms
@@ -26,6 +28,11 @@ class PostDetailPage extends Component implements HasInfolists, HasForms
     public function mount(Post $post)
     {
         $this->post = $post;
+
+        $title = Str::limit(ucwords($this->post->title), 60);
+        $desc = Str::limit($this->post->summary ?? config('meta_tags.description.default'), 160);
+        Meta::prependTitle($title)
+            ->setDescription($desc);
     }
 
     public function render(): View

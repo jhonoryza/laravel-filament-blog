@@ -4,7 +4,6 @@ RUN apt update -y
 RUN apt-get install -y libpq-dev
 RUN docker-php-ext-install pgsql pdo_pgsql
 RUN apt-get install -y zip libzip-dev libicu-dev
-RUN apt-get install -y node
 RUN docker-php-ext-configure intl
 RUN docker-php-ext-install zip exif intl
 

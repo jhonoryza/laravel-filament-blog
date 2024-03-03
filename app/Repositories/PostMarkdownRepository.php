@@ -35,8 +35,8 @@ class PostMarkdownRepository
         return new Post(
             title: $title,
             slug: Str::slug($title),
-            date: Carbon::createFromFormat('Y-m-d H:i:s', (Str::replace("'", "", $date))),
             content: $content,
+            date: Carbon::createFromFormat('Y-m-d H:i:s', (Str::replace("'", "", $date))),
             desc: $desc
         );
     }

@@ -4,10 +4,4 @@
     <a href="https://github.com/jhonoryza" class="mr-4 hover:text-rose-300" target="_blank">
         <i class="fa-brands fa-github"></i>
     </a>
-    @if(request()->routeIs('home'))
-        <label>search: </label>
-        <input type="text" x-data="{message: ''}" x-model="message"
-               x-on:input.debounce.500ms="$dispatch('search', { message: message })"
-            class="mx-2 rounded shadow border bg-white focus:outline-none self-center">
-    @endif
 </nav>

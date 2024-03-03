@@ -22,6 +22,7 @@
         "league/flysystem-aws-s3-v3": "^3.16",
         "paulo-hortelan/requests-graph-pulse": "^1.0",
         "predis/predis": "^2.2",
+        "spatie/laravel-markdown": "^2.5",
         "vcian/pulse-active-sessions": "^1.5"
     },
     "require-dev": {

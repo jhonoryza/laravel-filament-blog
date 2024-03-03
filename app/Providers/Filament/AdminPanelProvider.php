@@ -33,20 +33,12 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->font('Quicksand', provider: SpatieGoogleFontProvider::class)
-            ->topNavigation()
-            ->navigation(function (NavigationBuilder $builder): NavigationBuilder {
-                return $builder->items([
+//            ->topNavigation()
+            ->navigationItems([
                     NavigationItem::make('Preview')
                         ->icon('heroicon-o-cloud')
                         ->url(fn (): string => route('home'), shouldOpenInNewTab: true),
-                    NavigationItem::make('Dashboard')
-                        ->icon('heroicon-o-home')
-                        ->isActiveWhen(fn (): bool => request()->routeIs('filament.admin.pages.dashboard'))
-                        ->url(fn (): string => Dashboard::getUrl()),
-                    ...CategoryResource::getNavigationItems(),
-                    ...PostResource::getNavigationItems(),
-                ]);
-            })
+            ])
             ->login()
             // ->sidebarCollapsibleOnDesktop(true)
             ->colors([

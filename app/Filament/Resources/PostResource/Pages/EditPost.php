@@ -16,9 +16,8 @@ class EditPost extends EditRecord
         return [
             Actions\DeleteAction::make(),
             Actions\Action::make('preview-post')
-                ->action(function () {
-                    redirect(route('posts.show', $this->record));
-                })
+                ->url(route('posts.show', $this->record))
+                ->openUrlInNewTab()
         ];
     }
 

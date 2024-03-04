@@ -3,6 +3,7 @@ import preset from './vendor/filament/support/tailwind.config.preset'
 export default {
     presets: [preset],
     content: [
+        "./app/helpers.php",
         "./app/Livewire/**/*.php",
         "./app/Filament/**/*.php",
         "./resources/views/filament/**/*.blade.php",

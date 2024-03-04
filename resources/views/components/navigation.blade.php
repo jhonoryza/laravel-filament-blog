@@ -4,7 +4,7 @@
     <a href="{{ route('devtools') }}" wire:navigate class="mr-4 hover:text-rose-500 {{ isActive('devtools') }}">Tools</a>
     <!-- <a href="{{ route('tutorials') }}" wire:navigate class="mr-4 hover:text-rose-500">Tutorial</a> -->
 
-    <div class="relative inline-block text-left {{ isActive(['packages.php', 'packages.go']) }}"
+    <div class="relative inline-block mr-4 hover:text-rose-500 cursor-pointer"
          x-data="{
             open: false,
             close() { this.open = false },
@@ -12,7 +12,7 @@
          }"
     >
         <div>
-            <button x-on:click="toggle()" class="mr-4 hover:text-rose-500 cursor-pointer">
+            <button x-on:click="toggle()" class="{{ isActive(['packages.php', 'packages.go']) }}">
                 Packages
             </button>
         </div>
@@ -23,9 +23,9 @@
             role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
             <div class="py-1" role="none">
                 <a href="{{ route('packages.php') }}" wire:navigate
-                   class="text-gray-700 block px-4 py-2 text-sm hover:text-rose-500">PHP Packages</a>
+                   class="text-gray-700 block px-4 py-2 text-sm hover:text-rose-500 {{ isActive('packages.php') }}">PHP Packages</a>
                 <a href="{{ route('packages.go') }}" wire:navigate
-                   class="text-gray-700 block px-4 py-2 text-sm hover:text-rose-500">Go Packages</a>
+                   class="text-gray-700 block px-4 py-2 text-sm hover:text-rose-500 {{ isActive('packages.go') }}">Go Packages</a>
             </div>
         </div>
     </div>

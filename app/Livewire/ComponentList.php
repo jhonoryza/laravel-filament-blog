@@ -31,12 +31,11 @@ class ComponentList extends Component implements HasTable, HasForms
     public function table(Table $table): Table
     {
         return $table
-            ->defaultPaginationPageOption(25)
             ->query(
                 LivewireComponent::query()
                     ->where('is_published', true)
             )
-            ->heading('Livewire Components')
+            ->heading('List of Livewire Components / UI Components')
             ->recordClasses(['hover:bg-teal-200'])
             ->recordUrl(fn ($record) => $record->link)
             ->columns([
@@ -64,6 +63,7 @@ class ComponentList extends Component implements HasTable, HasForms
             ->contentGrid([
                 'md' => 5
             ])
+            ->defaultPaginationPageOption(25)
             ->defaultSort('created_at', 'desc');
     }
 

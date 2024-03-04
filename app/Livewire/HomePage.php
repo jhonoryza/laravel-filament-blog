@@ -34,10 +34,8 @@ class HomePage extends Component implements HasActions, HasForms, HasTable
                 Post::query()
                     ->whereNotNull('published_at')
             )
-            ->defaultSort('id', 'desc')
-            ->recordUrl(function (Post $record) {
-                return route('posts.show', $record->slug);
-            })
+            ->heading('Articles')
+            ->recordUrl(fn (Post $record) => route('posts.show', $record->slug))
             ->recordClasses(['hover:bg-teal-100 shadow border border-slate-300'])
             ->columns([
                 Split::make([
@@ -65,6 +63,7 @@ class HomePage extends Component implements HasActions, HasForms, HasTable
             ])
             ->persistSearchInSession()
             ->persistFiltersInSession()
+            ->defaultSort('id', 'desc')
             ->defaultPaginationPageOption(10)
             ->contentGrid(['md' => 2])
             ->filters([

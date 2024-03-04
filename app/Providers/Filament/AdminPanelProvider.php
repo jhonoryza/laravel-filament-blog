@@ -33,7 +33,7 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->font('Quicksand', provider: SpatieGoogleFontProvider::class)
-//            ->topNavigation()
+            ->favicon(asset('favicon.png'))
             ->navigationItems([
                     NavigationItem::make('Preview')
                         ->icon('heroicon-o-cloud')

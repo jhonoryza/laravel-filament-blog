@@ -8,9 +8,8 @@ use Filament\Actions\Contracts\HasActions;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
-use Filament\Tables\Columns\Layout\Split;
-use Filament\Tables\Columns\Layout\Stack;
-use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\Layout\Grid;
+use Filament\Tables\Columns\Layout\View;
 use Filament\Tables\Concerns\InteractsWithTable;
 use Filament\Tables\Contracts\HasTable;
 use Filament\Tables\Enums\FiltersLayout;
@@ -30,42 +29,29 @@ class HomePage extends Component implements HasActions, HasForms, HasTable
     public function table(Table $table): Table
     {
         return $table
+            ->view('components.tables.index')
             ->query(
                 Post::query()
                     ->whereNotNull('published_at')
             )
             ->heading('Articles')
-            ->recordUrl(fn (Post $record) => route('posts.show', $record->slug))
-            ->recordClasses(['hover:bg-teal-100 shadow border border-slate-300'])
             ->columns([
-                Split::make([
-                    Stack::make([
-                        TextColumn::make('title')
-                            ->searchable(),
-                        TextColumn::make('summary')
-                            ->html()
-                            ->formatStateUsing(function (Post $record) {
-                                return <<<HTML
-                                    <p class="!text-xs text-teal-700">{$record->summary}</p>
-                                HTML;
-                            })
-                    ]),
-                    Stack::make([
-                        TextColumn::make('author.name')
-                            ->badge()
-                            ->grow(false),
-                        TextColumn::make('created_at')
-                            ->date()
-                            ->grow(false),
+                Grid::make()
+                    ->columns(1)
+                    ->schema([
+                        View::make('livewire.post-card'),
                     ])
-                        ->alignEnd()
-                ])
             ])
             ->persistSearchInSession()
             ->persistFiltersInSession()
             ->defaultSort('id', 'desc')
-            ->defaultPaginationPageOption(10)
-            ->contentGrid(['md' => 2])
+            ->paginationPageOptions([15, 25, 50, 100])
+            ->defaultPaginationPageOption(15)
+            ->contentGrid([
+                'sm' => 1,
+                'md' => 2,
+                'lg' => 3,
+            ])
             ->filters([
                 SelectFilter::make('category')
                     ->relationship('categories', 'name'),

@@ -31,12 +31,13 @@ class ComponentList extends Component implements HasTable, HasForms
     public function table(Table $table): Table
     {
         return $table
+            ->view('components.tables.index')
             ->query(
                 LivewireComponent::query()
                     ->where('is_published', true)
             )
             ->heading('List of Livewire Components / UI Components')
-            ->recordClasses(['hover:bg-teal-200'])
+            ->recordClasses(['hover:bg-teal-200 p-2'])
             ->recordUrl(fn ($record) => $record->link)
             ->columns([
                 Stack::make([

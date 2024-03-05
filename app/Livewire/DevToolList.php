@@ -30,13 +30,14 @@ class DevToolList extends Component implements HasForms, HasTable
     public function table(Table $table): Table
     {
         return $table
+            ->view('components.tables.index')
             ->query(
                 Tool::query()
                     ->where('type', Tool::DEV_TOOLS)
                     ->where('is_published', true)
             )
             ->heading('Recommend Dev Tools')
-            ->recordClasses(['hover:bg-teal-200'])
+            ->recordClasses(['hover:bg-teal-200 p-2'])
             ->recordUrl(fn($record) => $record->link)
             ->contentGrid([
                 'md' => 3

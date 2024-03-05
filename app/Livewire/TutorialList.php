@@ -30,6 +30,7 @@ class TutorialList extends Component implements HasForms, HasTable
     public function table(Table $table): Table
     {
         return $table
+            ->view('components.tables.index')
             ->query(
                 Tool::query()
                     ->where('type', Tool::TUTORIAL)

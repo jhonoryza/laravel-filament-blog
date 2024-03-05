@@ -6,6 +6,7 @@ use App\Models\Post;
 use Filament\Actions\Concerns\InteractsWithActions;
 use Filament\Actions\Contracts\HasActions;
 use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Tables\Columns\Layout\Grid;
@@ -55,6 +56,25 @@ class HomePage extends Component implements HasActions, HasForms, HasTable
             ->filters([
                 SelectFilter::make('category')
                     ->relationship('categories', 'name'),
+                Filter::make('title')
+                    ->form([
+                        TextInput::make('search')
+                            ->label('Search')
+                    ])
+                    ->query(function (Builder $query, array $data): Builder {
+                        return $query
+                            ->when(
+                                $data['search'],
+                                fn(Builder $query, $search): Builder => $query
+                                    ->where('title', 'like', '%' . $search . '%')
+                            );
+                    })->indicateUsing(function (array $data): ?string {
+                        if (!$data['search']) {
+                            return null;
+                        }
+
+                        return 'Searching: ' . $data['search'];
+                    }),
                 Filter::make('date')
                     ->form([
                         DatePicker::make('created_from')->native(false),
@@ -70,6 +90,12 @@ class HomePage extends Component implements HasActions, HasForms, HasTable
                                 $data['created_until'],
                                 fn(Builder $query, $date): Builder => $query->whereDate('created_at', '<=', $date),
                             );
+                    })->indicateUsing(function (array $data): ?string {
+                        if (!$data['created_from'] && !$data['created_until']) {
+                            return null;
+                        }
+
+                        return 'Range Date: ' . $data['created_from'] . ' - ' . $data['created_until'];
                     })
 
             ], layout: FiltersLayout::Dropdown)

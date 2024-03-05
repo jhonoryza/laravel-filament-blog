@@ -16,6 +16,7 @@ class Post extends Model implements HasMedia
     use InteractsWithMedia;
 
     const IMAGE = 'post_image';
+    const THUMBNAIL = 'thumbnail';
 
     public function registerMediaCollections(): void
     {
@@ -28,7 +29,7 @@ class Post extends Model implements HasMedia
     public function registerMediaConversions(Media $media = null): void
     {
         $this
-            ->addMediaConversion('thumbnail')
+            ->addMediaConversion(self::THUMBNAIL)
             ->height(500)
             ->width(300);
         // ->fit(Manipulations::FIT_MAX, 500, 300);

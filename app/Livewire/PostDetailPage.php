@@ -57,7 +57,7 @@ class PostDetailPage extends Component implements HasInfolists, HasForms
                     ->schema([
                         ImageEntry::make('image')
                             ->hiddenLabel()
-                            ->height(200)
+                            ->height(120)
                             ->circular()
                             ->defaultImageUrl($this->post->getImageUrl()),
                         TextEntry::make('categories.name')
@@ -65,7 +65,6 @@ class PostDetailPage extends Component implements HasInfolists, HasForms
                             ->badge()
                             ->color(Color::Teal),
                         TextEntry::make('content')
-                            ->size(TextEntry\TextEntrySize::Large)
                             ->hiddenLabel()
                             ->markdown(),
 

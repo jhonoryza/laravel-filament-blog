@@ -91,6 +91,7 @@ class PostResource extends Resource
                     ->required(),
                 SpatieMediaLibraryFileUpload::make('image')
                     ->collection(Post::IMAGE)
+                    ->conversion(Post::THUMBNAIL)
                     ->disk(config('media-library.disk_name')),
             ]);
     }

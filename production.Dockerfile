@@ -17,7 +17,7 @@ RUN apt-get install -y \
     libgd-dev \
     jpegoptim optipng pngquant gifsicle \
     libonig-dev \
-    libxml2-dev \
+    libxml2-dev
 
 RUN docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg
 

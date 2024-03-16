@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
+use Opcodes\LogViewer\Facades\LogViewer;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -33,6 +34,10 @@ class AppServiceProvider extends ServiceProvider
             FilamentColor::register([
                 'primary' => Color::Teal,
             ]);
+        });
+
+        LogViewer::auth(function () {
+            return true;
         });
     }
 }

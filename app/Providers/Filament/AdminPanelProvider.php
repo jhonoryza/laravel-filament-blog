@@ -35,9 +35,12 @@ class AdminPanelProvider extends PanelProvider
             ->font('Quicksand', provider: SpatieGoogleFontProvider::class)
             ->favicon(asset('favicon.png'))
             ->navigationItems([
-                    NavigationItem::make('Preview')
+                    NavigationItem::make('Home')
                         ->icon('heroicon-o-cloud')
                         ->url(fn (): string => route('home'), shouldOpenInNewTab: true),
+                    NavigationItem::make('Log')
+                        ->icon('heroicon-o-trash')
+                        ->url(fn (): string => route('log-viewer.index'), shouldOpenInNewTab: true),
             ])
             ->login()
             // ->sidebarCollapsibleOnDesktop(true)

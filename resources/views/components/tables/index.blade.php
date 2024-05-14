@@ -122,12 +122,17 @@
     ])
 >
     <x-tables.container>
+        <!-- removed filament element -->
+        <!-- <x-filament-tables::container -->
+        <!-- used our own container -->
         <div
             @if (! $hasHeader) x-cloak @endif
             x-bind:hidden="! (@js($hasHeader) || (selectedRecords.length && @js(count($bulkActions))))"
             x-show="@js($hasHeader) || (selectedRecords.length && @js(count($bulkActions)))"
-            class="fi-ta-header-ctn dark:divide-white/10"
+            class="fi-ta-header-ctn"
         >
+            <!-- removed filament class -->
+            <!-- divide-y divide-gray-200 dark:divide-white/10 -->
             @if ($header)
                 {{ $header }}
             @elseif (($heading || $description || $headerActions) && ! $isReordering)
@@ -139,7 +144,8 @@
                 />
             @endif
 
-            <!-- show Pagination above filters in mobile -->
+            <!-- added element -->
+            <!-- show Pagination above filters icon if in mobile screen -->
             @if ((($records instanceof \Illuminate\Contracts\Pagination\Paginator) || ($records instanceof \Illuminate\Contracts\Pagination\CursorPaginator)) &&
              ((! ($records instanceof \Illuminate\Contracts\Pagination\LengthAwarePaginator)) || $records->total()))
                 <x-tables.pagination
@@ -289,6 +295,9 @@
                 '!border-t-0' => ! $hasHeader,
             ])
         >
+        <!-- removed filament class -->
+        <!-- divide-y divide-gray-200  -->
+        <!-- no idea where this is affected -->
             @if (($content || $hasColumnsLayout) && ($records !== null) && count($records))
                 @if (! $isReordering)
                     @php
@@ -503,6 +512,9 @@
                                     {{ $contentGrid ? '\'bg-white dark:bg-white/5 dark:ring-white/10\': ! isRecordSelected(\'' . $recordKey . '\')' : '\'\':\'\'' }},
                                 }"
                             >
+                            <!-- added class here -->
+                            <!-- overflow-hidden -->
+                            <!-- no idea where this is affected -->
                                 @php
                                     $hasItemBeforeRecordContent = $isReordering || ($isSelectionEnabled && $isRecordSelectable($record));
                                     $isRecordCollapsible = $hasCollapsibleColumnsLayout && (! $isReordering);
@@ -569,13 +581,18 @@
                                             'md:flex-row md:items-center' => ! $contentGrid,
                                         ])
                                     >
+                                    <!-- removed filament class -->
+                                    <!-- py-4 -->
+                                    <!-- this affect to remove padding-y in card -->
                                         <div class="flex-1">
                                             @if ($recordUrl)
                                                 <a
                                                     {{ \Filament\Support\generate_href_html($recordUrl) }}
-                                                    {{--class="{{ $recordContentClasses }}" --}}
-                                                    class="block w-full"
+                                                    class="block-w-full"
                                                 >
+                                                    <!-- replaced filament class -->
+                                                    <!-- {{ $recordContentClasses }} -->
+                                                    <!-- no idea where this affected -->
                                                     <x-filament-tables::columns.layout
                                                         :components="$columnsLayout"
                                                         :record="$record"
@@ -606,9 +623,11 @@
                                                 </button>
                                             @else
                                                 <div
-                                                    {{-- class="{{ $recordContentClasses }}" --}}
-                                                    class="block w-full"
+                                                    class="block-w-full"
                                                 >
+                                                    <!-- replaced filament class -->
+                                                    <!-- {{ $recordContentClasses }} -->
+                                                    <!-- no idea where this affected -->
                                                     <x-filament-tables::columns.layout
                                                         :components="$columnsLayout"
                                                         :record="$record"
@@ -1244,6 +1263,9 @@
                 :paginator="$records"
                 class="fi-ta-pagination px-3 py-3 sm:px-6"
             />
+            <!-- removed element -->
+            <!-- <x-filament::pagination -->
+            <!-- used our own pagination style -->
         @endif
 
         @if ($hasFiltersBelowContent)

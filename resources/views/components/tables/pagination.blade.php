@@ -1,3 +1,4 @@
+<!-- this file has no changes -->
 @props([
     'currentPageOptionProperty' => 'tableRecordsPerPage',
     'extremeLinks' => false,
@@ -51,52 +52,52 @@
                     'filament::components/pagination.overview',
                     $paginator->total(),
                     [
-                        'first' => \Filament\Support\format_number($paginator->firstItem() ?? 0),
-                        'last' => \Filament\Support\format_number($paginator->lastItem() ?? 0),
-                        'total' => \Filament\Support\format_number($paginator->total()),
+                        'first' => \Illuminate\Support\Number::format($paginator->firstItem() ?? 0),
+                        'last' => \Illuminate\Support\Number::format($paginator->lastItem() ?? 0),
+                        'total' => \Illuminate\Support\Number::format($paginator->total()),
                     ],
                 )
             }}
         </span>
     @endif
 
-{{--    @if (count($pageOptions) > 1)--}}
-{{--        <div class="col-start-2 justify-self-center">--}}
-{{--            <label class="fi-pagination-records-per-page-select fi-compact">--}}
-{{--                <x-filament::input.wrapper>--}}
-{{--                    <x-filament::input.select--}}
-{{--                        :wire:model.live="$currentPageOptionProperty"--}}
-{{--                    >--}}
-{{--                        @foreach ($pageOptions as $option)--}}
-{{--                            <option value="{{ $option }}">--}}
-{{--                                {{ $option === 'all' ? __('filament::components/pagination.fields.records_per_page.options.all') : $option }}--}}
-{{--                            </option>--}}
-{{--                        @endforeach--}}
-{{--                    </x-filament::input.select>--}}
-{{--                </x-filament::input.wrapper>--}}
+    @if (count($pageOptions) > 1)
+        <div class="col-start-2 justify-self-center">
+            <label class="fi-pagination-records-per-page-select fi-compact">
+                <x-filament::input.wrapper>
+                    <x-filament::input.select
+                        :wire:model.live="$currentPageOptionProperty"
+                    >
+                        @foreach ($pageOptions as $option)
+                            <option value="{{ $option }}">
+                                {{ $option === 'all' ? __('filament::components/pagination.fields.records_per_page.options.all') : $option }}
+                            </option>
+                        @endforeach
+                    </x-filament::input.select>
+                </x-filament::input.wrapper>
 
-{{--                <span class="sr-only">--}}
-{{--                    {{ __('filament::components/pagination.fields.records_per_page.label') }}--}}
-{{--                </span>--}}
-{{--            </label>--}}
+                <span class="sr-only">
+                    {{ __('filament::components/pagination.fields.records_per_page.label') }}
+                </span>
+            </label>
 
-{{--            <label class="fi-pagination-records-per-page-select">--}}
-{{--                <x-filament::input.wrapper--}}
-{{--                    :prefix="__('filament::components/pagination.fields.records_per_page.label')"--}}
-{{--                >--}}
-{{--                    <x-filament::input.select--}}
-{{--                        :wire:model.live="$currentPageOptionProperty"--}}
-{{--                    >--}}
-{{--                        @foreach ($pageOptions as $option)--}}
-{{--                            <option value="{{ $option }}">--}}
-{{--                                {{ $option === 'all' ? __('filament::components/pagination.fields.records_per_page.options.all') : $option }}--}}
-{{--                            </option>--}}
-{{--                        @endforeach--}}
-{{--                    </x-filament::input.select>--}}
-{{--                </x-filament::input.wrapper>--}}
-{{--            </label>--}}
-{{--        </div>--}}
-{{--    @endif--}}
+            <label class="fi-pagination-records-per-page-select">
+                <x-filament::input.wrapper
+                    :prefix="__('filament::components/pagination.fields.records_per_page.label')"
+                >
+                    <x-filament::input.select
+                        :wire:model.live="$currentPageOptionProperty"
+                    >
+                        @foreach ($pageOptions as $option)
+                            <option value="{{ $option }}">
+                                {{ $option === 'all' ? __('filament::components/pagination.fields.records_per_page.options.all') : $option }}
+                            </option>
+                        @endforeach
+                    </x-filament::input.select>
+                </x-filament::input.wrapper>
+            </label>
+        </div>
+    @endif
 
     @if ($paginator->hasMorePages())
         @php

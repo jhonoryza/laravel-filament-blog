@@ -1,4 +1,5 @@
 @import "@fontsource/quicksand";
+@import "../../vendor/tempest/highlight/src/Themes/Css/one-dark-pro.css";
 
 @tailwind base;
 @tailwind components;

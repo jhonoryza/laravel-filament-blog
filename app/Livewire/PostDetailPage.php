@@ -16,9 +16,14 @@ use Filament\Infolists\Infolist;
 use Filament\Support\Colors\Color;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Str;
+use League\CommonMark\Environment\Environment;
+use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
+use League\CommonMark\Extension\GithubFlavoredMarkdownExtension;
+use League\CommonMark\MarkdownConverter;
 use Livewire\Component;
+use Tempest\Highlight\CommonMark\HighlightExtension;
 
-class PostDetailPage extends Component implements HasInfolists, HasForms
+class PostDetailPage extends Component implements HasForms, HasInfolists
 {
     use InteractsWithForms;
     use InteractsWithInfolists;
@@ -42,6 +47,15 @@ class PostDetailPage extends Component implements HasInfolists, HasForms
 
     public function postInfoList(Infolist $infolist): Infolist
     {
+        $environment = new Environment;
+
+        $environment
+            ->addExtension(new CommonMarkCoreExtension)
+            ->addExtension(new HighlightExtension)
+            ->addExtension(new GithubFlavoredMarkdownExtension);
+
+        $markdown = new MarkdownConverter($environment);
+
         return $infolist
             ->record($this->post)
             ->schema([
@@ -51,7 +65,7 @@ class PostDetailPage extends Component implements HasInfolists, HasForms
                             ->icon('heroicon-o-chevron-left')
                             ->action(function () {
                                 redirect('/');
-                            })
+                            }),
                     ])
                     ->icon('heroicon-s-document-text')
                     ->schema([
@@ -66,9 +80,10 @@ class PostDetailPage extends Component implements HasInfolists, HasForms
                             ->color(Color::Teal),
                         TextEntry::make('content')
                             ->hiddenLabel()
-                            ->markdown(),
-
-                    ])
+                            ->html(true)
+                            ->prose(true)
+                            ->formatStateUsing(fn ($state) => $markdown->convert($state)),
+                    ]),
             ]);
     }
 }

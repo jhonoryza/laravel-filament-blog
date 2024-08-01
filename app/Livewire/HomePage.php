@@ -19,12 +19,13 @@ use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Str;
 use Livewire\Component;
 
 class HomePage extends Component implements HasActions, HasForms, HasTable
 {
-    use InteractsWithForms;
     use InteractsWithActions;
+    use InteractsWithForms;
     use InteractsWithTable;
 
     public function table(Table $table): Table
@@ -41,7 +42,7 @@ class HomePage extends Component implements HasActions, HasForms, HasTable
                     ->columns(1)
                     ->schema([
                         View::make('livewire.post-card'),
-                    ])
+                    ]),
             ])
             ->persistSearchInSession()
             ->persistFiltersInSession()
@@ -59,21 +60,21 @@ class HomePage extends Component implements HasActions, HasForms, HasTable
                 Filter::make('title')
                     ->form([
                         TextInput::make('search')
-                            ->label('Search')
+                            ->label('Search'),
                     ])
                     ->query(function (Builder $query, array $data): Builder {
                         return $query
                             ->when(
                                 $data['search'],
-                                fn(Builder $query, $search): Builder => $query
-                                    ->where('title', 'like', '%' . $search . '%')
+                                fn (Builder $query, $search): Builder => $query
+                                    ->whereRaw('LOWER("title") LIKE ?', '%'.Str::lower($search).'%')
                             );
                     })->indicateUsing(function (array $data): ?string {
-                        if (!$data['search']) {
+                        if (! $data['search']) {
                             return null;
                         }
 
-                        return 'Searching: ' . $data['search'];
+                        return 'Searching: '.$data['search'];
                     }),
                 Filter::make('date')
                     ->form([
@@ -84,19 +85,19 @@ class HomePage extends Component implements HasActions, HasForms, HasTable
                         return $query
                             ->when(
                                 $data['created_from'],
-                                fn(Builder $query, $date): Builder => $query->whereDate('created_at', '>=', $date),
+                                fn (Builder $query, $date): Builder => $query->whereDate('created_at', '>=', $date),
                             )
                             ->when(
                                 $data['created_until'],
-                                fn(Builder $query, $date): Builder => $query->whereDate('created_at', '<=', $date),
+                                fn (Builder $query, $date): Builder => $query->whereDate('created_at', '<=', $date),
                             );
                     })->indicateUsing(function (array $data): ?string {
-                        if (!$data['created_from'] && !$data['created_until']) {
+                        if (! $data['created_from'] && ! $data['created_until']) {
                             return null;
                         }
 
-                        return 'Range Date: ' . $data['created_from'] . ' - ' . $data['created_until'];
-                    })
+                        return 'Range Date: '.$data['created_from'].' - '.$data['created_until'];
+                    }),
 
             ], layout: FiltersLayout::Dropdown)
             ->actions([

@@ -82,7 +82,7 @@ class PostDetailPage extends Component implements HasForms, HasInfolists
                             ->hiddenLabel()
                             ->html(true)
                             ->prose(true)
-                            ->formatStateUsing(fn ($state) => $markdown->convert($state)),
+                            ->formatStateUsing(fn ($state) => $this->post->is_markdown ? $markdown->convert($state) : $state),
                     ]),
             ]);
     }

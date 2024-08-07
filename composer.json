@@ -32,6 +32,7 @@
         "opcodesio/log-viewer": "^3.6",
         "paulo-hortelan/requests-graph-pulse": "^1.0",
         "predis/predis": "^2.2",
+        "saade/filament-laravel-log": "^3.0",
         "spatie/laravel-tags": "^4.6",
         "tempest/highlight": "dev-main",
         "vcian/pulse-active-sessions": "^1.5"

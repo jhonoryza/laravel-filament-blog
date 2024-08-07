@@ -14,10 +14,15 @@ class EditPost extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
-            Actions\DeleteAction::make(),
+            $this->getCancelFormAction(),
+            Actions\Action::make('save')
+                ->label(__('filament-panels::resources/pages/edit-record.form.actions.save.label'))
+                ->submit(null)
+                ->action('save'),
             Actions\Action::make('preview-post')
                 ->url(route('posts.show', $this->record))
-                ->openUrlInNewTab()
+                ->openUrlInNewTab(),
+            Actions\DeleteAction::make(),
         ];
     }
 

@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\PostResource\Pages;
-
 // use App\Filament\Resources\PostResource\RelationManagers;
 use App\Models\Post;
 use Filament\Forms;
@@ -14,7 +13,6 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
-use Laravel\Prompts\Concerns\Colors;
 
 // use Illuminate\Support\Str;
 // use Illuminate\Database\Eloquent\Builder;
@@ -52,7 +50,7 @@ class PostResource extends Resource
                                     ->required(),
                                 Forms\Components\DateTimePicker::make('published_at')
                                     ->native(false)
-                                    ->required()
+                                    ->required(),
                             ]);
                     }),
                 Forms\Components\Select::make('author_id')
@@ -78,6 +76,7 @@ class PostResource extends Resource
                 Forms\Components\MarkdownEditor::make('content')
                     ->label('Markdown Content')
                     ->columnSpanFull()
+                    ->fileAttachmentsDisk(config('media-library.disk_name'))
                     ->hidden(function (Forms\Get $get) {
                         return $get('is_markdown') == false;
                     })
@@ -85,6 +84,7 @@ class PostResource extends Resource
                 Forms\Components\RichEditor::make('content')
                     ->label('Rich Text Editor Content')
                     ->columnSpanFull()
+                    ->fileAttachmentsDisk(config('media-library.disk_name'))
                     ->hidden(function (Forms\Get $get) {
                         return $get('is_markdown') == true;
                     })
@@ -136,11 +136,11 @@ class PostResource extends Resource
                 Tables\Filters\SelectFilter::make('category')
                     ->relationship('categories', 'name'),
                 Tables\Filters\Filter::make('published')
-                    ->query(fn(Builder $query): Builder => $query->whereNotNull('published_at')),
+                    ->query(fn (Builder $query): Builder => $query->whereNotNull('published_at')),
                 Tables\Filters\Filter::make('unpublished')
-                    ->query(fn(Builder $query): Builder => $query->whereNull('published_at')),
+                    ->query(fn (Builder $query): Builder => $query->whereNull('published_at')),
                 Tables\Filters\Filter::make('markdown')
-                    ->query(fn(Builder $query): Builder => $query->where('is_markdown', true)),
+                    ->query(fn (Builder $query): Builder => $query->where('is_markdown', true)),
                 Tables\Filters\Filter::make('date')
                     ->form([
                         Forms\Components\DatePicker::make('created_from')->native(false),
@@ -150,13 +150,13 @@ class PostResource extends Resource
                         return $query
                             ->when(
                                 $data['created_from'],
-                                fn(Builder $query, $date): Builder => $query->whereDate('created_at', '>=', $date),
+                                fn (Builder $query, $date): Builder => $query->whereDate('created_at', '>=', $date),
                             )
                             ->when(
                                 $data['created_until'],
-                                fn(Builder $query, $date): Builder => $query->whereDate('created_at', '<=', $date),
+                                fn (Builder $query, $date): Builder => $query->whereDate('created_at', '<=', $date),
                             );
-                    })
+                    }),
 
             ])
             ->actions([

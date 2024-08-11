@@ -4,3 +4,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    .fi-ta-group-header {
+        @apply bg-transparent border-none;
+    }
+}

@@ -16,6 +16,7 @@ use Filament\Tables\Contracts\HasTable;
 use Filament\Tables\Enums\FiltersLayout;
 use Filament\Tables\Filters\Filter;
 use Filament\Tables\Filters\SelectFilter;
+use Filament\Tables\Grouping\Group;
 use Filament\Tables\Table;
 use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Database\Eloquent\Builder;
@@ -31,6 +32,15 @@ class HomePage extends Component implements HasActions, HasForms, HasTable
     public function table(Table $table): Table
     {
         return $table
+            ->defaultGroup('is_highlighted')
+            ->groups([
+                Group::make('is_highlighted')
+                    ->label('')
+                    ->getTitleFromRecordUsing(fn ($record) => $record->is_highlighted ? '📌pinned' : 'latest')
+                    ->orderQueryUsing(fn (Builder $query) => $query->orderBy('is_highlighted', 'desc')),
+            ])
+            ->groupingSettingsHidden()
+            ->groupingDirectionSettingHidden()
             ->view('components.tables.index')
             ->query(
                 Post::query()

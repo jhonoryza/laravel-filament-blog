@@ -64,7 +64,14 @@ class PostDetailPage extends Component implements HasForms, HasInfolists
                         Action::make('back')
                             ->icon('heroicon-o-chevron-left')
                             ->action(function () {
-                                redirect('/');
+                                $this->redirectRoute('home', navigate: true);
+                            }),
+                    ])
+                    ->footerActions([
+                        Action::make('back')
+                            ->icon('heroicon-o-chevron-left')
+                            ->action(function () {
+                                $this->redirectRoute('home', navigate: true);
                             }),
                     ])
                     ->icon('heroicon-s-document-text')

@@ -6,13 +6,13 @@ use App\Filament\Resources\PostResource\Pages;
 // use App\Filament\Resources\PostResource\RelationManagers;
 use App\Models\Post;
 use Filament\Forms;
-use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
+use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 
 // use Illuminate\Support\Str;
 // use Illuminate\Database\Eloquent\Builder;
@@ -89,10 +89,19 @@ class PostResource extends Resource
                         return $get('is_markdown') == true;
                     })
                     ->required(),
-                SpatieMediaLibraryFileUpload::make('image')
-                    ->collection(Post::IMAGE)
-                    ->conversion(Post::THUMBNAIL)
-                    ->disk(config('media-library.disk_name')),
+                Forms\Components\FileUpload::make('image_url')
+                    ->disk(config('media-library.disk_name'))
+                    ->directory('posts')
+                    ->getUploadedFileNameForStorageUsing(
+                        function (TemporaryUploadedFile $file): string {
+                            return (string) str($file->getClientOriginalName())
+                                ->prepend(now()->format('Ymd-His-'));
+                        }
+                    ),
+                // SpatieMediaLibraryFileUpload::make('image')
+                //     ->collection(Post::IMAGE)
+                //     ->conversion(Post::THUMBNAIL)
+                //     ->disk(config('media-library.disk_name')),
             ]);
     }
 

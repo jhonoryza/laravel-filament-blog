@@ -7,27 +7,25 @@ return [
      * Meta title section
      */
     'title' => [
-        'default' => 'Blog',
+        'default' => 'Blog | Fajar SP',
         'separator' => '-',
         'max_length' => 255,
     ],
-
 
     /*
      * Meta description section
      */
     'description' => [
-        'default' => 'my personal blog',
+        'default' => 'personal blog',
         'max_length' => 255,
     ],
-
 
     /*
      * Meta keywords section
      */
     'keywords' => [
         'default' => 'laravel,livewire,filament,tailwind,svelte',
-        'max_length' => 255
+        'max_length' => 255,
     ],
 
     /*

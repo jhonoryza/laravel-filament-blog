@@ -90,8 +90,10 @@ class PostResource extends Resource
                     })
                     ->required(),
                 Forms\Components\FileUpload::make('image_url')
+                    ->fetchFileInformation(false)
                     ->disk(config('media-library.disk_name'))
                     ->directory('posts')
+                    ->visibility('public')
                     ->getUploadedFileNameForStorageUsing(
                         function (TemporaryUploadedFile $file): string {
                             return (string) str($file->getClientOriginalName())

@@ -3,6 +3,7 @@ version: "3"
 services:
   frankenphp-filament-blog:
     image: "jhonoryza/filament-blog:latest"
+    restart: unless-stopped
     environment:
       SERVER_NAME: ":80"
     volumes:

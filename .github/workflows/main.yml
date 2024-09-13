@@ -57,7 +57,7 @@ jobs:
           cd /media/ubuntu/server_data/docker/laravel-projects/laravel-filament-blog
           git pull origin main
           docker compose -f production.docker-compose.yaml up -d
-          docker image prune -f
-          docker builder prune --force
-          docker exec app php artisan filament:cache-components
-          docker exec app php artisan icons:cache
+          # docker image prune -f
+          # docker builder prune --force
+          # docker exec app php artisan filament:cache-components
+          # docker exec app php artisan icons:cache

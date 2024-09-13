@@ -96,6 +96,14 @@
         <div class="space-y-1 px-2 pb-3 pt-2 shadow rounded bg-slate-100">
             <a href="{{ route('home') }}" wire:navigate
                 class="block hover:bg-white px-3 py-2 text-sm font-medium hover:text-rose-500 {{ isActive('home') }}">Blog</a>
+            <a href="https://nuxt-blog-gamma.vercel.app/"
+                class="block hover:bg-white px-3 py-2 text-sm font-medium hover:text-rose-500" target="_blank">
+                Nuxt SSR
+            </a>
+            <a href="https://vue-blog-gules.vercel.app/"
+                class="block hover:bg-white px-3 py-2 text-sm font-medium hover:text-rose-500" target="_blank">
+                Vue SPA
+            </a>
             <a href="{{ route('components') }}" wire:navigate
                 class="block hover:bg-white px-3 py-2 text-sm font-medium hover:text-rose-500 {{ isActive('components') }}">Components</a>
             <a href="{{ route('devtools') }}" wire:navigate

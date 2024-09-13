@@ -33,45 +33,54 @@ jobs:
             --file ./production.Dockerfile . \
             --tag jhonoryza/filament-blog:latest
 
-  install-ansible:
-    runs-on: ubuntu-latest
+  # install-ansible:
+  #   runs-on: ubuntu-latest
 
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+  #   steps:
+  #   - name: Checkout repository
+  #     uses: actions/checkout@v4
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.x'
+  #   - name: Set up Python
+  #     uses: actions/setup-python@v4
+  #     with:
+  #       python-version: '3.x'
 
-    - name: Install Ansible
-      run: |
-        python -m pip install --upgrade pip
-        pip install ansible
+  #   - name: Install Ansible
+  #     run: |
+  #       python -m pip install --upgrade pip
+  #       pip install ansible
 
   deploy:
-    needs: [install-ansible, build-docker-image]
+    needs: build-docker-image
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.x'
+    # - name: Set up Python
+    #   uses: actions/setup-python@v4
+    #   with:
+    #     python-version: '3.x'
 
-    - name: Add SSH key
-      uses: webfactory/ssh-agent@v0.5.4
-      with:
-        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+    # - name: Add SSH key
+    #   uses: webfactory/ssh-agent@v0.5.4
+    #   with:
+    #     ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+    # - name: deploy
+    #   run: |
+    #     cd ansible
+    #     ansible-playbook -i hosts production-ansible.yaml
+    #   env:
+    #     ANSIBLE_HOST_KEY_CHECKING: 'False'
+    #     CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
 
     - name: deploy
-      run: |
-        cd ansible
-        ansible-playbook -i hosts production-ansible.yaml
-      env:
-        ANSIBLE_HOST_KEY_CHECKING: 'False'
-        CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      uses: Gustavo-caetano/cloudflared-ssh-action@1.1
+      with:
+        host: ${{ vars.HOST }}
+        username: ${{ secrets.USERNAME }}
+        private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+        port: ${{ secrets.PORT }}
+        commands: docker pull jhonoryza/filament-blog:latest; cd /media/ubuntu/server_data/docker/laravel-projects/laravel-filament-blog; docker compose -f production.docker-compose.yaml up -d; docker image prune -f; docker builder prune --force; docker exec app php artisan filament:cache-components; docker exec app php artisan icons:cache;

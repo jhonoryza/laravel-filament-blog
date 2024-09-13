@@ -1,0 +1,5 @@
+---
+
+# Variables
+deployDir: "/media/ubuntu/server_data/docker/laravel-projects/laravel-filament-blog"
+tag: "latest"

@@ -43,7 +43,7 @@ jobs:
     - name: deploy
       uses: Genesys225/cloudflared-service-token-ssh-proxy@V1
       with:
-        HOST: 192.168.18.106
+        HOST: dell.labkita.my.id
         USER: ubuntu
         PORT: 22
         CLIENT_ID: ${{ secrets.CLIENT_ID }}
@@ -52,8 +52,6 @@ jobs:
         PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         KEY_TYPE: id_rsa
         REMOTE_SHELL: 'bash'
-        # COMMAND: |
-        #   pwd
         COMMAND: |
           docker pull jhonoryza/filament-blog:latest
           cd /media/ubuntu/server_data/docker/laravel-projects/laravel-filament-blog

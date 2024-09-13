@@ -77,10 +77,22 @@ jobs:
     #     CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
 
     - name: deploy
-      uses: Gustavo-caetano/cloudflared-ssh-action@1.1
+      uses: Genesys225/cloudflared-service-token-ssh-proxy@V1
       with:
-        host: ${{ vars.HOST }}
-        username: ${{ secrets.USERNAME }}
-        private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-        port: ${{ secrets.PORT }}
-        commands: docker pull jhonoryza/filament-blog:latest; cd /media/ubuntu/server_data/docker/laravel-projects/laravel-filament-blog; docker compose -f production.docker-compose.yaml up -d; docker image prune -f; docker builder prune --force; docker exec app php artisan filament:cache-components; docker exec app php artisan icons:cache;
+        HOST: 192.168.18.106
+        USER: ubuntu
+        PORT: 22
+        CLIENT_ID: ${{ secrets.CLIENT_ID }}
+        CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+        PUBLIC_KEY: ${{ secrets.SSH_PUBLIC_KEY }}
+        PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        KEY_TYPE: id_rsa
+        REMOTE_SHELL: 'bash'
+        COMMAND: |
+          docker pull jhonoryza/filament-blog:latest
+          cd /media/ubuntu/server_data/docker/laravel-projects/laravel-filament-blog
+          docker compose -f production.docker-compose.yaml up -d
+          docker image prune -f
+          docker builder prune --force
+          docker exec app php artisan filament:cache-components
+          docker exec app php artisan icons:cache

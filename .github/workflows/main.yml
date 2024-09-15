@@ -53,10 +53,4 @@ jobs:
         KEY_TYPE: id_rsa
         REMOTE_SHELL: 'bash'
         COMMAND: |
-          docker pull jhonoryza/filament-blog:latest && cd /media/ubuntu/server_data/docker/laravel-projects/laravel-filament-blog/src
-          git pull origin main
-          docker compose -f production.docker-compose.yaml up -d
-          docker image prune -f
-          docker builder prune --force
-          docker exec app php artisan filament:cache-components
-          docker exec app php artisan icons:cache
+          docker pull jhonoryza/filament-blog:latest && cd /media/ubuntu/server_data/docker/laravel-projects/laravel-filament-blog/src && git pull origin main && docker compose -f production.docker-compose.yaml up -d && docker image prune -f && docker exec app php artisan filament:cache-components && docker exec app php artisan icons:cache

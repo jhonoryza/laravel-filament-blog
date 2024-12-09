@@ -1,12 +1,5 @@
 FROM dunglas/frankenphp:latest-php8.2
 
-# Install Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
-# RUN apt update -y
-# RUN apt-get install -y libpq-dev
-# RUN docker-php-ext-install pgsql pdo_pgsql
-
 # Install dependencies untuk Composer dan ekstensi PHP
 RUN apt-get update && apt-get install -y \
     curl \
@@ -16,8 +9,10 @@ RUN apt-get update && apt-get install -y \
     unzip \
     libpq-dev \
     libexif-dev \
-    libsodium-dev \
-    && apt-get clean
+    libsodium-dev
+
+# Install Composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 RUN install-php-extensions \
     pgsql \

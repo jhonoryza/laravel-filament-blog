@@ -62,6 +62,7 @@ jobs:
         REMOTE_SHELL: 'bash -c'
         COMMAND: |
           docker pull jhonoryza/filament-blog:latest
+          sleep 90
 
     - name: deploy pull latest repo
       uses: Genesys225/cloudflared-service-token-ssh-proxy@V1

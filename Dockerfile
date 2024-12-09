@@ -18,4 +18,5 @@ RUN install-php-extensions \
     intl \
     zip \
     exif \
-    sodium
+    sodium \
+    pcntl

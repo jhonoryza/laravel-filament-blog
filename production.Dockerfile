@@ -1,10 +1,12 @@
 FROM jhonoryza/frankenphp-pgsql:8.2
 
-# Install Caddy
-RUN curl -fsSL https://get.caddyserver.com | bash
+# Install Caddy menggunakan repository resmi
+RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
+    curl -fsSL https://dl.cloudsmith.io/public/caddy/stable/deb/caddy-stable.deb | tee /etc/apt/sources.list.d/caddy-stable.list && \
+    apt-get install -y caddy
 
-# Pastikan caddy terpasang dengan benar
-RUN mv /usr/bin/caddy /usr/local/bin/caddy
+# Pastikan Caddy terpasang
+RUN caddy version
 
 WORKDIR /app
 

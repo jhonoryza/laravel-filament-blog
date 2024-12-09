@@ -4,7 +4,7 @@ services:
   frankenphp-filament-blog:
     image: "jhonoryza/filament-blog:latest"
     restart: unless-stopped
-    entrypoint: php artisan octane:frankenphp --workers=2 --max-requests=1000
+    entrypoint: php artisan octane:frankenphp --host=0.0.0.0 --port=80 --workers=2 --max-requests=1000
     volumes:
       - ./env:/app/.env
     networks:

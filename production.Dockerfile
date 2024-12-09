@@ -10,7 +10,7 @@ RUN composer install --no-dev --optimize-autoloader
 RUN rm -rf ./git
 
 # Salin konfigurasi Caddyfile dan file environment
-COPY Caddyfile /etc/caddy/Caddyfile
+COPY default.Caddyfile /etc/caddy/Caddyfile
 COPY caddy.env /etc/caddy/caddy.env
 
 # Expose port untuk akses aplikasi

@@ -8,7 +8,6 @@ services:
       SERVER_NAME: ":80"
     volumes:
       - ./env:/app/.env
-      - ./default.Caddyfile:/etc/caddy/Caddyfile
     networks:
       - tunnel_default
       - postgres

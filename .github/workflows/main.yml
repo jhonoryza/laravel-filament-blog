@@ -53,7 +53,7 @@ jobs:
       with:
         host: dell.labkita.my.id
         username: ubuntu
-        private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+        private_key: ${{ secrets.SSH_PUBLIC_KEY }}
         port: 22
         commands: /media/ubuntu/server_data/docker/laravel-projects/deploy-filament-blog.sh
 

@@ -61,41 +61,5 @@ jobs:
         KEY_TYPE: id_rsa
         REMOTE_SHELL: 'bash -c'
         COMMAND: |
-          docker pull jhonoryza/filament-blog:latest
-          sleep 90
-
-    - name: deploy pull latest repo
-      uses: Genesys225/cloudflared-service-token-ssh-proxy@V1
-      with:
-        HOST: dell.labkita.my.id
-        USER: ubuntu
-        PORT: 22
-        CLIENT_ID: ${{ secrets.CLIENT_ID }}
-        CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
-        PUBLIC_KEY: ${{ secrets.SSH_PUBLIC_KEY }}
-        PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        KEY_TYPE: id_rsa
-        REMOTE_SHELL: 'bash -c'
-        COMMAND: |
-          cd /media/ubuntu/server_data/docker/laravel-projects/laravel-filament-blog/src
-          git pull origin main
-
-    - name: deploy container
-      uses: Genesys225/cloudflared-service-token-ssh-proxy@V1
-      with:
-        HOST: dell.labkita.my.id
-        USER: ubuntu
-        PORT: 22
-        CLIENT_ID: ${{ secrets.CLIENT_ID }}
-        CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
-        PUBLIC_KEY: ${{ secrets.SSH_PUBLIC_KEY }}
-        PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        KEY_TYPE: id_rsa
-        REMOTE_SHELL: 'bash -c'
-        COMMAND: |
-          cd /media/ubuntu/server_data/docker/laravel-projects/laravel-filament-blog/src
-          docker compose -f production.docker-compose.yaml up -d
-          docker image prune -f
-          docker builder prune --force
-          docker exec src-frankenphp-filament-blog-1 php artisan filament:cache-components
-          docker exec src-frankenphp-filament-blog-1 php artisan icons:cache
+          cd /media/ubuntu/server_data/docker/laravel-projects/
+          ./deploy-filament-blog.sh &

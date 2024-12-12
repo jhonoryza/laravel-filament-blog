@@ -24,13 +24,13 @@ jobs:
       with:
           buildx-version: latest
 
-    - name: Build base image with push
-      run: |
-          docker buildx build \
-          --platform=linux/amd64 \
-          --output "type=image,push=true" \
-          --file ./Dockerfile . \
-          --tag jhonoryza/frankenphp-pgsql:8.2
+    # - name: Build base image with push
+    #   run: |
+    #       docker buildx build \
+    #       --platform=linux/amd64 \
+    #       --output "type=image,push=true" \
+    #       --file ./Dockerfile . \
+    #       --tag jhonoryza/frankenphp-pgsql:8.2
 
     - name: Build dockerfile (with push)
       run: |

@@ -15,19 +15,19 @@
     @filamentStyles
     @vite('resources/css/app.css')
 
-    @@if(config('app.env') == 'production')
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6L3N891QWX"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
+    @if (config('app.env') == 'production')
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-6L3N891QWX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
 
-        gtag('config', 'G-6L3N891QWX');
-    </script>
+            gtag('config', 'G-6L3N891QWX');
+        </script>
     @endif
 </head>
 

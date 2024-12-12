@@ -61,5 +61,4 @@ jobs:
         KEY_TYPE: id_rsa
         REMOTE_SHELL: 'bash -c'
         COMMAND: |
-          cd /media/ubuntu/server_data/docker/laravel-projects/
-          ./deploy-filament-blog.sh &
+          /media/ubuntu/server_data/docker/laravel-projects/deploy-filament-blog.sh &

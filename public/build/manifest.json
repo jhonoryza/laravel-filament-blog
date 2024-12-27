@@ -1,74 +1,66 @@
 {
-  "node_modules/@fontsource/quicksand/files/quicksand-latin-400-normal.woff": {
-    "file": "assets/quicksand-latin-400-normal-a368715e.woff",
-    "src": "node_modules/@fontsource/quicksand/files/quicksand-latin-400-normal.woff"
+  "node_modules/@fontsource/lato/files/lato-latin-400-normal.woff": {
+    "file": "assets/lato-latin-400-normal-f55abc76.woff",
+    "src": "node_modules/@fontsource/lato/files/lato-latin-400-normal.woff"
   },
-  "node_modules/@fontsource/quicksand/files/quicksand-latin-400-normal.woff2": {
-    "file": "assets/quicksand-latin-400-normal-e3616551.woff2",
-    "src": "node_modules/@fontsource/quicksand/files/quicksand-latin-400-normal.woff2"
+  "node_modules/@fontsource/lato/files/lato-latin-400-normal.woff2": {
+    "file": "assets/lato-latin-400-normal-918b7dc3.woff2",
+    "src": "node_modules/@fontsource/lato/files/lato-latin-400-normal.woff2"
   },
-  "node_modules/@fontsource/quicksand/files/quicksand-latin-ext-400-normal.woff": {
-    "file": "assets/quicksand-latin-ext-400-normal-6ed17db0.woff",
-    "src": "node_modules/@fontsource/quicksand/files/quicksand-latin-ext-400-normal.woff"
+  "node_modules/@fontsource/lato/files/lato-latin-ext-400-normal.woff": {
+    "file": "assets/lato-latin-ext-400-normal-315bd67b.woff",
+    "src": "node_modules/@fontsource/lato/files/lato-latin-ext-400-normal.woff"
   },
-  "node_modules/@fontsource/quicksand/files/quicksand-latin-ext-400-normal.woff2": {
-    "file": "assets/quicksand-latin-ext-400-normal-bb022ef8.woff2",
-    "src": "node_modules/@fontsource/quicksand/files/quicksand-latin-ext-400-normal.woff2"
-  },
-  "node_modules/@fontsource/quicksand/files/quicksand-vietnamese-400-normal.woff": {
-    "file": "assets/quicksand-vietnamese-400-normal-dbac1e1c.woff",
-    "src": "node_modules/@fontsource/quicksand/files/quicksand-vietnamese-400-normal.woff"
-  },
-  "node_modules/@fontsource/quicksand/files/quicksand-vietnamese-400-normal.woff2": {
-    "file": "assets/quicksand-vietnamese-400-normal-b2e021dc.woff2",
-    "src": "node_modules/@fontsource/quicksand/files/quicksand-vietnamese-400-normal.woff2"
+  "node_modules/@fontsource/lato/files/lato-latin-ext-400-normal.woff2": {
+    "file": "assets/lato-latin-ext-400-normal-1c2fc265.woff2",
+    "src": "node_modules/@fontsource/lato/files/lato-latin-ext-400-normal.woff2"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.ttf": {
-    "file": "assets/fa-brands-400-5656d596.ttf",
+    "file": "assets/fa-brands-400-808443ae.ttf",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.ttf"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2": {
-    "file": "assets/fa-brands-400-3a8924cd.woff2",
+    "file": "assets/fa-brands-400-d7236a19.woff2",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf": {
-    "file": "assets/fa-regular-400-5d02dc9b.ttf",
+    "file": "assets/fa-regular-400-54cf6086.ttf",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2": {
-    "file": "assets/fa-regular-400-2bccecf0.woff2",
+    "file": "assets/fa-regular-400-e3456d12.woff2",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf": {
-    "file": "assets/fa-solid-900-fbbf06d7.ttf",
+    "file": "assets/fa-solid-900-d2f05935.ttf",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2": {
-    "file": "assets/fa-solid-900-9fc85f3a.woff2",
+    "file": "assets/fa-solid-900-aa759986.woff2",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2"
   },
   "resources/css/app.css": {
-    "file": "assets/app-b53cf5d5.css",
+    "file": "assets/app-5056b556.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
   "resources/js/app.css": {
-    "file": "assets/app-71c41fb9.css",
+    "file": "assets/app-f8cc31f7.css",
     "src": "resources/js/app.css"
   },
   "resources/js/app.js": {
     "assets": [
-      "assets/fa-brands-400-3a8924cd.woff2",
-      "assets/fa-brands-400-5656d596.ttf",
-      "assets/fa-regular-400-2bccecf0.woff2",
-      "assets/fa-regular-400-5d02dc9b.ttf",
-      "assets/fa-solid-900-9fc85f3a.woff2",
-      "assets/fa-solid-900-fbbf06d7.ttf"
+      "assets/fa-brands-400-d7236a19.woff2",
+      "assets/fa-brands-400-808443ae.ttf",
+      "assets/fa-regular-400-e3456d12.woff2",
+      "assets/fa-regular-400-54cf6086.ttf",
+      "assets/fa-solid-900-aa759986.woff2",
+      "assets/fa-solid-900-d2f05935.ttf"
     ],
     "css": [
-      "assets/app-71c41fb9.css"
+      "assets/app-f8cc31f7.css"
     ],
-    "file": "assets/app-d7992a3f.js",
+    "file": "assets/app-93f54b55.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   }

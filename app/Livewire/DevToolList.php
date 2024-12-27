@@ -40,7 +40,7 @@ class DevToolList extends Component implements HasForms, HasTable
             ->recordClasses(['hover:bg-teal-200 p-2'])
             ->recordUrl(fn($record) => $record->link)
             ->contentGrid([
-                'md' => 3
+                'md' => 2
             ])
             ->columns([
                 Stack::make([

@@ -14,11 +14,15 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                quicksand: ["Quicksand"],
+                main: ['Lato', 'sans-serif'],
             },
+            zIndex: {
+                '100': '100',
+            }
         },
     },
     plugins: [
         require("@tailwindcss/typography"),
+        require('@tailwindcss/forms'),
     ],
 };

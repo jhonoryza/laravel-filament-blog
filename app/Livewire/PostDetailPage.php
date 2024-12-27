@@ -2,18 +2,10 @@
 
 namespace App\Livewire;
 
+use App\CommonMark\CodeBlockWithCopyRenderer;
 use App\Models\Post;
+use App\Tempest\HighlightExtension;
 use Butschster\Head\Facades\Meta;
-use Filament\Forms\Concerns\InteractsWithForms;
-use Filament\Forms\Contracts\HasForms;
-use Filament\Infolists\Components\Actions\Action;
-use Filament\Infolists\Components\ImageEntry;
-use Filament\Infolists\Components\Section;
-use Filament\Infolists\Components\TextEntry;
-use Filament\Infolists\Concerns\InteractsWithInfolists;
-use Filament\Infolists\Contracts\HasInfolists;
-use Filament\Infolists\Infolist;
-use Filament\Support\Colors\Color;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Str;
 use League\CommonMark\Environment\Environment;
@@ -21,14 +13,11 @@ use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
 use League\CommonMark\Extension\GithubFlavoredMarkdownExtension;
 use League\CommonMark\MarkdownConverter;
 use Livewire\Component;
-use Tempest\Highlight\CommonMark\HighlightExtension;
 
-class PostDetailPage extends Component implements HasForms, HasInfolists
+class PostDetailPage extends Component
 {
-    use InteractsWithForms;
-    use InteractsWithInfolists;
-
     public Post $post;
+    public string $content = '';
 
     public function mount(Post $post)
     {
@@ -42,11 +31,6 @@ class PostDetailPage extends Component implements HasForms, HasInfolists
 
     public function render(): View
     {
-        return view('livewire.post-detail-page');
-    }
-
-    public function postInfoList(Infolist $infolist): Infolist
-    {
         $environment = new Environment;
 
         $environment
@@ -56,41 +40,10 @@ class PostDetailPage extends Component implements HasForms, HasInfolists
 
         $markdown = new MarkdownConverter($environment);
 
-        return $infolist
-            ->record($this->post)
-            ->schema([
-                Section::make($this->post->title)
-                    ->headerActions([
-                        Action::make('back')
-                            ->icon('heroicon-o-chevron-left')
-                            ->action(function () {
-                                $this->redirectRoute('home', navigate: true);
-                            }),
-                    ])
-                    ->footerActions([
-                        Action::make('back')
-                            ->icon('heroicon-o-chevron-left')
-                            ->action(function () {
-                                $this->redirectRoute('home', navigate: true);
-                            }),
-                    ])
-                    ->icon('heroicon-s-document-text')
-                    ->schema([
-                        ImageEntry::make('image')
-                            ->hiddenLabel()
-                            ->height(120)
-                            ->circular()
-                            ->defaultImageUrl($this->post->getImageUrl()),
-                        TextEntry::make('categories.name')
-                            ->hiddenLabel()
-                            ->badge()
-                            ->color(Color::Teal),
-                        TextEntry::make('content')
-                            ->hiddenLabel()
-                            ->html(true)
-                            ->prose(true)
-                            ->formatStateUsing(fn ($state) => $this->post->is_markdown ? $markdown->convert($state) : $state),
-                    ]),
-            ]);
+        $this->content = $this->post->is_markdown ?
+            $markdown->convert($this->post->content)
+            : $this->post->content;
+
+        return view('livewire.post-detail-page');
     }
 }

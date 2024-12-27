@@ -62,7 +62,7 @@ class ComponentList extends Component implements HasTable, HasForms
                     ->preload()
             ])
             ->contentGrid([
-                'md' => 5
+                'md' => 2
             ])
             ->defaultPaginationPageOption(25)
             ->defaultSort('created_at', 'desc');

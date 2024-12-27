@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
@@ -61,5 +62,10 @@ class Post extends Model implements HasMedia
         return Storage::disk(config('media-library.disk_name'))
             ->url($this->image_url);
         //return $this->getFirstMediaUrl(self::IMAGE, 'thumbnail');
+    }
+
+    public function getSummary(): string
+    {
+        return Str::excerpt($this->summary ?? '');
     }
 }

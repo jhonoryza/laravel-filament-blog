@@ -14,6 +14,7 @@
 
     @filamentStyles
     @vite('resources/css/app.css')
+    @stack('css')
 
     @if (config('app.env') == 'production')
         <!-- Google tag (gtag.js) -->
@@ -24,6 +25,7 @@
             function gtag() {
                 dataLayer.push(arguments);
             }
+
             gtag('js', new Date());
 
             gtag('config', 'G-6L3N891QWX');
@@ -31,16 +33,18 @@
     @endif
 </head>
 
-<body class="antialiased font-quicksand">
-    <x-navigation />
+<body class="antialiased font-main max-w-sm mx-auto">
+<div class="flex flex-col">
+    <x-navigation/>
 
-    <main class="p-4">
+    <main class="py-4 mt-10">
         {{ $slot }}
     </main>
+</div>
 
-    @filamentScripts
-    @vite('resources/js/app.js')
-    @stack('scripts')
+@filamentScripts
+@vite('resources/js/app.js')
+@stack('js')
 </body>
 
 </html>

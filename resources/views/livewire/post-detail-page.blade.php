@@ -48,6 +48,7 @@
     </style>
 @endpush
 @push('js')
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
     <script>
         function copyToClipboard(button) {
             var codeBlock = button.closest('.code-block-container').querySelector('pre');
@@ -69,14 +70,13 @@
 >
     <div class="flex flex-col gap-6">
 
-        <a
-            href="{{ url()->previous() }}"
-            wire:navigate
-            class="w-20 p-2 rounded
-                border border-indigo-400 hover:opacity-60"
-        >
-            Back
-        </a>
+        <x-buttons.back />
+
+        <!-- title -->
+        <h1 class="text-2xl font-bold tracking-tight text-slate-900">
+            {{ $post->title }}
+        </h1>
+        <!-- end title -->
 
         <!-- image -->
         <img src="{{ $post->getImageUrl() }}"
@@ -105,6 +105,7 @@
                 'prose-ul:max-w-sm prose-li:max-w-sm prose-table:max-w-sm',
                 'prose-thead:max-w-sm prose-tbody:max-w-sm prose-pre:max-w-sm',
                 'prose-code:max-w-sm prose-pre:w-full prose-pre:my-0',
+                'prose-a:break-words',
                 'prose-code:bg-gray-200' => $post->is_markdown == true,
                 'prose-code:text-slate-200'=> $post->is_markdown == false,
                 ])
@@ -113,5 +114,6 @@
         </div>
         <!-- end content -->
 
+        <x-buttons.back />
     </div>
 </div>

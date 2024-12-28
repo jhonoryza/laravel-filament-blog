@@ -104,12 +104,6 @@
         <!-- Mobile menu, show/hide based on menu state. -->
         <div x-show="open" x-transition x-on:click.away="close()" style="display: none" class="" id="mobile-menu">
             <div class="fixed space-y-1 px-2 pb-3 pt-2 shadow rounded bg-indigo-50 mt-0 w-full max-w-sm z-[100]">
-                <a href="{{ route('home') }}" wire:navigate
-                   class="block hover:bg-white px-3 py-2 text-sm font-medium
-               hover:text-rose-500 {{ isActive('home') }}"
-                >
-                    Blog
-                </a>
                 <div class="relative inline-block px-3 py-2 text-sm font-medium
             hover:text-rose-500 cursor-pointer"
                      x-data="{

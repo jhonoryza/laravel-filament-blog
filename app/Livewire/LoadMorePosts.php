@@ -45,9 +45,10 @@ class LoadMorePosts extends Component
         return Post::query()
             ->whereNotNull('published_at')
             ->when($this->search, fn($q, $search) => $q->where('title', 'ilike', '%' . $search . '%'))
-            ->latest()
             ->forPage($this->page, $this->perPage)
-            ->get(['id', 'title', 'slug', 'summary', 'image_url', 'published_at', 'created_at']);
+            ->orderBy('is_highlighted', 'desc')
+            ->orderBy('published_at', 'desc')
+            ->get(['id', 'title', 'slug', 'summary', 'image_url', 'published_at', 'is_highlighted', 'created_at']);
     }
 
     private function loadPosts(): void

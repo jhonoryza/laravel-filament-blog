@@ -6,6 +6,7 @@ export default {
         "./app/helpers.php",
         "./app/Livewire/**/*.php",
         "./app/Filament/**/*.php",
+        "./app/CommonMark/*.php",
         "./resources/views/filament/**/*.blade.php",
         "./resources/views/livewire/**/*.blade.php",
         "./vendor/filament/**/*.blade.php",
@@ -18,6 +19,9 @@ export default {
             },
             zIndex: {
                 '100': '100',
+            },
+            colors: {
+                "link": "#377fab"
             }
         },
     },

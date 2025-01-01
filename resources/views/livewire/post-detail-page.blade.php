@@ -80,7 +80,7 @@
 
         <!-- image -->
         <img src="{{ $post->getThumbnailImageUrl() }}"
-             class="max-w-none w-fit h-fit object-fill rounded-xl bg-transparent"
+             class="max-w-none object-cover rounded-xl h-48 w-48 bg-transparent"
              alt="{{ $post->title }}"
         >
         <!-- end image -->

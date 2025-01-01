@@ -36,10 +36,11 @@ class CreatePost extends CreateRecord
 
     protected function handleRecordCreation(array $data): Model
     {
+        /** @var Post $record */
         $record = parent::handleRecordCreation($data);
 
-        /** @var Post $record */
         $record->generateTwitterImage();
+        $record->generateThumbnailImage();
 
         return $record;
     }

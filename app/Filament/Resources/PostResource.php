@@ -96,14 +96,10 @@ class PostResource extends Resource
                     ->visibility('public')
                     ->getUploadedFileNameForStorageUsing(
                         function (TemporaryUploadedFile $file): string {
-                            return (string) str($file->getClientOriginalName())
+                            return (string) str(Str::slug($file->getClientOriginalName()))
                                 ->prepend(now()->format('Ymd-His-'));
                         }
                     ),
-                // SpatieMediaLibraryFileUpload::make('image')
-                //     ->collection(Post::IMAGE)
-                //     ->conversion(Post::THUMBNAIL)
-                //     ->disk(config('media-library.disk_name')),
             ]);
     }
 

@@ -25,10 +25,10 @@ class PostDetailPage extends Component
         $this->setMetaDetail(
             title: $post->title,
             desc: $post->summary ?? config('meta_tags.description.default'),
-            url: urlencode(route('posts.show', $post)),
-            imageUrl: urlencode($post->getTwitterImageUrl()),
+            url: route('posts.show', $post),
+            imageUrl: $post->getTwitterImageUrl(),
             keywords: $post->categories()->pluck('name')->implode(','),
-            author: urlencode($post->author->getProfileUrl()),
+            author: $post->author->getProfileUrl(),
             publishedTime: $post->getPublishedAtIso8601(),
             section: $post->categories()->first()?->name ?? '',
         );

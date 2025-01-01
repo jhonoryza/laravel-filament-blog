@@ -91,7 +91,7 @@ class Post extends Model
 
     public function generateTwitterImage(): void
     {
-        $extPath = $this->resizeImage(300, 157, Fit::Max, self::TWITTER);
+        $extPath = $this->resizeImage(1200, 675, Fit::Fill, self::TWITTER);
         $this->image_tw_url = $extPath;
         $this->save();
     }

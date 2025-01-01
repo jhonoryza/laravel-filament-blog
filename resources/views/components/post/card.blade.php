@@ -6,8 +6,8 @@
    bg-gradient-to-br from-white via-slate-100 to-purple-50"
 >
     <!-- image thumbnail -->
-    <div class="w-full mx-auto flex justify-center mt-4">
-        <img class="object-cover rounded-xl h-48 w-48 bg-transparent"
+    <div class="w-full mx-auto flex justify-center mt-2">
+        <img class="object-contain rounded-xl h-32 w-32 bg-transparent"
              src="{{ $post->getThumbnailImageUrl() }}"
              alt=""
         >

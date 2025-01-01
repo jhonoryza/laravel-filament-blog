@@ -2,8 +2,8 @@
 
 namespace App\Livewire;
 
+use App\Livewire\Concerns\MetaTrait;
 use App\Models\LivewireComponent;
-use Butschster\Head\Facades\Meta;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Support\Colors\Color;
@@ -21,11 +21,11 @@ class ComponentList extends Component implements HasTable, HasForms
 {
     use InteractsWithTable;
     use InteractsWithForms;
+    use MetaTrait;
 
     public function mount()
     {
-        Meta::prependTitle('Livewire Components')
-            ->setDescription('List of Livewire Components');
+        $this->setMetaIndex('Livewire Components', 'List of Livewire Components');
     }
 
     public function table(Table $table): Table

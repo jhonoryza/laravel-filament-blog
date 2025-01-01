@@ -2,8 +2,8 @@
 
 namespace App\Livewire;
 
+use App\Livewire\Concerns\MetaTrait;
 use App\Models\Tool;
-use Butschster\Head\Facades\Meta;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Support\Enums\FontWeight;
@@ -19,11 +19,11 @@ class PhpPackageList extends Component implements HasForms, HasTable
 {
     use InteractsWithTable;
     use InteractsWithForms;
+    use MetaTrait;
 
     public function mount()
     {
-        Meta::prependTitle('PHP Packages')
-            ->setDescription('List of PHP Packages');
+        $this->setMetaIndex('PHP Packages', 'List of PHP packages');
     }
 
     public function table(Table $table): Table

@@ -2,8 +2,8 @@
 
 namespace App\Livewire;
 
+use App\Livewire\Concerns\MetaTrait;
 use App\Models\Tool;
-use Butschster\Head\Facades\Meta;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Support\Enums\FontWeight;
@@ -19,11 +19,11 @@ class GoPackageList extends Component implements HasTable, HasForms
 {
     use InteractsWithForms;
     use InteractsWithTable;
+    use MetaTrait;
 
     public function mount()
     {
-        Meta::prependTitle('Go Packages')
-            ->setDescription('List of go packages');
+        $this->setMetaIndex('Go Packages', 'List of go packages');
     }
 
     public function table(Table $table): Table

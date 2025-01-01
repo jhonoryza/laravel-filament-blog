@@ -79,9 +79,8 @@
         <!-- end title -->
 
         <!-- image -->
-        <img src="{{ $post->getImageUrl() }}"
-             style="height: 120px; width: 120px;"
-             class="max-w-none object-cover object-center rounded-full ring-white dark:ring-gray-900"
+        <img src="{{ $post->getThumbnailImageUrl() }}"
+             class="max-w-none w-fit h-fit object-fill rounded-xl bg-transparent"
              alt="{{ $post->title }}"
         >
         <!-- end image -->

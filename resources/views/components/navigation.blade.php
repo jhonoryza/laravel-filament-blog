@@ -7,9 +7,9 @@
     <div class="
         text-center text-xl font-bold h-12 border-b fixed bg-white w-full max-w-sm z-[100]"
     >
-        <div class="flex items-end justify-between">
+        <div class="flex items-end justify-between items-center">
 
-            <a href="{{ route('home') }}" class="text-2xl text-slate-900 hover:opacity-60" wire:navigate>Home</a>
+            <a href="{{ route('home') }}" class="text-xl text-slate-900 hover:opacity-60" wire:navigate>Home</a>
 
             <!-- Mobile breadcrumb button-->
             <button x-on:click="toggle()"

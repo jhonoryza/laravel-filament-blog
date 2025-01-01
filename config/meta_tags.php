@@ -7,8 +7,8 @@ return [
      * Meta title section
      */
     'title' => [
-        'default' => 'Blog | Fajar SP',
-        'separator' => '-',
+        'default' => 'Blog',
+        'separator' => '|',
         'max_length' => 255,
     ],
 
@@ -16,7 +16,7 @@ return [
      * Meta description section
      */
     'description' => [
-        'default' => 'personal blog',
+        'default' => 'Personal Blog',
         'max_length' => 255,
     ],
 

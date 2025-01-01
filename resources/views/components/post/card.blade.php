@@ -7,8 +7,8 @@
 >
     <!-- image thumbnail -->
     <div class="w-full mx-auto flex justify-center mt-4">
-        <img class="object-cover rounded-full h-32 w-32 bg-transparent"
-             src="{{ $post->getImageUrl() }}"
+        <img class="object-fill rounded-xl h-fit w-fit bg-transparent"
+             src="{{ $post->getThumbnailImageUrl() }}"
              alt=""
         >
     </div>

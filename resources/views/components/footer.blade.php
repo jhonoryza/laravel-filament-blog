@@ -1,4 +1,4 @@
-<div class="flex flex-col justify-start items-start gap-4 w-full py-2 border-t border-slate-300">
+<div class="flex flex-col justify-start items-start gap-4 w-full py-2 border-t border-slate-300 mt-auto">
     <p class="text-sm text-slate-600">
         © Copyright 2015 Fajar SP
         <br/>Code snippets are

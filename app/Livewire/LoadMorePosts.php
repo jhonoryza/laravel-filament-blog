@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Livewire\Concerns\MetaTrait;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Collection;
 use Livewire\Attributes\On;
@@ -14,6 +15,7 @@ use App\Models\Post;
 class LoadMorePosts extends Component
 {
     use WithPagination;
+    use MetaTrait;
 
     private $perPage = 10;
 
@@ -35,6 +37,7 @@ class LoadMorePosts extends Component
 
     public function mount()
     {
+        $this->setMetaIndex('Blog posts', 'List of blog posts');
         if ($this->page == 1) {
             $this->posts = null;
         }
@@ -48,7 +51,18 @@ class LoadMorePosts extends Component
             ->forPage($this->page, $this->perPage)
             ->orderBy('is_highlighted', 'desc')
             ->orderBy('published_at', 'desc')
-            ->get(['id', 'title', 'slug', 'summary', 'image_url', 'published_at', 'is_highlighted', 'created_at']);
+            ->get([
+                'id',
+                'title',
+                'slug',
+                'summary',
+                'image_url',
+                'image_tw_url',
+                'image_thumb_url',
+                'published_at',
+                'is_highlighted',
+                'created_at',
+            ]);
     }
 
     private function loadPosts(): void

@@ -2,17 +2,17 @@
 
 namespace App\Providers;
 
-use Butschster\Head\Facades\Meta;
-use Butschster\Head\Packages\Entities\OpenGraphPackage;
-use Butschster\Head\Packages\Entities\TwitterCardPackage;
+use App\Models\User;
 use Filament\Support\Colors\Color;
 use Filament\Support\Facades\FilamentColor;
 use Filament\Support\Facades\FilamentView;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Opcodes\LogViewer\Facades\LogViewer;
+use PharIo\Manifest\Author;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -46,21 +46,10 @@ class AppServiceProvider extends ServiceProvider
 
         FilamentView::spa();
 
-        $og = new OpenGraphPackage('facebook');
-        $og
-            ->setTitle(config('meta_tags.title.default'))
-            ->setType('website')
-            ->setDescription(config('meta_tags.description.default'));
-        Meta::registerPackage($og);
-
-        $tw = new TwitterCardPackage('twitter');
-        $tw->setTitle(config('meta_tags.title.default'))
-            ->setType('website')
-            ->setDescription(config('meta_tags.description.default'))
-            ->setImage(asset('banner.png'));
-        Meta::registerPackage($tw);
-
-        Meta::setFavicon(asset('favicon.png'))
-            ->setContentType('website');
+        Route::bind('author', function ($value) {
+            return User::query()
+                ->where('name', $value)
+                ->firstOrFail();
+        });
     }
 }

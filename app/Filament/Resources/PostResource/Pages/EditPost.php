@@ -3,8 +3,10 @@
 namespace App\Filament\Resources\PostResource\Pages;
 
 use App\Filament\Resources\PostResource;
+use App\Models\Post;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
 class EditPost extends EditRecord
@@ -34,4 +36,17 @@ class EditPost extends EditRecord
 
         return $data;
     }
+
+    protected function handleRecordUpdate(Model $record, array $data): Model
+    {
+        if ($data['image_url'] !== null && $data['image_url'] !== $record->image_url) {
+            /** @var Post $record */
+            $record->generateTwitterImage();
+            $record->generateThumbnailImage();
+        }
+
+        $record->update($data);
+        return $record;
+    }
+
 }

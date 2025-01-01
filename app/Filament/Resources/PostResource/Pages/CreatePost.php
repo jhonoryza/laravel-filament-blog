@@ -5,6 +5,7 @@ namespace App\Filament\Resources\PostResource\Pages;
 use App\Filament\Resources\PostResource;
 use Filament\Actions;
 use Filament\Resources\Pages\CreateRecord;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Str;
 
 class CreatePost extends CreateRecord
@@ -29,5 +30,10 @@ class CreatePost extends CreateRecord
         }
 
         return $data;
+    }
+
+    protected function afterCreate(): void
+    {
+        Artisan::call('sitemap:generate');
     }
 }

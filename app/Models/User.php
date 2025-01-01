@@ -50,4 +50,9 @@ class User extends Authenticatable implements FilamentUser
     {
         return true;
     }
+
+    public function getProfileUrl(): string
+    {
+        return route('authors.show', $this->name);
+    }
 }

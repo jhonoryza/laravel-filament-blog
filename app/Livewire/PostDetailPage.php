@@ -2,15 +2,10 @@
 
 namespace App\Livewire;
 
-use App\CommonMark\CodeBlockWithCopyRenderer;
 use App\Livewire\Concerns\MetaTrait;
 use App\Models\Post;
 use App\Tempest\HighlightExtension;
-use Butschster\Head\Facades\Meta;
-use Butschster\Head\Packages\Entities\OpenGraphPackage;
-use Butschster\Head\Packages\Entities\TwitterCardPackage;
 use Illuminate\Contracts\View\View;
-use Illuminate\Support\Str;
 use League\CommonMark\Environment\Environment;
 use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
 use League\CommonMark\Extension\GithubFlavoredMarkdownExtension;
@@ -27,14 +22,15 @@ class PostDetailPage extends Component
     {
         $this->post = $post;
 
-        $title = Str::limit(ucwords($post->title), 60);
-        $desc = Str::limit($post->summary ?? config('meta_tags.description.default'), 160);
-
         $this->setMetaDetail(
-            title: $title,
-            desc: $desc,
-            imageUrl: $post->getImageUrl(),
+            title: $post->title,
+            desc: $post->summary ?? config('meta_tags.description.default'),
+            url: urlencode(route('posts.show', $post)),
+            imageUrl: urlencode($post->getTwitterImageUrl()),
             keywords: $post->categories()->pluck('name')->implode(','),
+            author: urlencode($post->author->getProfileUrl()),
+            publishedTime: $post->getPublishedAtIso8601(),
+            section: $post->categories()->first()?->name ?? '',
         );
     }
 

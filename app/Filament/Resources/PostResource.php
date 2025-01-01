@@ -92,7 +92,7 @@ class PostResource extends Resource
                 Forms\Components\FileUpload::make('image_url')
                     ->fetchFileInformation(false)
                     ->disk(config('media-library.disk_name'))
-                    ->directory('posts')
+                    ->directory(Post::DIR)
                     ->visibility('public')
                     ->getUploadedFileNameForStorageUsing(
                         function (TemporaryUploadedFile $file): string {

@@ -2,45 +2,35 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
-use Spatie\MediaLibrary\HasMedia;
+use Spatie\Image\Enums\Fit;
+use Spatie\Image\Image;
 use Spatie\MediaLibrary\InteractsWithMedia;
-use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
-class Post extends Model implements HasMedia
+class Post extends Model
 {
-    use HasFactory;
     use InteractsWithMedia;
 
     const IMAGE = 'post_image';
 
     const THUMBNAIL = 'thumbnail';
 
-    public function registerMediaCollections(): void
-    {
-        $this->addMediaCollection(self::IMAGE)
-            ->singleFile()
-            ->acceptsMimeTypes(['image/jpeg', 'image/png'])
-            ->useFallbackUrl('https://source.unsplash.com/500x300?random');
-    }
+    const TWITTER = 'twitter';
 
-    public function registerMediaConversions(?Media $media = null): void
-    {
-        $this
-            ->addMediaConversion(self::THUMBNAIL)
-            ->height(500)
-            ->width(300);
-        // ->fit(Manipulations::FIT_MAX, 500, 300);
-    }
+    const DIR = 'posts';
 
     protected $casts = [
         'published_at' => 'datetime',
     ];
+
+    public function getPublishedAtIso8601(): string
+    {
+        return $this->published_at?->toIso8601String() ?? '';
+    }
 
     public function getRouteKeyName()
     {
@@ -61,11 +51,60 @@ class Post extends Model implements HasMedia
     {
         return Storage::disk(config('media-library.disk_name'))
             ->url($this->image_url);
-        //return $this->getFirstMediaUrl(self::IMAGE, 'thumbnail');
     }
 
     public function getSummary(): string
     {
         return Str::excerpt($this->summary ?? '');
+    }
+
+    private function resizeImage(int $width, int $height, Fit $fit, string $type): string
+    {
+        $disk = Storage::disk(config('media-library.disk_name'));
+        $filePath = $this->image_url;
+        $fileName = basename($filePath);
+        $extension = pathinfo($fileName, PATHINFO_EXTENSION);
+        $newFileName = $this->slug . '.' . $extension;
+        $tempPath = public_path('temp') . '/' . $newFileName;
+
+        $fileContents = $disk->get($filePath);
+        file_put_contents($tempPath, $fileContents);
+
+        Image::load($tempPath)
+            ->fit($fit, $width, $height)
+            ->save($tempPath);
+
+        $extPath = self::DIR . '/' . $type . '/' . $newFileName;
+        $disk
+            ->put($extPath, file_get_contents($tempPath));
+        unlink($tempPath);
+
+        return $extPath;
+    }
+
+    public function generateThumbnailImage(): void
+    {
+        $extPath = $this->resizeImage(128, 128, Fit::Contain, self::THUMBNAIL);
+        $this->image_thumb_url = $extPath;
+        $this->save();
+    }
+
+    public function generateTwitterImage(): void
+    {
+        $extPath = $this->resizeImage(300, 157, Fit::Max, self::TWITTER);
+        $this->image_tw_url = $extPath;
+        $this->save();
+    }
+
+    public function getTwitterImageUrl(): string
+    {
+        return Storage::disk(config('media-library.disk_name'))
+            ->url($this->image_tw_url);
+    }
+
+    public function getThumbnailImageUrl(): string
+    {
+        return Storage::disk(config('media-library.disk_name'))
+            ->url($this->image_thumb_url);
     }
 }

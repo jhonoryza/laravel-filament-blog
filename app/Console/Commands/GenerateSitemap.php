@@ -2,7 +2,9 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Post;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\URL;
 use Spatie\Sitemap\SitemapGenerator;
 
 class GenerateSitemap extends Command
@@ -28,7 +30,13 @@ class GenerateSitemap extends Command
      */
     public function handle()
     {
-        SitemapGenerator::create(config('app.url'))
-            ->writeToFile(public_path('sitemap.xml'));
+        $sitemap = SitemapGenerator::create(config('app.url'))
+            ->getSitemap();
+        Post::query()
+            ->whereNotNull('published_at')
+            ->get()->each(function ($post) use ($sitemap) {
+                $sitemap->add(URL::route('posts.show', $post));
+            });
+        $sitemap->writeToFile(public_path('sitemap.xml'));
     }
 }

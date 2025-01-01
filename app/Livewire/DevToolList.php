@@ -2,8 +2,8 @@
 
 namespace App\Livewire;
 
+use App\Livewire\Concerns\MetaTrait;
 use App\Models\Tool;
-use Butschster\Head\Facades\Meta;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Support\Enums\FontWeight;
@@ -20,11 +20,11 @@ class DevToolList extends Component implements HasForms, HasTable
 {
     use InteractsWithForms;
     use InteractsWithTable;
+    use MetaTrait;
 
     public function mount()
     {
-        Meta::prependTitle('Recommended Dev Tools')
-            ->setDescription('List of my dev tools');
+        $this->setMetaIndex('Recommended Dev Tools', 'List of my dev tools');
     }
 
     public function table(Table $table): Table

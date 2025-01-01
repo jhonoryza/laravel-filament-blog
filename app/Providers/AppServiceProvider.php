@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use Butschster\Head\Facades\Meta;
+use Butschster\Head\Packages\Entities\OpenGraphPackage;
+use Butschster\Head\Packages\Entities\TwitterCardPackage;
 use Filament\Support\Colors\Color;
 use Filament\Support\Facades\FilamentColor;
 use Filament\Support\Facades\FilamentView;
@@ -42,5 +45,22 @@ class AppServiceProvider extends ServiceProvider
         });
 
         FilamentView::spa();
+
+        $og = new OpenGraphPackage('facebook');
+        $og
+            ->setTitle(config('meta_tags.title.default'))
+            ->setType('website')
+            ->setDescription(config('meta_tags.description.default'));
+        Meta::registerPackage($og);
+
+        $tw = new TwitterCardPackage('twitter');
+        $tw->setTitle(config('meta_tags.title.default'))
+            ->setType('website')
+            ->setDescription(config('meta_tags.description.default'))
+            ->setImage(asset('banner.png'));
+        Meta::registerPackage($tw);
+
+        Meta::setFavicon(asset('favicon.png'))
+            ->setContentType('website');
     }
 }

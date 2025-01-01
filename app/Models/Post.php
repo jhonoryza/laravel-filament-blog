@@ -84,7 +84,7 @@ class Post extends Model
 
     public function generateThumbnailImage(): void
     {
-        $extPath = $this->resizeImage(128, 128, Fit::Contain, self::THUMBNAIL);
+        $extPath = $this->resizeImage(600, 900, Fit::Fill, self::THUMBNAIL);
         $this->image_thumb_url = $extPath;
         $this->save();
     }

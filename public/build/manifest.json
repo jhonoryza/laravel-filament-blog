@@ -1,67 +1,150 @@
 {
-  "node_modules/@fontsource/lato/files/lato-latin-400-normal.woff": {
-    "file": "assets/lato-latin-400-normal-f55abc76.woff",
-    "src": "node_modules/@fontsource/lato/files/lato-latin-400-normal.woff"
+  "_ToggleDarkMode-CCOZBFle.js": {
+    "file": "assets/ToggleDarkMode-CCOZBFle.js",
+    "name": "ToggleDarkMode",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/vue.js"
+    ]
   },
-  "node_modules/@fontsource/lato/files/lato-latin-400-normal.woff2": {
-    "file": "assets/lato-latin-400-normal-918b7dc3.woff2",
-    "src": "node_modules/@fontsource/lato/files/lato-latin-400-normal.woff2"
+  "_bootstrap-!~{009}~.js": {
+    "file": "assets/bootstrap-CNvYGP83.css",
+    "src": "_bootstrap-!~{009}~.js"
   },
-  "node_modules/@fontsource/lato/files/lato-latin-ext-400-normal.woff": {
-    "file": "assets/lato-latin-ext-400-normal-315bd67b.woff",
-    "src": "node_modules/@fontsource/lato/files/lato-latin-ext-400-normal.woff"
-  },
-  "node_modules/@fontsource/lato/files/lato-latin-ext-400-normal.woff2": {
-    "file": "assets/lato-latin-ext-400-normal-1c2fc265.woff2",
-    "src": "node_modules/@fontsource/lato/files/lato-latin-ext-400-normal.woff2"
+  "_bootstrap-CO4xQ79P.js": {
+    "file": "assets/bootstrap-CO4xQ79P.js",
+    "name": "bootstrap",
+    "css": [
+      "assets/bootstrap-CNvYGP83.css"
+    ]
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.ttf": {
-    "file": "assets/fa-brands-400-808443ae.ttf",
+    "file": "assets/fa-brands-400-D1LuMI3I.ttf",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.ttf"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2": {
-    "file": "assets/fa-brands-400-d7236a19.woff2",
+    "file": "assets/fa-brands-400-D_cYUPeE.woff2",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf": {
-    "file": "assets/fa-regular-400-54cf6086.ttf",
+    "file": "assets/fa-regular-400-DZaxPHgR.ttf",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2": {
-    "file": "assets/fa-regular-400-e3456d12.woff2",
+    "file": "assets/fa-regular-400-BjRzuEpd.woff2",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf": {
-    "file": "assets/fa-solid-900-d2f05935.ttf",
+    "file": "assets/fa-solid-900-D0aA9rwL.ttf",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2": {
-    "file": "assets/fa-solid-900-aa759986.woff2",
+    "file": "assets/fa-solid-900-CTAAxXor.woff2",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2"
   },
-  "resources/css/app.css": {
-    "file": "assets/app-bd44adb9.css",
-    "isEntry": true,
-    "src": "resources/css/app.css"
+  "resources/js/Pages/Base.vue": {
+    "file": "assets/Base-CZWTEdmy.js",
+    "name": "Base",
+    "src": "resources/js/Pages/Base.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/Pages/Nav.vue",
+      "resources/js/Pages/Footer.vue",
+      "resources/js/vue.js",
+      "_ToggleDarkMode-CCOZBFle.js",
+      "_bootstrap-CO4xQ79P.js"
+    ]
   },
-  "resources/js/app.css": {
-    "file": "assets/app-f8cc31f7.css",
-    "src": "resources/js/app.css"
+  "resources/js/Pages/Footer.vue": {
+    "file": "assets/Footer-CjaVUWPt.js",
+    "name": "Footer",
+    "src": "resources/js/Pages/Footer.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/vue.js",
+      "_bootstrap-CO4xQ79P.js"
+    ]
   },
-  "resources/js/app.js": {
-    "assets": [
-      "assets/fa-brands-400-d7236a19.woff2",
-      "assets/fa-brands-400-808443ae.ttf",
-      "assets/fa-regular-400-e3456d12.woff2",
-      "assets/fa-regular-400-54cf6086.ttf",
-      "assets/fa-solid-900-aa759986.woff2",
-      "assets/fa-solid-900-d2f05935.ttf"
+  "resources/js/Pages/Nav.vue": {
+    "file": "assets/Nav-Cm9-Y2_Y.js",
+    "name": "Nav",
+    "src": "resources/js/Pages/Nav.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/vue.js",
+      "_ToggleDarkMode-CCOZBFle.js",
+      "_bootstrap-CO4xQ79P.js"
+    ]
+  },
+  "resources/js/Pages/Post/Index.vue": {
+    "file": "assets/Index-Dkgm0vgi.js",
+    "name": "Index",
+    "src": "resources/js/Pages/Post/Index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/vue.js",
+      "resources/js/Pages/Base.vue",
+      "_ToggleDarkMode-CCOZBFle.js",
+      "_bootstrap-CO4xQ79P.js",
+      "resources/js/Pages/Nav.vue",
+      "resources/js/Pages/Footer.vue"
     ],
     "css": [
-      "assets/app-f8cc31f7.css"
+      "assets/Index-CJjZizqq.css"
+    ]
+  },
+  "resources/js/Pages/Post/Show.vue": {
+    "file": "assets/Show-61ZchxHD.js",
+    "name": "Show",
+    "src": "resources/js/Pages/Post/Show.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/vue.js",
+      "resources/js/Pages/Base.vue",
+      "_bootstrap-CO4xQ79P.js",
+      "resources/js/Pages/Nav.vue",
+      "_ToggleDarkMode-CCOZBFle.js",
+      "resources/js/Pages/Footer.vue"
     ],
-    "file": "assets/app-93f54b55.js",
+    "css": [
+      "assets/Show-D9_Vpbtn.css"
+    ]
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-BgOugt8D.js",
+    "name": "app",
+    "src": "resources/js/app.js",
     "isEntry": true,
-    "src": "resources/js/app.js"
+    "imports": [
+      "_bootstrap-CO4xQ79P.js"
+    ],
+    "css": [
+      "assets/app-C-dKUBfe.css"
+    ],
+    "assets": [
+      "assets/fa-brands-400-D_cYUPeE.woff2",
+      "assets/fa-brands-400-D1LuMI3I.ttf",
+      "assets/fa-regular-400-BjRzuEpd.woff2",
+      "assets/fa-regular-400-DZaxPHgR.ttf",
+      "assets/fa-solid-900-CTAAxXor.woff2",
+      "assets/fa-solid-900-D0aA9rwL.ttf"
+    ]
+  },
+  "resources/js/vue.js": {
+    "file": "assets/vue-DjRCHpJJ.js",
+    "name": "vue",
+    "src": "resources/js/vue.js",
+    "isEntry": true,
+    "imports": [
+      "_bootstrap-CO4xQ79P.js"
+    ],
+    "dynamicImports": [
+      "resources/js/Pages/Base.vue",
+      "resources/js/Pages/Footer.vue",
+      "resources/js/Pages/Nav.vue",
+      "resources/js/Pages/Post/Index.vue",
+      "resources/js/Pages/Post/Show.vue",
+      "_ToggleDarkMode-CCOZBFle.js"
+    ]
   }
 }

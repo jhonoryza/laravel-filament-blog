@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Post;
 use App\Models\User;
 use Filament\Support\Colors\Color;
 use Filament\Support\Facades\FilamentColor;
@@ -49,6 +50,13 @@ class AppServiceProvider extends ServiceProvider
         Route::bind('author', function ($value) {
             return User::query()
                 ->where('name', $value)
+                ->firstOrFail();
+        });
+
+        Route::bind('post', function ($value) {
+            return Post::query()
+                ->whereNotNull('published_at')
+                ->where('slug', $value)
                 ->firstOrFail();
         });
     }

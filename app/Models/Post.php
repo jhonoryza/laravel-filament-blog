@@ -9,12 +9,9 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Spatie\Image\Enums\Fit;
 use Spatie\Image\Image;
-use Spatie\MediaLibrary\InteractsWithMedia;
 
 class Post extends Model
 {
-    use InteractsWithMedia;
-
     const IMAGE = 'post_image';
 
     const THUMBNAIL = 'thumbnail';

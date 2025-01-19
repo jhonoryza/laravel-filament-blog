@@ -41,8 +41,10 @@ class EditPost extends EditRecord
     {
         if ($data['image_url'] !== null && $data['image_url'] !== $record->image_url) {
             /** @var Post $record */
+            $record->update($data);
             $record->generateTwitterImage();
             $record->generateThumbnailImage();
+            return $record;
         }
 
         $record->update($data);

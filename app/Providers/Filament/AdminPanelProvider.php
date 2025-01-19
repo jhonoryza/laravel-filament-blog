@@ -39,6 +39,7 @@ class AdminPanelProvider extends PanelProvider
                 //     ->icon('heroicon-o-trash')
                 //     ->url(fn (): string => route('log-viewer.index'), shouldOpenInNewTab: true),
             ])
+            ->darkMode(true, true)
             ->login()
             // ->sidebarCollapsibleOnDesktop(true)
             ->colors([

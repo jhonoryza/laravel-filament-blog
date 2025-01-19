@@ -23,6 +23,7 @@
         "filament/spatie-laravel-media-library-plugin": "^3.0-stable",
         "filament/spatie-laravel-tags-plugin": "^3.2",
         "guzzlehttp/guzzle": "^7.2",
+        "inertiajs/inertia-laravel": "^2.0",
         "laravel/framework": "^10.10",
         "laravel/octane": "^2.6",
         "laravel/pulse": "^1.0@beta",
@@ -37,6 +38,7 @@
         "spatie/laravel-sitemap": "^7.3",
         "spatie/laravel-tags": "^4.6",
         "tempest/highlight": "dev-main",
+        "tightenco/ziggy": "^2.4",
         "vcian/pulse-active-sessions": "^1.5"
     },
     "require-dev": {

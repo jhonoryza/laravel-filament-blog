@@ -96,7 +96,10 @@ class PostResource extends Resource
                     ->visibility('public')
                     ->getUploadedFileNameForStorageUsing(
                         function (TemporaryUploadedFile $file): string {
-                            return (string) str(Str::slug($file->getClientOriginalName()))
+                            $extension = Str::afterLast($file->getClientOriginalName(), '.');
+                            $fileName = Str::slug(Str::replace('.' . $extension, '', $file->getClientOriginalName()));
+                            return (string)str($fileName)
+                                ->append('.' . $extension)
                                 ->prepend(now()->format('Ymd-His-'));
                         }
                     ),
@@ -143,11 +146,11 @@ class PostResource extends Resource
                 Tables\Filters\SelectFilter::make('category')
                     ->relationship('categories', 'name'),
                 Tables\Filters\Filter::make('published')
-                    ->query(fn (Builder $query): Builder => $query->whereNotNull('published_at')),
+                    ->query(fn(Builder $query): Builder => $query->whereNotNull('published_at')),
                 Tables\Filters\Filter::make('unpublished')
-                    ->query(fn (Builder $query): Builder => $query->whereNull('published_at')),
+                    ->query(fn(Builder $query): Builder => $query->whereNull('published_at')),
                 Tables\Filters\Filter::make('markdown')
-                    ->query(fn (Builder $query): Builder => $query->where('is_markdown', true)),
+                    ->query(fn(Builder $query): Builder => $query->where('is_markdown', true)),
                 Tables\Filters\Filter::make('date')
                     ->form([
                         Forms\Components\DatePicker::make('created_from')->native(false),
@@ -157,11 +160,11 @@ class PostResource extends Resource
                         return $query
                             ->when(
                                 $data['created_from'],
-                                fn (Builder $query, $date): Builder => $query->whereDate('created_at', '>=', $date),
+                                fn(Builder $query, $date): Builder => $query->whereDate('created_at', '>=', $date),
                             )
                             ->when(
                                 $data['created_until'],
-                                fn (Builder $query, $date): Builder => $query->whereDate('created_at', '<=', $date),
+                                fn(Builder $query, $date): Builder => $query->whereDate('created_at', '<=', $date),
                             );
                     }),
 

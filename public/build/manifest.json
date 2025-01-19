@@ -1,21 +1,21 @@
 {
-  "_ToggleDarkMode-CCOZBFle.js": {
-    "file": "assets/ToggleDarkMode-CCOZBFle.js",
+  "_ToggleDarkMode-BktkNerX.js": {
+    "file": "assets/ToggleDarkMode-BktkNerX.js",
     "name": "ToggleDarkMode",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/vue.js"
     ]
   },
-  "_bootstrap-!~{009}~.js": {
-    "file": "assets/bootstrap-CNvYGP83.css",
-    "src": "_bootstrap-!~{009}~.js"
+  "_bootstrap-!~{00d}~.js": {
+    "file": "assets/bootstrap-CLVaemSV.css",
+    "src": "_bootstrap-!~{00d}~.js"
   },
-  "_bootstrap-CO4xQ79P.js": {
-    "file": "assets/bootstrap-CO4xQ79P.js",
+  "_bootstrap-CfjwIV3O.js": {
+    "file": "assets/bootstrap-CfjwIV3O.js",
     "name": "bootstrap",
     "css": [
-      "assets/bootstrap-CNvYGP83.css"
+      "assets/bootstrap-CLVaemSV.css"
     ]
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.ttf": {
@@ -43,7 +43,7 @@
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2"
   },
   "resources/js/Pages/Base.vue": {
-    "file": "assets/Base-CZWTEdmy.js",
+    "file": "assets/Base-DBGCxbCa.js",
     "name": "Base",
     "src": "resources/js/Pages/Base.vue",
     "isDynamicEntry": true,
@@ -51,72 +51,128 @@
       "resources/js/Pages/Nav.vue",
       "resources/js/Pages/Footer.vue",
       "resources/js/vue.js",
-      "_ToggleDarkMode-CCOZBFle.js",
-      "_bootstrap-CO4xQ79P.js"
+      "_ToggleDarkMode-BktkNerX.js",
+      "_bootstrap-CfjwIV3O.js"
+    ]
+  },
+  "resources/js/Pages/Component/Index.vue": {
+    "file": "assets/Index-BGvSWthr.js",
+    "name": "Index",
+    "src": "resources/js/Pages/Component/Index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/Pages/Base.vue",
+      "resources/js/vue.js",
+      "resources/js/Pages/Nav.vue",
+      "_ToggleDarkMode-BktkNerX.js",
+      "resources/js/Pages/Footer.vue",
+      "_bootstrap-CfjwIV3O.js"
     ]
   },
   "resources/js/Pages/Footer.vue": {
-    "file": "assets/Footer-CjaVUWPt.js",
+    "file": "assets/Footer-CrnQgjES.js",
     "name": "Footer",
     "src": "resources/js/Pages/Footer.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/vue.js",
-      "_bootstrap-CO4xQ79P.js"
+      "_bootstrap-CfjwIV3O.js"
     ]
   },
   "resources/js/Pages/Nav.vue": {
-    "file": "assets/Nav-Cm9-Y2_Y.js",
+    "file": "assets/Nav-1MQVdXHV.js",
     "name": "Nav",
     "src": "resources/js/Pages/Nav.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/vue.js",
-      "_ToggleDarkMode-CCOZBFle.js",
-      "_bootstrap-CO4xQ79P.js"
+      "_ToggleDarkMode-BktkNerX.js",
+      "_bootstrap-CfjwIV3O.js"
+    ]
+  },
+  "resources/js/Pages/Package/DevTools/Index.vue": {
+    "file": "assets/Index-Ce_8pA5C.js",
+    "name": "Index",
+    "src": "resources/js/Pages/Package/DevTools/Index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/Pages/Base.vue",
+      "resources/js/vue.js",
+      "resources/js/Pages/Nav.vue",
+      "_ToggleDarkMode-BktkNerX.js",
+      "resources/js/Pages/Footer.vue",
+      "_bootstrap-CfjwIV3O.js"
+    ]
+  },
+  "resources/js/Pages/Package/Go/Index.vue": {
+    "file": "assets/Index-x8EQwNSl.js",
+    "name": "Index",
+    "src": "resources/js/Pages/Package/Go/Index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/Pages/Base.vue",
+      "resources/js/vue.js",
+      "resources/js/Pages/Nav.vue",
+      "_ToggleDarkMode-BktkNerX.js",
+      "resources/js/Pages/Footer.vue",
+      "_bootstrap-CfjwIV3O.js"
+    ]
+  },
+  "resources/js/Pages/Package/PHP/Index.vue": {
+    "file": "assets/Index-BeH7-wDU.js",
+    "name": "Index",
+    "src": "resources/js/Pages/Package/PHP/Index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/Pages/Base.vue",
+      "resources/js/vue.js",
+      "resources/js/Pages/Nav.vue",
+      "_ToggleDarkMode-BktkNerX.js",
+      "resources/js/Pages/Footer.vue",
+      "_bootstrap-CfjwIV3O.js"
     ]
   },
   "resources/js/Pages/Post/Index.vue": {
-    "file": "assets/Index-Dkgm0vgi.js",
+    "file": "assets/Index-BQqOpuUy.js",
     "name": "Index",
     "src": "resources/js/Pages/Post/Index.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/vue.js",
       "resources/js/Pages/Base.vue",
-      "_ToggleDarkMode-CCOZBFle.js",
-      "_bootstrap-CO4xQ79P.js",
+      "_ToggleDarkMode-BktkNerX.js",
+      "_bootstrap-CfjwIV3O.js",
       "resources/js/Pages/Nav.vue",
       "resources/js/Pages/Footer.vue"
     ],
     "css": [
-      "assets/Index-CJjZizqq.css"
+      "assets/Index-C06bBxpS.css"
     ]
   },
   "resources/js/Pages/Post/Show.vue": {
-    "file": "assets/Show-61ZchxHD.js",
+    "file": "assets/Show-Dtfka_R3.js",
     "name": "Show",
     "src": "resources/js/Pages/Post/Show.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/vue.js",
       "resources/js/Pages/Base.vue",
-      "_bootstrap-CO4xQ79P.js",
+      "_bootstrap-CfjwIV3O.js",
       "resources/js/Pages/Nav.vue",
-      "_ToggleDarkMode-CCOZBFle.js",
+      "_ToggleDarkMode-BktkNerX.js",
       "resources/js/Pages/Footer.vue"
     ],
     "css": [
-      "assets/Show-D9_Vpbtn.css"
+      "assets/Show-BTmnEX6d.css"
     ]
   },
   "resources/js/app.js": {
-    "file": "assets/app-BgOugt8D.js",
+    "file": "assets/app-D3rn82EJ.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "imports": [
-      "_bootstrap-CO4xQ79P.js"
+      "_bootstrap-CfjwIV3O.js"
     ],
     "css": [
       "assets/app-C-dKUBfe.css"
@@ -131,20 +187,24 @@
     ]
   },
   "resources/js/vue.js": {
-    "file": "assets/vue-DjRCHpJJ.js",
+    "file": "assets/vue-Ce4_tXaN.js",
     "name": "vue",
     "src": "resources/js/vue.js",
     "isEntry": true,
     "imports": [
-      "_bootstrap-CO4xQ79P.js"
+      "_bootstrap-CfjwIV3O.js"
     ],
     "dynamicImports": [
       "resources/js/Pages/Base.vue",
+      "resources/js/Pages/Component/Index.vue",
       "resources/js/Pages/Footer.vue",
       "resources/js/Pages/Nav.vue",
+      "resources/js/Pages/Package/DevTools/Index.vue",
+      "resources/js/Pages/Package/Go/Index.vue",
+      "resources/js/Pages/Package/PHP/Index.vue",
       "resources/js/Pages/Post/Index.vue",
       "resources/js/Pages/Post/Show.vue",
-      "_ToggleDarkMode-CCOZBFle.js"
+      "_ToggleDarkMode-BktkNerX.js"
     ]
   }
 }

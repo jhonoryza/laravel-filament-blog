@@ -8,14 +8,12 @@ const _sfc_main = {
   __ssrInlineRender: true,
   setup(__props) {
     const breadIsOpen = ref(false);
-    const packageIsOpen = ref(false);
-    function closeBreadAndPackage() {
+    function closeBread() {
       breadIsOpen.value = false;
-      packageIsOpen.value = false;
     }
     return (_ctx, _push, _parent, _attrs) => {
       const _directive_click_away = resolveDirective("click-away");
-      _push(`<nav${ssrRenderAttrs(mergeProps({ class: "bg-white dark:bg-zinc-800 dark:text-white border-b border-zinc-300 h-14 fixed top-0 left-0 right-0 z-50 flex flex-col justify-center items-center max-w-xl mx-auto" }, _attrs))}><div${ssrRenderAttrs(mergeProps({ class: "container mx-auto" }, ssrGetDirectiveProps(_ctx, _directive_click_away, closeBreadAndPackage)))}><div class="mx-2 flex justify-between items-center gap-2">`);
+      _push(`<nav${ssrRenderAttrs(mergeProps({ class: "bg-white dark:bg-zinc-800 dark:text-white border-b border-zinc-300 h-14 fixed top-0 left-0 right-0 z-50 flex flex-col justify-center items-center max-w-xl mx-auto" }, _attrs))}><div${ssrRenderAttrs(mergeProps({ class: "container mx-auto" }, ssrGetDirectiveProps(_ctx, _directive_click_away, closeBread)))}><div class="mx-2 flex justify-between items-center gap-2">`);
       _push(ssrRenderComponent(unref(Link), { href: "/" }, {
         default: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
@@ -33,13 +31,10 @@ const _sfc_main = {
       _push(`<button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-slate-900 dark:text-white hover:opacity-60" aria-controls="mobile-menu" aria-expanded="false"><span class="absolute -inset-0.5"></span><span class="sr-only">Open main menu</span><svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path></svg><svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg></button></div></div><div style="${ssrRenderStyle([
         breadIsOpen.value ? null : { display: "none" },
         { "display": "none" }
-      ])}" x-transition class="" id="mobile-menu"><div class="fixed space-y-1 px-2 pb-3 pt-2 shadow rounded bg-sky-100 dark:bg-zinc-800 dark:text-white mt-0 max-w-xl w-full z-[100]"><div class="relative inline-block px-3 py-2 text-sm font-medium hover:text-rose-500 cursor-pointer"><div><button class="{{ isActive([&#39;packages.php&#39;, &#39;packages.go&#39;]) }}"> Packages </button></div><div style="${ssrRenderStyle([
-        packageIsOpen.value ? null : { display: "none" },
-        { "display": "none" }
-      ])}" x-transition class="absolute left-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white dark:bg-zinc-800 dark:text-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1"><div class="py-1" role="none">`);
+      ])}" x-transition class="" id="mobile-menu"><div class="fixed space-y-1 px-2 pb-3 pt-2 shadow rounded bg-lime-100 dark:bg-zinc-800 dark:text-white mt-0 max-w-xl w-full z-[100]">`);
       _push(ssrRenderComponent(unref(Link), {
         href: _ctx.route("packages.php"),
-        class: "text-gray-700 block px-4 py-2 text-sm hover:text-rose-500 {{ isActive('packages.php') }}"
+        class: "block px-3 py-2 text-sm font-medium hover:text-rose-500 {{ isActive('packages.php') }}"
       }, {
         default: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
@@ -54,7 +49,7 @@ const _sfc_main = {
       }, _parent));
       _push(ssrRenderComponent(unref(Link), {
         href: _ctx.route("packages.go"),
-        class: "text-gray-700 block px-4 py-2 text-sm hover:text-rose-500 {{ isActive('packages.go') }}"
+        class: "block px-3 py-2 text-sm font-medium hover:text-rose-500 {{ isActive('packages.go') }}"
       }, {
         default: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
@@ -62,22 +57,6 @@ const _sfc_main = {
           } else {
             return [
               createTextVNode(" Go Packages ")
-            ];
-          }
-        }),
-        _: 1
-      }, _parent));
-      _push(`</div></div></div>`);
-      _push(ssrRenderComponent(unref(Link), {
-        href: _ctx.route("components"),
-        class: "block px-3 py-2 text-sm font-medium hover:text-rose-500 {{ isActive('components') }}"
-      }, {
-        default: withCtx((_, _push2, _parent2, _scopeId) => {
-          if (_push2) {
-            _push2(` Components `);
-          } else {
-            return [
-              createTextVNode(" Components ")
             ];
           }
         }),
@@ -99,38 +78,21 @@ const _sfc_main = {
         _: 1
       }, _parent));
       _push(ssrRenderComponent(unref(Link), {
-        href: "https://nuxt-blog-gamma.vercel.app/",
-        class: "block px-3 py-2 text-sm font-medium hover:text-rose-500",
-        target: "_blank"
+        href: _ctx.route("components"),
+        class: "block px-3 py-2 text-sm font-medium hover:text-rose-500 {{ isActive('components') }}"
       }, {
         default: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(` Nuxt SSR `);
+            _push2(` Components `);
           } else {
             return [
-              createTextVNode(" Nuxt SSR ")
+              createTextVNode(" Components ")
             ];
           }
         }),
         _: 1
       }, _parent));
-      _push(ssrRenderComponent(unref(Link), {
-        href: "https://vue-blog-gules.vercel.app/",
-        class: "block px-3 py-2 text-sm font-medium hover:text-rose-500",
-        target: "_blank"
-      }, {
-        default: withCtx((_, _push2, _parent2, _scopeId) => {
-          if (_push2) {
-            _push2(` Vue SPA `);
-          } else {
-            return [
-              createTextVNode(" Vue SPA ")
-            ];
-          }
-        }),
-        _: 1
-      }, _parent));
-      _push(`</div></div></div></nav>`);
+      _push(`<a href="https://nuxt-blog-gamma.vercel.app/" class="block px-3 py-2 text-sm font-medium hover:text-rose-500" target="_blank"> Nuxt SSR </a><a href="https://vue-blog-gules.vercel.app/" class="block px-3 py-2 text-sm font-medium hover:text-rose-500" target="_blank"> Vue SPA </a></div></div></div></nav>`);
     };
   }
 };

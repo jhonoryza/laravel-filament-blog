@@ -69,11 +69,11 @@ function renderCodeFence(renderer) {
 
         return `
           <div class="code">
-            <div class="flex justify-between items-center bg-amber-950 rounded-t">
-                <p class=" text-orange-100 p-2 my-0 text-sm">${ lang.toUpperCase() }</p>
+            <div class="flex justify-between items-center bg-material rounded-t">
+                <p class=" text-zinc-100 p-2 my-0 text-sm">${ lang.toUpperCase() }</p>
                 <button
-                  class="hover:block text-orange-100 text-sm px-3 py-1
-                  rounded shadow hover:text-orange-200 focus:outline-none
+                  class="hover:block text-zinc-100 text-sm px-3 py-1
+                  rounded shadow hover:text-zinc-200 focus:outline-none
                   transition-all duration-300"
                   onclick="copyCode(this)"
                 >

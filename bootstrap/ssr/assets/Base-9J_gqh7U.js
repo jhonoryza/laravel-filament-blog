@@ -1,6 +1,6 @@
 import { mergeProps, useSSRContext } from "vue";
 import { ssrRenderAttrs, ssrRenderComponent, ssrRenderSlot } from "vue/server-renderer";
-import _sfc_main$1 from "./Nav-CiIVEdsZ.js";
+import _sfc_main$1 from "./Nav-BS4sGgs1.js";
 import _sfc_main$2 from "./Footer-B-2zln9Z.js";
 import "@inertiajs/vue3";
 import "./ToggleDarkMode-JFaivfUX.js";

@@ -34,7 +34,8 @@ export default {
                 "primary": "#333333",
                 "secondary": "#b0b0b0",
                 "link": "#377fab",
-                "link-hover": "#1f6793"
+                "link-hover": "#1f6793",
+                "material": "#282c34",
             },
             listStyleType: {
                 square: 'square',

@@ -1,7 +1,7 @@
 import { ref, onMounted, withCtx, unref, createTextVNode, createVNode, openBlock, createBlock, toDisplayString, createCommentVNode, useSSRContext } from "vue";
 import { ssrRenderComponent, ssrRenderAttr, ssrInterpolate, ssrRenderClass } from "vue/server-renderer";
 import { Link } from "@inertiajs/vue3";
-import _sfc_main$1 from "./Base-BAyfJMGA.js";
+import _sfc_main$1 from "./Base-9J_gqh7U.js";
 import markdownIt from "markdown-it";
 import markdownItSub from "markdown-it-sub";
 import markdownItSup from "markdown-it-sup";
@@ -15,7 +15,7 @@ import { slugify } from "@mdit-vue/shared";
 import { full } from "markdown-it-emoji";
 import hljs from "highlight.js/lib/core";
 import highlightjs from "markdown-it-highlightjs";
-import "./Nav-CiIVEdsZ.js";
+import "./Nav-BS4sGgs1.js";
 import "./ToggleDarkMode-JFaivfUX.js";
 import "@tabler/icons-vue";
 import "./Footer-B-2zln9Z.js";
@@ -74,11 +74,11 @@ function renderCodeFence(renderer) {
     }
     return `
           <div class="code">
-            <div class="flex justify-between items-center bg-amber-950 rounded-t">
-                <p class=" text-orange-100 p-2 my-0 text-sm">${lang.toUpperCase()}</p>
+            <div class="flex justify-between items-center bg-material rounded-t">
+                <p class=" text-zinc-100 p-2 my-0 text-sm">${lang.toUpperCase()}</p>
                 <button
-                  class="hover:block text-orange-100 text-sm px-3 py-1
-                  rounded shadow hover:text-orange-200 focus:outline-none
+                  class="hover:block text-zinc-100 text-sm px-3 py-1
+                  rounded shadow hover:text-zinc-200 focus:outline-none
                   transition-all duration-300"
                   onclick="copyCode(this)"
                 >
@@ -185,7 +185,8 @@ const _sfc_main = {
                 "prose-pre:m-0 prose-pre:p-0": true,
                 "prose-a:break-words prose-pre:w-full": true,
                 "prose-ul:list-square": true,
-                "prose-code:bg-zinc-800 prose-code:p-1 prose-code:rounded-b": true
+                "prose-code:bg-lime-100 prose-code:p-1 prose-code:rounded-b": true,
+                "prose-code:text-black": true
                 // 'prose-code:text-slate-200': post.is_markdown === false,
               })}"${_scopeId}>${renderedContent.value ?? ""}</div></article>`);
             } else {
@@ -244,7 +245,8 @@ const _sfc_main = {
                       "prose-pre:m-0 prose-pre:p-0": true,
                       "prose-a:break-words prose-pre:w-full": true,
                       "prose-ul:list-square": true,
-                      "prose-code:bg-zinc-800 prose-code:p-1 prose-code:rounded-b": true
+                      "prose-code:bg-lime-100 prose-code:p-1 prose-code:rounded-b": true,
+                      "prose-code:text-black": true
                       // 'prose-code:text-slate-200': post.is_markdown === false,
                     }
                   }, null, 8, ["innerHTML"])

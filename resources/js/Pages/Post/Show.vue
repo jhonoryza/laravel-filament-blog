@@ -44,7 +44,8 @@ const scrollToTop = () => {
                         'prose-pre:m-0 prose-pre:p-0': true,
                         'prose-a:break-words prose-pre:w-full': true,
                         'prose-ul:list-square': true,
-                        'prose-code:bg-zinc-800 prose-code:p-1 prose-code:rounded-b': true,
+                        'prose-code:bg-lime-100 prose-code:p-1 prose-code:rounded-b': true,
+                        'prose-code:text-black': true,
                         // 'prose-code:text-slate-200': post.is_markdown === false,
                     }"
                 >

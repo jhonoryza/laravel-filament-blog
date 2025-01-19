@@ -352,7 +352,7 @@ createServer(
     title: (title) => `${title} - ${appName}`,
     resolve: (name) => resolvePageComponent(
       `./Pages/${name}.vue`,
-      /* @__PURE__ */ Object.assign({ "./Pages/Base.vue": () => import("./assets/Base-BAyfJMGA.js"), "./Pages/Footer.vue": () => import("./assets/Footer-B-2zln9Z.js"), "./Pages/Nav.vue": () => import("./assets/Nav-CiIVEdsZ.js"), "./Pages/Post/Index.vue": () => import("./assets/Index-c_6JVCnY.js"), "./Pages/Post/Show.vue": () => import("./assets/Show-zMrXoj0R.js"), "./Pages/ToggleDarkMode.vue": () => import("./assets/ToggleDarkMode-JFaivfUX.js") })
+      /* @__PURE__ */ Object.assign({ "./Pages/Base.vue": () => import("./assets/Base-9J_gqh7U.js"), "./Pages/Component/Index.vue": () => import("./assets/Index-0yGaHkyV.js"), "./Pages/Footer.vue": () => import("./assets/Footer-B-2zln9Z.js"), "./Pages/Nav.vue": () => import("./assets/Nav-BS4sGgs1.js"), "./Pages/Package/DevTools/Index.vue": () => import("./assets/Index-CyB3YwPZ.js"), "./Pages/Package/Go/Index.vue": () => import("./assets/Index-DTuMLiUp.js"), "./Pages/Package/PHP/Index.vue": () => import("./assets/Index-BS1fQYzG.js"), "./Pages/Post/Index.vue": () => import("./assets/Index-tuAxHxJ9.js"), "./Pages/Post/Show.vue": () => import("./assets/Show-BR2j__vn.js"), "./Pages/ToggleDarkMode.vue": () => import("./assets/ToggleDarkMode-JFaivfUX.js") })
     ),
     setup({ App, props, plugin }) {
       return createSSRApp({ render: () => h$1(App, props) }).use(plugin).use(k, {

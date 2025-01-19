@@ -14,7 +14,10 @@ import {markdownItLineNumber} from "@/Utils/markdown-it-line-number.js";
 
 import highlightjs from 'markdown-it-highlightjs';
 import hljs from 'highlight.js/lib/core';
-import 'highlight.js/styles/base16/gruvbox-dark-soft.min.css';
+
+/** to change code theme change this import styles */
+//import 'highlight.js/styles/base16/gruvbox-dark-soft.min.css';
+import 'highlight.js/styles/base16/material.min.css';
 
 export async function renderMarkdown(markdown) {
     const md = markdownIt({

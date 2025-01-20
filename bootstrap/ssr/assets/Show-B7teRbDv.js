@@ -1,7 +1,7 @@
-import { ref, onMounted, withCtx, unref, createTextVNode, createVNode, openBlock, createBlock, toDisplayString, createCommentVNode, useSSRContext } from "vue";
-import { ssrRenderComponent, ssrRenderAttr, ssrInterpolate, ssrRenderClass } from "vue/server-renderer";
-import { Link } from "@inertiajs/vue3";
-import _sfc_main$1 from "./Base-9J_gqh7U.js";
+import { ref, onMounted, withCtx, unref, createVNode, toDisplayString, createTextVNode, openBlock, createBlock, createCommentVNode, useSSRContext } from "vue";
+import { ssrRenderComponent, ssrInterpolate, ssrRenderAttr, ssrRenderClass } from "vue/server-renderer";
+import { Head, Link } from "@inertiajs/vue3";
+import _sfc_main$1 from "./Base-ByNzQINa.js";
 import markdownIt from "markdown-it";
 import markdownItSub from "markdown-it-sub";
 import markdownItSup from "markdown-it-sup";
@@ -15,7 +15,7 @@ import { slugify } from "@mdit-vue/shared";
 import { full } from "markdown-it-emoji";
 import hljs from "highlight.js/lib/core";
 import highlightjs from "markdown-it-highlightjs";
-import "./Nav-BS4sGgs1.js";
+import "./Nav-C-Br6y1g.js";
 import "./ToggleDarkMode-JFaivfUX.js";
 import "@tabler/icons-vue";
 import "./Footer-B-2zln9Z.js";
@@ -144,7 +144,8 @@ const _sfc_main = {
   __name: "Show",
   __ssrInlineRender: true,
   props: {
-    post: Object
+    post: Object,
+    meta: Array
   },
   setup(__props) {
     const props = __props;
@@ -159,7 +160,75 @@ const _sfc_main = {
       _push(ssrRenderComponent(_sfc_main$1, _attrs, {
         default: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(`<div class="max-w-xl font-rubik text-lg"${_scopeId}>`);
+            _push2(ssrRenderComponent(unref(Head), null, {
+              default: withCtx((_2, _push3, _parent3, _scopeId2) => {
+                if (_push3) {
+                  _push3(`<title${_scopeId2}>${ssrInterpolate(__props.meta.title)} </title><meta name="description"${ssrRenderAttr("content", __props.meta.desc)}${_scopeId2}><meta name="keywords"${ssrRenderAttr("content", __props.meta.keywords)}${_scopeId2}><meta property="og:title"${ssrRenderAttr("content", __props.meta.title)}${_scopeId2}><meta property="og:type"${ssrRenderAttr("content", __props.meta.og_type)}${_scopeId2}><meta property="og:image"${ssrRenderAttr("content", __props.meta.image)}${_scopeId2}><meta property="og:description"${ssrRenderAttr("content", __props.meta.desc)}${_scopeId2}><meta property="og:url"${ssrRenderAttr("content", __props.meta.og_url)}${_scopeId2}><meta property="og:author"${ssrRenderAttr("content", __props.meta.og_author)}${_scopeId2}><meta property="og:published_time"${ssrRenderAttr("content", __props.meta.og_time)}${_scopeId2}><meta property="og:section"${ssrRenderAttr("content", __props.meta.og_section)}${_scopeId2}><meta name="twitter:title"${ssrRenderAttr("content", __props.meta.title)}${_scopeId2}><meta name="twitter:card"${ssrRenderAttr("content", __props.meta.tw_card)}${_scopeId2}><meta name="twitter:description"${ssrRenderAttr("content", __props.meta.desc)}${_scopeId2}><meta name="twitter:image"${ssrRenderAttr("content", __props.meta.image)}${_scopeId2}>`);
+                } else {
+                  return [
+                    createVNode("title", null, toDisplayString(__props.meta.title) + " ", 1),
+                    createVNode("meta", {
+                      name: "description",
+                      content: __props.meta.desc
+                    }, null, 8, ["content"]),
+                    createVNode("meta", {
+                      name: "keywords",
+                      content: __props.meta.keywords
+                    }, null, 8, ["content"]),
+                    createVNode("meta", {
+                      property: "og:title",
+                      content: __props.meta.title
+                    }, null, 8, ["content"]),
+                    createVNode("meta", {
+                      property: "og:type",
+                      content: __props.meta.og_type
+                    }, null, 8, ["content"]),
+                    createVNode("meta", {
+                      property: "og:image",
+                      content: __props.meta.image
+                    }, null, 8, ["content"]),
+                    createVNode("meta", {
+                      property: "og:description",
+                      content: __props.meta.desc
+                    }, null, 8, ["content"]),
+                    createVNode("meta", {
+                      property: "og:url",
+                      content: __props.meta.og_url
+                    }, null, 8, ["content"]),
+                    createVNode("meta", {
+                      property: "og:author",
+                      content: __props.meta.og_author
+                    }, null, 8, ["content"]),
+                    createVNode("meta", {
+                      property: "og:published_time",
+                      content: __props.meta.og_time
+                    }, null, 8, ["content"]),
+                    createVNode("meta", {
+                      property: "og:section",
+                      content: __props.meta.og_section
+                    }, null, 8, ["content"]),
+                    createVNode("meta", {
+                      name: "twitter:title",
+                      content: __props.meta.title
+                    }, null, 8, ["content"]),
+                    createVNode("meta", {
+                      name: "twitter:card",
+                      content: __props.meta.tw_card
+                    }, null, 8, ["content"]),
+                    createVNode("meta", {
+                      name: "twitter:description",
+                      content: __props.meta.desc
+                    }, null, 8, ["content"]),
+                    createVNode("meta", {
+                      name: "twitter:image",
+                      content: __props.meta.image
+                    }, null, 8, ["content"])
+                  ];
+                }
+              }),
+              _: 1
+            }, _parent2, _scopeId));
+            _push2(`<div class="mx-4 text-lg"${_scopeId}>`);
             _push2(ssrRenderComponent(unref(Link), {
               href: _ctx.route("home"),
               class: "p-2 text-primary dark:text-white rounded-lg hover:opacity-60"
@@ -211,7 +280,69 @@ const _sfc_main = {
             _push2(`<button class="px-4 py-2 rounded-full hover:opacity-60"${_scopeId}> ⬆ </button></div></div>`);
           } else {
             return [
-              createVNode("div", { class: "max-w-xl font-rubik text-lg" }, [
+              createVNode(unref(Head), null, {
+                default: withCtx(() => [
+                  createVNode("title", null, toDisplayString(__props.meta.title) + " ", 1),
+                  createVNode("meta", {
+                    name: "description",
+                    content: __props.meta.desc
+                  }, null, 8, ["content"]),
+                  createVNode("meta", {
+                    name: "keywords",
+                    content: __props.meta.keywords
+                  }, null, 8, ["content"]),
+                  createVNode("meta", {
+                    property: "og:title",
+                    content: __props.meta.title
+                  }, null, 8, ["content"]),
+                  createVNode("meta", {
+                    property: "og:type",
+                    content: __props.meta.og_type
+                  }, null, 8, ["content"]),
+                  createVNode("meta", {
+                    property: "og:image",
+                    content: __props.meta.image
+                  }, null, 8, ["content"]),
+                  createVNode("meta", {
+                    property: "og:description",
+                    content: __props.meta.desc
+                  }, null, 8, ["content"]),
+                  createVNode("meta", {
+                    property: "og:url",
+                    content: __props.meta.og_url
+                  }, null, 8, ["content"]),
+                  createVNode("meta", {
+                    property: "og:author",
+                    content: __props.meta.og_author
+                  }, null, 8, ["content"]),
+                  createVNode("meta", {
+                    property: "og:published_time",
+                    content: __props.meta.og_time
+                  }, null, 8, ["content"]),
+                  createVNode("meta", {
+                    property: "og:section",
+                    content: __props.meta.og_section
+                  }, null, 8, ["content"]),
+                  createVNode("meta", {
+                    name: "twitter:title",
+                    content: __props.meta.title
+                  }, null, 8, ["content"]),
+                  createVNode("meta", {
+                    name: "twitter:card",
+                    content: __props.meta.tw_card
+                  }, null, 8, ["content"]),
+                  createVNode("meta", {
+                    name: "twitter:description",
+                    content: __props.meta.desc
+                  }, null, 8, ["content"]),
+                  createVNode("meta", {
+                    name: "twitter:image",
+                    content: __props.meta.image
+                  }, null, 8, ["content"])
+                ]),
+                _: 1
+              }),
+              createVNode("div", { class: "mx-4 text-lg" }, [
                 createVNode(unref(Link), {
                   href: _ctx.route("home"),
                   class: "p-2 text-primary dark:text-white rounded-lg hover:opacity-60"

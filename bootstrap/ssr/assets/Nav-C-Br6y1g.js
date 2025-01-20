@@ -1,5 +1,5 @@
 import { ref, resolveDirective, mergeProps, unref, withCtx, createTextVNode, useSSRContext } from "vue";
-import { ssrRenderAttrs, ssrGetDirectiveProps, ssrRenderComponent, ssrRenderStyle } from "vue/server-renderer";
+import { ssrRenderAttrs, ssrGetDirectiveProps, ssrRenderComponent, ssrRenderStyle, ssrRenderAttr } from "vue/server-renderer";
 import { Link } from "@inertiajs/vue3";
 import _sfc_main$1 from "./ToggleDarkMode-JFaivfUX.js";
 import "@tabler/icons-vue";
@@ -32,6 +32,21 @@ const _sfc_main = {
         breadIsOpen.value ? null : { display: "none" },
         { "display": "none" }
       ])}" x-transition class="" id="mobile-menu"><div class="fixed space-y-1 px-2 pb-3 pt-2 shadow rounded bg-lime-100 dark:bg-zinc-800 dark:text-white mt-0 max-w-xl w-full z-[100]">`);
+      _push(ssrRenderComponent(unref(Link), {
+        href: _ctx.route("home"),
+        class: "block px-3 py-2 text-sm font-medium hover:text-rose-500 {{ isActive('packages.php') }}"
+      }, {
+        default: withCtx((_, _push2, _parent2, _scopeId) => {
+          if (_push2) {
+            _push2(` Articles `);
+          } else {
+            return [
+              createTextVNode(" Articles ")
+            ];
+          }
+        }),
+        _: 1
+      }, _parent));
       _push(ssrRenderComponent(unref(Link), {
         href: _ctx.route("packages.php"),
         class: "block px-3 py-2 text-sm font-medium hover:text-rose-500 {{ isActive('packages.php') }}"
@@ -92,7 +107,7 @@ const _sfc_main = {
         }),
         _: 1
       }, _parent));
-      _push(`<a href="https://nuxt-blog-gamma.vercel.app/" class="block px-3 py-2 text-sm font-medium hover:text-rose-500" target="_blank"> Nuxt SSR </a><a href="https://vue-blog-gules.vercel.app/" class="block px-3 py-2 text-sm font-medium hover:text-rose-500" target="_blank"> Vue SPA </a></div></div></div></nav>`);
+      _push(`<a${ssrRenderAttr("href", _ctx.route("wire.home"))} class="block px-3 py-2 text-sm font-medium hover:text-rose-500" target="_blank"> Home with livewire </a><a href="https://nuxt-blog-gamma.vercel.app/" class="block px-3 py-2 text-sm font-medium hover:text-rose-500" target="_blank"> Nuxt SSR </a><a href="https://vue-blog-gules.vercel.app/" class="block px-3 py-2 text-sm font-medium hover:text-rose-500" target="_blank"> Vue SPA </a></div></div></div></nav>`);
     };
   }
 };

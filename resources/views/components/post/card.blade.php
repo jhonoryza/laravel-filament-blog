@@ -1,6 +1,6 @@
 <!-- card -->
 <a wire:navigate
-   href="{{ route('posts.show', $post->slug) }}"
+   href="{{ route('wire.posts.show', $post->slug) }}"
    @click="sessionStorage.setItem('scrollPosition', window.scrollY)"
    class="hover:opacity-60 flex flex-col border border-slate-100 shadow-xl rounded-xl overflow-hidden pb-2
    bg-gradient-to-br from-white via-slate-100 to-purple-50"

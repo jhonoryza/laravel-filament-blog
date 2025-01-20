@@ -26,6 +26,7 @@ const props = defineProps({
     posts: Array,
     page: Number,
     next_url: String,
+    meta: Array,
 });
 
 const form = useForm({
@@ -53,7 +54,17 @@ function goToDetail(slug) {
 </script>
 
 <template>
-    <Head title="Homepage" />
+    <Head :title="meta.title">
+        <meta name="description" :content="meta.desc">
+        <meta property="og:title" :content="meta.title">
+        <meta property="og:type" :content="meta.og_type">
+        <meta property="og:image" :content="meta.image">
+        <meta property="og:description" :content="meta.desc">
+        <meta name="twitter:title" :content="meta.title">
+        <meta name="twitter:card" :content="meta.tw_card">
+        <meta name="twitter:description" :content="meta.desc">
+        <meta name="twitter:image" :content="meta.image">
+    </Head>
     <Base>
         <div>
             <div class="flex flex-col gap-4 mx-4">

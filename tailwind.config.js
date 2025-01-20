@@ -25,7 +25,6 @@ export default {
         extend: {
             fontFamily: {
                 main: ['Rubik', ...defaultTheme.fontFamily.sans],
-                rubik: ['Rubik', ...defaultTheme.fontFamily.sans],
             },
             zIndex: {
                 '100': '100',

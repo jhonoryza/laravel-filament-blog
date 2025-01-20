@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Livewire\Concerns\MetaTrait;
 use App\Models\Tool;
 use Illuminate\Http\Request;
 
 class PackageIndexController extends Controller
 {
+    use MetaTrait;
+
     public function php(Request $request)
     {
         $tools = Tool::query()
@@ -15,8 +18,12 @@ class PackageIndexController extends Controller
             //->simplePaginate(10);
             ->orderBy('updated_at', 'desc')
             ->get();
+
+        $meta = $this->getMetaIndex('PHP Packages', 'List of PHP packages');
+
         return inertia()->render("Package/PHP/Index", [
             "tools" => $tools,
+            'meta' => $meta
         ]);
     }
 
@@ -28,8 +35,12 @@ class PackageIndexController extends Controller
             //->simplePaginate(10);
             ->orderBy('updated_at', 'desc')
             ->get();
+
+        $meta = $this->getMetaIndex('Go Packages', 'List of go packages');
+
         return inertia()->render("Package/Go/Index", [
             "tools" => $tools,
+            'meta' => $meta
         ]);
     }
 
@@ -41,8 +52,12 @@ class PackageIndexController extends Controller
             //->simplePaginate(10);
             ->orderBy('updated_at', 'desc')
             ->get();
+
+        $meta = $this->getMetaIndex('Recommended Dev Tools', 'List of my dev tools');
+
         return inertia()->render("Package/DevTools/Index", [
             "tools" => $tools,
+            'meta' => $meta
         ]);
     }
 }

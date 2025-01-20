@@ -45,6 +45,24 @@ trait MetaTrait
             ->setFavicon(asset('favicon.png'));
     }
 
+    public function getMetaIndex(
+        string $title,
+        string $desc,
+    ): array
+    {
+        $title = $this->normalizeTitle($title);
+        $desc = $this->normalizeDesc($desc);
+
+        return [
+            'title' => $title,
+            'desc' => $desc,
+            'image' => asset('banner.png'),
+            'favicon' => asset('favicon.png'),
+            'og_type' => 'website',
+            'tw_card' => 'summary_large_image',
+        ];
+    }
+
     public function setMetaDetail(
         string $title,
         string $desc,
@@ -82,5 +100,34 @@ trait MetaTrait
             ->setDescription($desc)
             ->setKeywords($keywords)
             ->setFavicon(asset('favicon.png'));
+    }
+
+    public function getMetaDetail(
+        string $title,
+        string $desc,
+        string $url,
+        string $imageUrl,
+        string $keywords,
+        string $author,
+        string $publishedTime,
+        string $section,
+    ): array
+    {
+        $title = $this->normalizeTitle($title);
+        $desc = $this->normalizeDesc($desc);
+
+        return [
+            'title' => $title,
+            'desc' => $desc,
+            'keywords' => $keywords,
+            'image' => $imageUrl,
+            'favicon' => asset('favicon.png'),
+            'og_type' => 'article',
+            'og_url' => $url,
+            'og_author' => $author,
+            'og_time' => $publishedTime,
+            'og_section' => $section,
+            'tw_card' => 'summary_large_image',
+        ];
     }
 }

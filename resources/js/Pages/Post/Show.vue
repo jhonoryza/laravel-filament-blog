@@ -1,11 +1,12 @@
 <script setup>
-import {Link} from '@inertiajs/vue3';
+import {Link, Head} from '@inertiajs/vue3';
 import Base from "@/Pages/Base.vue";
 import {onMounted, ref} from "vue";
 import {renderMarkdown} from "@/Utils/markdownRenderer.js";
 
 const props = defineProps({
     post: Object,
+    meta: Array,
 })
 
 const renderedContent = ref('');
@@ -21,7 +22,24 @@ const scrollToTop = () => {
 
 <template>
     <Base>
-        <div class="max-w-xl font-rubik text-lg">
+        <Head>
+            <title>{{ meta.title }} </title>
+            <meta name="description" :content="meta.desc">
+            <meta name="keywords" :content="meta.keywords">
+            <meta property="og:title" :content="meta.title">
+            <meta property="og:type" :content="meta.og_type">
+            <meta property="og:image" :content="meta.image">
+            <meta property="og:description" :content="meta.desc">
+            <meta property="og:url" :content="meta.og_url">
+            <meta property="og:author" :content="meta.og_author">
+            <meta property="og:published_time" :content="meta.og_time">
+            <meta property="og:section" :content="meta.og_section">
+            <meta name="twitter:title" :content="meta.title">
+            <meta name="twitter:card" :content="meta.tw_card">
+            <meta name="twitter:description" :content="meta.desc">
+            <meta name="twitter:image" :content="meta.image">
+        </Head>
+        <div class="mx-4 text-lg">
             <Link :href="route('home')" class="p-2 text-primary dark:text-white rounded-lg hover:opacity-60">
                 ⬅ Go Back
             </Link>

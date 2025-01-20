@@ -1,8 +1,10 @@
 <script setup lang="js">
+import {Head} from '@inertiajs/vue3';
 import Base from "@/Pages/Base.vue";
 
 const props = defineProps({
-    tools: Object
+    tools: Object,
+    meta: Array,
 });
 
 const gotoLink = (url) => {
@@ -12,6 +14,17 @@ const gotoLink = (url) => {
 
 <template>
     <Base>
+    <Head :title="meta.title">
+        <meta name="description" :content="meta.desc">
+        <meta property="og:title" :content="meta.title">
+        <meta property="og:type" :content="meta.og_type">
+        <meta property="og:image" :content="meta.image">
+        <meta property="og:description" :content="meta.desc">
+        <meta name="twitter:title" :content="meta.title">
+        <meta name="twitter:card" :content="meta.tw_card">
+        <meta name="twitter:description" :content="meta.desc">
+        <meta name="twitter:image" :content="meta.image">
+    </Head>
         <div class="flex flex-col space-y-1 mx-4 text-primary dark:text-slate-300">
             <h1 class="font-bold text-xl">DevTools</h1>
             <div class="flex flex-col space-y-2">

@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Livewire\Concerns\MetaTrait;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 
 class PostIndexController extends Controller
 {
+    use MetaTrait;
+
     /**
      * Handle the incoming request.
      */
@@ -51,10 +54,13 @@ class PostIndexController extends Controller
             ])
             ->withQueryString();
 
+        $meta = $this->getMetaIndex('Blog posts', 'List of blog posts');
+
         return inertia('Post/Index', [
             'posts' => inertia()->merge(fn() => $posts->items()),
             'page' => $posts->toArray()['current_page'],
-            'next_url' => $posts->toArray()['next_page_url']
+            'next_url' => $posts->toArray()['next_page_url'],
+            'meta' => $meta
         ]);
     }
 }

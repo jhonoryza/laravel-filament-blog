@@ -9,7 +9,7 @@
     >
         <div class="flex items-end justify-between items-center">
 
-            <a href="{{ route('home') }}" class="text-xl text-slate-900 hover:opacity-60" wire:navigate>Home</a>
+            <a href="{{ route('wire.home') }}" class="text-xl text-slate-900 hover:opacity-60" wire:navigate>Home</a>
 
             <!-- Mobile breadcrumb button-->
             <button x-on:click="toggle()"
@@ -104,6 +104,18 @@
         <!-- Mobile menu, show/hide based on menu state. -->
         <div x-show="open" x-transition x-on:click.away="close()" style="display: none" class="" id="mobile-menu">
             <div class="fixed space-y-1 px-2 pb-3 pt-2 shadow rounded bg-indigo-50 mt-0 w-full max-w-sm z-[100]">
+                <a href="{{ route('home') }}" target="_blank"
+                   class="block hover:bg-white px-3 py-2 text-sm font-medium
+               hover:text-rose-500 {{ isActive('home') }}"
+                >
+                    Home with Vue
+                </a>
+                <a href="{{ route('wire.home') }}" wire:navigate
+                   class="block hover:bg-white px-3 py-2 text-sm font-medium
+               hover:text-rose-500 {{ isActive('home') }}"
+                >
+                    Articles
+                </a>
                 <div class="relative inline-block px-3 py-2 text-sm font-medium
             hover:text-rose-500 cursor-pointer"
                      x-data="{
@@ -112,7 +124,7 @@
                     toggle() { this.open = !this.open }
                 }">
                     <div>
-                        <button x-on:click="toggle()" class="{{ isActive(['packages.php', 'packages.go']) }}">
+                        <button x-on:click="toggle()" class="{{ isActive(['wire.packages.php', 'wire.packages.go']) }}">
                             Packages
                         </button>
                     </div>
@@ -122,13 +134,13 @@
                          role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1"
                     >
                         <div class="py-1" role="none">
-                            <a href="{{ route('packages.php') }}" wire:navigate
+                            <a href="{{ route('wire.packages.php') }}" wire:navigate
                                class="text-gray-700 block px-4 py-2 text-sm
                            hover:text-rose-500 {{ isActive('packages.php') }}"
                             >
                                 PHP Packages
                             </a>
-                            <a href="{{ route('packages.go') }}" wire:navigate
+                            <a href="{{ route('wire.packages.go') }}" wire:navigate
                                class="text-gray-700 block px-4 py-2 text-sm
                            hover:text-rose-500 {{ isActive('packages.go') }}"
                             >
@@ -137,13 +149,13 @@
                         </div>
                     </div>
                 </div>
-                <a href="{{ route('components') }}" wire:navigate
+                <a href="{{ route('wire.components') }}" wire:navigate
                    class="block hover:bg-white px-3 py-2 text-sm font-medium
                hover:text-rose-500 {{ isActive('components') }}"
                 >
                     Components
                 </a>
-                <a href="{{ route('devtools') }}" wire:navigate
+                <a href="{{ route('wire.devtools') }}" wire:navigate
                    class="block hover:bg-white px-3 py-2 text-sm font-medium
                hover:text-rose-500 {{ isActive('devtools') }}"
                 >

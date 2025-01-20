@@ -87,6 +87,12 @@ function closeBread() {
                     class="fixed space-y-1 px-2 pb-3 pt-2 shadow rounded bg-lime-100 dark:bg-zinc-800 dark:text-white mt-0 max-w-xl w-full z-[100]"
                 >
                     <Link
+                        :href="route('home')"
+                        class="block px-3 py-2 text-sm font-medium hover:text-rose-500 {{ isActive('packages.php') }}"
+                    >
+                        Articles
+                    </Link>
+                    <Link
                         :href="route('packages.php')"
                         class="block px-3 py-2 text-sm font-medium hover:text-rose-500 {{ isActive('packages.php') }}"
                     >
@@ -110,6 +116,13 @@ function closeBread() {
                     >
                         Components
                     </Link>
+                    <a
+                        :href="route('wire.home')"
+                        class="block px-3 py-2 text-sm font-medium hover:text-rose-500"
+                        target="_blank"
+                    >
+                        Home with livewire
+                    </a>
                     <a
                         href="https://nuxt-blog-gamma.vercel.app/"
                         class="block px-3 py-2 text-sm font-medium hover:text-rose-500"

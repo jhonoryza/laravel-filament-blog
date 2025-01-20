@@ -10,7 +10,6 @@
     </style>
 
     @filamentStyles
-    @vite('resources/css/app.css')
     @stack('css')
 
     @if (config('app.env') == 'production')

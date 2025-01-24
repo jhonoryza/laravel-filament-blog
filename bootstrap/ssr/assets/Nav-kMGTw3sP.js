@@ -38,25 +38,26 @@ const _sfc_main = {
       }, {
         default: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(` Articles `);
+            _push2(` My Articles `);
           } else {
             return [
-              createTextVNode(" Articles ")
+              createTextVNode(" My Articles ")
             ];
           }
         }),
         _: 1
       }, _parent));
+      _push(`<a href="https://github.com/jhonoryza" class="block px-3 py-2 text-sm font-medium hover:text-rose-500" target="_blank"> My Github </a><a href="https://rb.gy/uy8nj0" class="block px-3 py-2 text-sm font-medium hover:text-rose-500" target="_blank"> My Portofolio </a>`);
       _push(ssrRenderComponent(unref(Link), {
         href: _ctx.route("packages.php"),
         class: "block px-3 py-2 text-sm font-medium hover:text-rose-500 {{ isActive('packages.php') }}"
       }, {
         default: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(` PHP Packages `);
+            _push2(` Good PHP Packages `);
           } else {
             return [
-              createTextVNode(" PHP Packages ")
+              createTextVNode(" Good PHP Packages ")
             ];
           }
         }),
@@ -68,10 +69,10 @@ const _sfc_main = {
       }, {
         default: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(` Go Packages `);
+            _push2(` Good Go Packages `);
           } else {
             return [
-              createTextVNode(" Go Packages ")
+              createTextVNode(" Good Go Packages ")
             ];
           }
         }),
@@ -83,10 +84,10 @@ const _sfc_main = {
       }, {
         default: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(` Tools `);
+            _push2(` Good Tools `);
           } else {
             return [
-              createTextVNode(" Tools ")
+              createTextVNode(" Good Tools ")
             ];
           }
         }),
@@ -98,16 +99,16 @@ const _sfc_main = {
       }, {
         default: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(` Components `);
+            _push2(` Good Components `);
           } else {
             return [
-              createTextVNode(" Components ")
+              createTextVNode(" Good Components ")
             ];
           }
         }),
         _: 1
       }, _parent));
-      _push(`<a${ssrRenderAttr("href", _ctx.route("wire.home"))} class="block px-3 py-2 text-sm font-medium hover:text-rose-500" target="_blank"> Home with livewire </a><a href="https://nuxt-blog-gamma.vercel.app/" class="block px-3 py-2 text-sm font-medium hover:text-rose-500" target="_blank"> Nuxt SSR </a><a href="https://vue-blog-gules.vercel.app/" class="block px-3 py-2 text-sm font-medium hover:text-rose-500" target="_blank"> Vue SPA </a></div></div></div></nav>`);
+      _push(`<a${ssrRenderAttr("href", _ctx.route("wire.home"))} class="block px-3 py-2 text-sm font-medium hover:text-rose-500" target="_blank"> Home using livewire </a><a href="https://nuxt-blog-gamma.vercel.app/" class="block px-3 py-2 text-sm font-medium hover:text-rose-500" target="_blank"> Home using Nuxt SSR </a><a href="https://vue-blog-gules.vercel.app/" class="block px-3 py-2 text-sm font-medium hover:text-rose-500" target="_blank"> Home using Vue SPA </a></div></div></div></nav>`);
     };
   }
 };

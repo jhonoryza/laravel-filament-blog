@@ -1,8 +1,8 @@
 import { withCtx, unref, createVNode, openBlock, createBlock, Fragment, renderList, toDisplayString, useSSRContext } from "vue";
 import { ssrRenderComponent, ssrRenderAttr, ssrRenderList, ssrInterpolate } from "vue/server-renderer";
 import { Head } from "@inertiajs/vue3";
-import _sfc_main$1 from "./Base-ByNzQINa.js";
-import "./Nav-C-Br6y1g.js";
+import _sfc_main$1 from "./Base-D2lUmFxp.js";
+import "./Nav-kMGTw3sP.js";
 import "./ToggleDarkMode-JFaivfUX.js";
 import "@tabler/icons-vue";
 import "./Footer-B-2zln9Z.js";
@@ -70,7 +70,7 @@ const _sfc_main = {
               }),
               _: 1
             }, _parent2, _scopeId));
-            _push2(`<div class="flex flex-col space-y-1 mx-4 text-primary dark:text-slate-300"${_scopeId}><h1 class="font-bold text-xl"${_scopeId}>DevTools</h1><div class="flex flex-col space-y-2"${_scopeId}><!--[-->`);
+            _push2(`<div class="flex flex-col space-y-1 mx-4 text-primary dark:text-slate-300"${_scopeId}><h1 class="font-bold text-xl"${_scopeId}>Go Packages</h1><div class="flex flex-col space-y-2"${_scopeId}><!--[-->`);
             ssrRenderList(__props.tools, (tool) => {
               _push2(`<div class="border border-slate-100 shadow py-2 px-2 hover:cursor-pointer hover:opacity-60 rounded"${_scopeId}><h2 class="text-lg font-medium"${_scopeId}>${ssrInterpolate(tool.name)}</h2><p class="text-secondary"${_scopeId}>${ssrInterpolate(tool.desc)}</p></div>`);
             });
@@ -121,7 +121,7 @@ const _sfc_main = {
                 _: 1
               }, 8, ["title"]),
               createVNode("div", { class: "flex flex-col space-y-1 mx-4 text-primary dark:text-slate-300" }, [
-                createVNode("h1", { class: "font-bold text-xl" }, "DevTools"),
+                createVNode("h1", { class: "font-bold text-xl" }, "Go Packages"),
                 createVNode("div", { class: "flex flex-col space-y-2" }, [
                   (openBlock(true), createBlock(Fragment, null, renderList(__props.tools, (tool) => {
                     return openBlock(), createBlock("div", {
@@ -146,7 +146,7 @@ const _sfc_main = {
 const _sfc_setup = _sfc_main.setup;
 _sfc_main.setup = (props, ctx) => {
   const ssrContext = useSSRContext();
-  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Pages/Package/DevTools/Index.vue");
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Pages/Package/Go/Index.vue");
   return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
 };
 export {

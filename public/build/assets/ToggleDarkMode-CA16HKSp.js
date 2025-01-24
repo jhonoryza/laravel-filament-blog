@@ -1,4 +1,4 @@
-import{y as n,f as p,g as M,e as _,c as u,u as m,o as r}from"./vue-UKWXKTbY.js";/**
+import{y as n,f as p,g as M,e as _,c as u,u as m,o as r}from"./vue-Cr6ICkdw.js";/**
  * @license @tabler/icons-vue v3.26.0 - MIT
  *
  * This source code is licensed under the MIT license.

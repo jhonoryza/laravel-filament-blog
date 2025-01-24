@@ -103,75 +103,66 @@
 
         <!-- Mobile menu, show/hide based on menu state. -->
         <div x-show="open" x-transition x-on:click.away="close()" style="display: none" class="" id="mobile-menu">
-            <div class="fixed space-y-1 px-2 pb-3 pt-2 shadow rounded bg-indigo-50 mt-0 w-full max-w-sm z-[100]">
-                <a href="{{ route('home') }}" target="_blank"
-                   class="block hover:bg-white px-3 py-2 text-sm font-medium
-               hover:text-rose-500 {{ isActive('home') }}"
-                >
-                    Home with Vue
-                </a>
+            <div class="fixed space-y-1 px-2 pb-3 pt-2 shadow rounded bg-lime-100 mt-0 w-full max-w-sm z-[100] text-left">
                 <a href="{{ route('wire.home') }}" wire:navigate
                    class="block hover:bg-white px-3 py-2 text-sm font-medium
                hover:text-rose-500 {{ isActive('home') }}"
                 >
-                    Articles
+                    My Articles
                 </a>
-                <div class="relative inline-block px-3 py-2 text-sm font-medium
-            hover:text-rose-500 cursor-pointer"
-                     x-data="{
-                    open: false,
-                    close() { this.open = false },
-                    toggle() { this.open = !this.open }
-                }">
-                    <div>
-                        <button x-on:click="toggle()" class="{{ isActive(['wire.packages.php', 'wire.packages.go']) }}">
-                            Packages
-                        </button>
-                    </div>
-                    <div x-show="open" x-transition x-on:click.away="close()" style="display: none"
-                         class="absolute left-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white
-                     shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
-                         role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1"
-                    >
-                        <div class="py-1" role="none">
-                            <a href="{{ route('wire.packages.php') }}" wire:navigate
-                               class="text-gray-700 block px-4 py-2 text-sm
-                           hover:text-rose-500 {{ isActive('packages.php') }}"
-                            >
-                                PHP Packages
-                            </a>
-                            <a href="{{ route('wire.packages.go') }}" wire:navigate
-                               class="text-gray-700 block px-4 py-2 text-sm
-                           hover:text-rose-500 {{ isActive('packages.go') }}"
-                            >
-                                Go Packages
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <a href="{{ route('wire.components') }}" wire:navigate
-                   class="block hover:bg-white px-3 py-2 text-sm font-medium
-               hover:text-rose-500 {{ isActive('components') }}"
+                <a
+                    href="https://github.com/jhonoryza"
+                    class="block px-3 py-2 text-sm font-medium hover:text-rose-500"
+                    target="_blank"
                 >
-                    Components
+                    My Github
+                </a>
+                <a
+                    href="https://rb.gy/uy8nj0"
+                    class="block px-3 py-2 text-sm font-medium hover:text-rose-500"
+                    target="_blank"
+                >
+                    My Portofolio
+                </a>
+                <a href="{{ route('wire.packages.php') }}" wire:navigate
+                   class="block px-3 py-2 text-sm font-medium hover:text-rose-500"
+                >
+                    Good PHP Packages
+                </a>
+                <a href="{{ route('wire.packages.go') }}" wire:navigate
+                   class="block px-3 py-2 text-sm font-medium hover:text-rose-500"
+                >
+                    Good Go Packages
                 </a>
                 <a href="{{ route('wire.devtools') }}" wire:navigate
                    class="block hover:bg-white px-3 py-2 text-sm font-medium
                hover:text-rose-500 {{ isActive('devtools') }}"
                 >
-                    Tools
+                    Good Tools
+                </a>
+                <a href="{{ route('wire.components') }}" wire:navigate
+                   class="block hover:bg-white px-3 py-2 text-sm font-medium
+               hover:text-rose-500 {{ isActive('components') }}"
+                >
+                    Good Components
+                </a>
+                <a href="{{ route('home') }}" target="_blank"
+                   class="block hover:bg-white px-3 py-2 text-sm font-medium
+               hover:text-rose-500 {{ isActive('home') }}"
+                >
+                    Home using Inertia Vue
                 </a>
                 <a href="https://nuxt-blog-gamma.vercel.app/"
                    class="block hover:bg-white px-3 py-2 text-sm font-medium
                hover:text-rose-500" target="_blank"
                 >
-                    Nuxt SSR
+                    Home using Nuxt SSR
                 </a>
                 <a href="https://vue-blog-gules.vercel.app/"
                    class="block hover:bg-white px-3 py-2 text-sm font-medium
                hover:text-rose-500" target="_blank"
                 >
-                    Vue SPA
+                    Home using Vue SPA
                 </a>
             </div>
         </div>

@@ -1,9 +1,9 @@
 import { ref, onMounted, unref, withCtx, createVNode, openBlock, createBlock, Fragment, createTextVNode, withModifiers, withDirectives, withKeys, vModelText, vShow, renderList, toDisplayString, useSSRContext } from "vue";
 import { ssrRenderComponent, ssrRenderAttr, ssrRenderList, ssrInterpolate, ssrRenderStyle } from "vue/server-renderer";
 import { useForm, Head, WhenVisible, router } from "@inertiajs/vue3";
-import _sfc_main$1 from "./Base-ByNzQINa.js";
+import _sfc_main$1 from "./Base-D2lUmFxp.js";
 import { IconXboxX } from "@tabler/icons-vue";
-import "./Nav-C-Br6y1g.js";
+import "./Nav-kMGTw3sP.js";
 import "./ToggleDarkMode-JFaivfUX.js";
 import "./Footer-B-2zln9Z.js";
 const _export_sfc = (sfc, props) => {

@@ -90,52 +90,66 @@ function closeBread() {
                         :href="route('home')"
                         class="block px-3 py-2 text-sm font-medium hover:text-rose-500 {{ isActive('packages.php') }}"
                     >
-                        Articles
+                        My Articles
                     </Link>
+                    <a
+                        href="https://github.com/jhonoryza"
+                        class="block px-3 py-2 text-sm font-medium hover:text-rose-500"
+                        target="_blank"
+                    >
+                        My Github
+                    </a>
+                    <a
+                        href="https://rb.gy/uy8nj0"
+                        class="block px-3 py-2 text-sm font-medium hover:text-rose-500"
+                        target="_blank"
+                    >
+                        My Portofolio
+                    </a>
                     <Link
                         :href="route('packages.php')"
                         class="block px-3 py-2 text-sm font-medium hover:text-rose-500 {{ isActive('packages.php') }}"
                     >
-                        PHP Packages
+                        Good PHP Packages
                     </Link>
                     <Link
                         :href="route('packages.go')"
                         class="block px-3 py-2 text-sm font-medium hover:text-rose-500 {{ isActive('packages.go') }}"
                     >
-                        Go Packages
+                        Good Go Packages
                     </Link>
                     <Link
                         :href="route('devtools')"
                         class="block px-3 py-2 text-sm font-medium hover:text-rose-500 {{ isActive('devtools') }}"
                     >
-                        Tools
+                        Good Tools
                     </Link>
                     <Link
                         :href="route('components')"
                         class="block px-3 py-2 text-sm font-medium hover:text-rose-500 {{ isActive('components') }}"
                     >
-                        Components
+                        Good Components
                     </Link>
                     <a
                         :href="route('wire.home')"
                         class="block px-3 py-2 text-sm font-medium hover:text-rose-500"
                         target="_blank"
                     >
-                        Home with livewire
+                        Home using livewire
                     </a>
                     <a
                         href="https://nuxt-blog-gamma.vercel.app/"
                         class="block px-3 py-2 text-sm font-medium hover:text-rose-500"
                         target="_blank"
                     >
-                        Nuxt SSR
+                        Home using Nuxt SSR
                     </a>
                     <a
                         href="https://vue-blog-gules.vercel.app/"
                         class="block px-3 py-2 text-sm font-medium hover:text-rose-500"
                         target="_blank"
                     >
-                        Vue SPA
+                        Home using Vue SPA
                     </a>
                 </div>
             </div>

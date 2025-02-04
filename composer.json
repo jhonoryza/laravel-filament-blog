@@ -32,7 +32,6 @@
         "league/commonmark": "^2.5",
         "league/flysystem-aws-s3-v3": "^3.16",
         "opcodesio/log-viewer": "^3.6",
-        "paulo-hortelan/requests-graph-pulse": "^1.0",
         "predis/predis": "^2.2",
         "saade/filament-laravel-log": "^3.0",
         "spatie/laravel-sitemap": "^7.3",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "243ad6a9221804e97a6d42b71575f50b",
+    "content-hash": "b0217e11d599a437734607b201e7419a",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -5296,86 +5296,6 @@
                 }
             ],
             "time": "2024-07-26T05:48:04+00:00"
-        },
-        {
-            "name": "paulo-hortelan/requests-graph-pulse",
-            "version": "v1.0.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/paulo-hortelan/requests-graph-pulse.git",
-                "reference": "43d343d4b28eb4a6971cabcffd14917f26271fc5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/paulo-hortelan/requests-graph-pulse/zipball/43d343d4b28eb4a6971cabcffd14917f26271fc5",
-                "reference": "43d343d4b28eb4a6971cabcffd14917f26271fc5",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/contracts": "^10.0",
-                "laravel/pulse": "^1.0@beta",
-                "php": "^8.1",
-                "spatie/laravel-package-tools": "^1.14.0"
-            },
-            "require-dev": {
-                "larastan/larastan": "^2.0.1",
-                "laravel/pint": "^1.0",
-                "nunomaduro/collision": "^7.8",
-                "orchestra/testbench": "^8.8",
-                "pestphp/pest": "^2.20",
-                "pestphp/pest-plugin-arch": "^2.0",
-                "pestphp/pest-plugin-laravel": "^2.0",
-                "phpstan/extension-installer": "^1.1",
-                "phpstan/phpstan-deprecation-rules": "^1.0",
-                "phpstan/phpstan-phpunit": "^1.0",
-                "spatie/laravel-ray": "^1.26"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "PauloHortelan\\RequestsGraphPulse\\RequestsGraphServiceProvider"
-                    ],
-                    "aliases": {
-                        "RequestsGraphPulse": "PauloHortelan\\RequestsGraphPulse\\Facades\\RequestsGraphPulse"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "PauloHortelan\\RequestsGraphPulse\\": "src/",
-                    "PauloHortelan\\RequestsGraphPulse\\Database\\Factories\\": "database/factories/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Paulo Hortelan",
-                    "email": "paulohincar@gmail.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "This is my package requests-graph-pulse",
-            "homepage": "https://github.com/paulo-hortelan/requests-graph-pulse",
-            "keywords": [
-                "Paulo Hortelan",
-                "laravel",
-                "requests-graph-pulse"
-            ],
-            "support": {
-                "issues": "https://github.com/paulo-hortelan/requests-graph-pulse/issues",
-                "source": "https://github.com/paulo-hortelan/requests-graph-pulse/tree/v1.0.5"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/paulo.hortelan",
-                    "type": "github"
-                }
-            ],
-            "time": "2024-01-10T11:43:48+00:00"
         },
         {
             "name": "phpoption/phpoption",

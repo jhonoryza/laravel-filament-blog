@@ -1,7 +1,5 @@
 <x-pulse>
-    <livewire:pulse_active_session cols='4' rows='2' />
-
-    <livewire:requests-graph cols="8" rows="2" />
+    <livewire:pulse_active_session cols='8' rows='2' />
 
     <livewire:pulse.usage cols="4" rows="8" />
 

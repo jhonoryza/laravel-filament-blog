@@ -38,5 +38,5 @@ RUN apt-get update && apt-get install -y supervisor
 # Copy supervisord configuration
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-# Jalankan supervisord
-CMD ["/usr/bin/supervisord"]
+# Jalankan supervisord dengan konfigurasi yang ditentukan
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]

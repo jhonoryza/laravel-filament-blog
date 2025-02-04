@@ -1,19 +1,15 @@
-import { ref, resolveDirective, mergeProps, unref, withCtx, createTextVNode, useSSRContext } from "vue";
-import { ssrRenderAttrs, ssrGetDirectiveProps, ssrRenderComponent, ssrRenderStyle, ssrRenderAttr } from "vue/server-renderer";
+import { ref, mergeProps, unref, withCtx, createTextVNode, useSSRContext } from "vue";
+import { ssrRenderAttrs, ssrRenderComponent, ssrRenderStyle, ssrRenderAttr } from "vue/server-renderer";
 import { Link } from "@inertiajs/vue3";
-import _sfc_main$1 from "./ToggleDarkMode-JFaivfUX.js";
+import _sfc_main$1 from "./ToggleDarkMode-B4VrkS93.js";
 import "@tabler/icons-vue";
 const _sfc_main = {
   __name: "Nav",
   __ssrInlineRender: true,
   setup(__props) {
     const breadIsOpen = ref(false);
-    function closeBread() {
-      breadIsOpen.value = false;
-    }
     return (_ctx, _push, _parent, _attrs) => {
-      const _directive_click_away = resolveDirective("click-away");
-      _push(`<nav${ssrRenderAttrs(mergeProps({ class: "bg-white dark:bg-zinc-800 dark:text-white border-b border-zinc-300 h-14 fixed top-0 left-0 right-0 z-50 flex flex-col justify-center items-center max-w-xl mx-auto" }, _attrs))}><div${ssrRenderAttrs(mergeProps({ class: "container mx-auto" }, ssrGetDirectiveProps(_ctx, _directive_click_away, closeBread)))}><div class="mx-2 flex justify-between items-center gap-2">`);
+      _push(`<nav${ssrRenderAttrs(mergeProps({ class: "bg-white dark:bg-zinc-800 dark:text-white border-b border-zinc-300 h-14 fixed top-0 left-0 right-0 z-50 flex flex-col justify-center items-center max-w-xl mx-auto" }, _attrs))}><div class="container mx-auto"><div class="mx-2 flex justify-between items-center gap-2">`);
       _push(ssrRenderComponent(unref(Link), { href: "/" }, {
         default: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {

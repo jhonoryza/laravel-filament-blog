@@ -5,11 +5,18 @@ const _sfc_main = {
   __name: "ToggleDarkMode",
   __ssrInlineRender: true,
   setup(__props) {
-    const colorMode = ref(localStorage.getItem("color-mode") || void 0);
+    const colorMode = ref(void 0);
     onMounted(() => {
-      if (colorMode.value === void 0) {
+      if (typeof window !== "undefined" && localStorage) {
+        const storedColorMode = localStorage.getItem("color-mode");
+        if (storedColorMode) {
+          colorMode.value = storedColorMode;
+        } else {
+          colorMode.value = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          localStorage.setItem("color-mode", colorMode.value);
+        }
+      } else {
         colorMode.value = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-        localStorage.setItem("color-mode", colorMode.value);
       }
       const rootElement = document.documentElement;
       if (colorMode.value === "light") {

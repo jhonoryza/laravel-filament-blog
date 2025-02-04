@@ -2,7 +2,6 @@ import { createInertiaApp } from "@inertiajs/vue3";
 import createServer from "@inertiajs/vue3/server";
 import { renderToString } from "@vue/server-renderer";
 import { createSSRApp, h as h$1 } from "vue";
-import VueClickAway from "vue3-click-away";
 async function resolvePageComponent(path, pages) {
   for (const p2 of Array.isArray(path) ? path : [path]) {
     const page = pages[p2];
@@ -352,13 +351,13 @@ createServer(
     title: (title) => `${title} - ${appName}`,
     resolve: (name) => resolvePageComponent(
       `./Pages/${name}.vue`,
-      /* @__PURE__ */ Object.assign({ "./Pages/Base.vue": () => import("./assets/Base-D2lUmFxp.js"), "./Pages/Component/Index.vue": () => import("./assets/Index-Bg_fbwAe.js"), "./Pages/Footer.vue": () => import("./assets/Footer-B-2zln9Z.js"), "./Pages/Nav.vue": () => import("./assets/Nav-kMGTw3sP.js"), "./Pages/Package/DevTools/Index.vue": () => import("./assets/Index-Ds2E6yIC.js"), "./Pages/Package/Go/Index.vue": () => import("./assets/Index-6nn-_OJN.js"), "./Pages/Package/PHP/Index.vue": () => import("./assets/Index-BVTffdq-.js"), "./Pages/Post/Index.vue": () => import("./assets/Index-BrBFT9pF.js"), "./Pages/Post/Show.vue": () => import("./assets/Show-DjDsQIyZ.js"), "./Pages/ToggleDarkMode.vue": () => import("./assets/ToggleDarkMode-JFaivfUX.js") })
+      /* @__PURE__ */ Object.assign({ "./Pages/Base.vue": () => import("./assets/Base-BXw2IAc-.js"), "./Pages/Component/Index.vue": () => import("./assets/Index-C5Xn1tE5.js"), "./Pages/Footer.vue": () => import("./assets/Footer-B-2zln9Z.js"), "./Pages/Nav.vue": () => import("./assets/Nav-C7ATHS_5.js"), "./Pages/Package/DevTools/Index.vue": () => import("./assets/Index-CcHXjbAe.js"), "./Pages/Package/Go/Index.vue": () => import("./assets/Index-Ce-PAKdF.js"), "./Pages/Package/PHP/Index.vue": () => import("./assets/Index-Dkt2DkoX.js"), "./Pages/Post/Index.vue": () => import("./assets/Index-1neaNWOd.js"), "./Pages/Post/Show.vue": () => import("./assets/Show-iuGqyLVM.js"), "./Pages/ToggleDarkMode.vue": () => import("./assets/ToggleDarkMode-B4VrkS93.js") })
     ),
     setup({ App, props, plugin }) {
       return createSSRApp({ render: () => h$1(App, props) }).use(plugin).use(k, {
         ...page.props.ziggy,
         location: new URL(page.props.ziggy.location)
-      }).use(VueClickAway);
+      });
     }
   })
 );

@@ -1,7 +1,7 @@
 import { ref, onMounted, withCtx, unref, createVNode, toDisplayString, createTextVNode, openBlock, createBlock, createCommentVNode, useSSRContext } from "vue";
 import { ssrRenderComponent, ssrInterpolate, ssrRenderAttr, ssrRenderClass } from "vue/server-renderer";
 import { Head, Link } from "@inertiajs/vue3";
-import _sfc_main$1 from "./Base-D2lUmFxp.js";
+import _sfc_main$1 from "./Base-BXw2IAc-.js";
 import markdownIt from "markdown-it";
 import markdownItSub from "markdown-it-sub";
 import markdownItSup from "markdown-it-sup";
@@ -15,8 +15,8 @@ import { slugify } from "@mdit-vue/shared";
 import { full } from "markdown-it-emoji";
 import hljs from "highlight.js/lib/core";
 import highlightjs from "markdown-it-highlightjs";
-import "./Nav-kMGTw3sP.js";
-import "./ToggleDarkMode-JFaivfUX.js";
+import "./Nav-C7ATHS_5.js";
+import "./ToggleDarkMode-B4VrkS93.js";
 import "@tabler/icons-vue";
 import "./Footer-B-2zln9Z.js";
 function copyCode(button) {
@@ -145,7 +145,7 @@ const _sfc_main = {
   __ssrInlineRender: true,
   props: {
     post: Object,
-    meta: Array
+    meta: Object
   },
   setup(__props) {
     const props = __props;
@@ -163,7 +163,7 @@ const _sfc_main = {
             _push2(ssrRenderComponent(unref(Head), null, {
               default: withCtx((_2, _push3, _parent3, _scopeId2) => {
                 if (_push3) {
-                  _push3(`<title${_scopeId2}>${ssrInterpolate(__props.meta.title)} </title><meta name="description"${ssrRenderAttr("content", __props.meta.desc)}${_scopeId2}><meta name="keywords"${ssrRenderAttr("content", __props.meta.keywords)}${_scopeId2}><meta property="og:title"${ssrRenderAttr("content", __props.meta.title)}${_scopeId2}><meta property="og:type"${ssrRenderAttr("content", __props.meta.og_type)}${_scopeId2}><meta property="og:image"${ssrRenderAttr("content", __props.meta.image)}${_scopeId2}><meta property="og:description"${ssrRenderAttr("content", __props.meta.desc)}${_scopeId2}><meta property="og:url"${ssrRenderAttr("content", __props.meta.og_url)}${_scopeId2}><meta property="og:author"${ssrRenderAttr("content", __props.meta.og_author)}${_scopeId2}><meta property="og:published_time"${ssrRenderAttr("content", __props.meta.og_time)}${_scopeId2}><meta property="og:section"${ssrRenderAttr("content", __props.meta.og_section)}${_scopeId2}><meta name="twitter:title"${ssrRenderAttr("content", __props.meta.title)}${_scopeId2}><meta name="twitter:card"${ssrRenderAttr("content", __props.meta.tw_card)}${_scopeId2}><meta name="twitter:description"${ssrRenderAttr("content", __props.meta.desc)}${_scopeId2}><meta name="twitter:image"${ssrRenderAttr("content", __props.meta.image)}${_scopeId2}>`);
+                  _push3(`<title${_scopeId2}>${ssrInterpolate(__props.meta.title)} </title><meta name="description"${ssrRenderAttr("content", __props.meta.desc)}${_scopeId2}><meta name="keywords"${ssrRenderAttr("content", __props.meta.keywords)}${_scopeId2}><meta property="og:title"${ssrRenderAttr("content", __props.meta.title)}${_scopeId2}><meta property="og:type"${ssrRenderAttr("content", __props.meta.og_type)}${_scopeId2}><meta property="og:image"${ssrRenderAttr("content", __props.meta.image)}${_scopeId2}><meta property="og:description"${ssrRenderAttr("content", __props.meta.desc)}${_scopeId2}><meta property="og:url"${ssrRenderAttr("content", __props.meta.og_url)}${_scopeId2}><meta property="og:author"${ssrRenderAttr("content", __props.meta.og_author)}${_scopeId2}><meta property="og:published_time"${ssrRenderAttr("content", __props.meta.og_time)}${_scopeId2}><meta property="og:section"${ssrRenderAttr("content", __props.meta.og_section)}${_scopeId2}><meta name="twitter:title"${ssrRenderAttr("content", __props.meta.title)}${_scopeId2}><meta name="twitter:card"${ssrRenderAttr("content", __props.meta.tw_card)}${_scopeId2}><meta name="twitter:description"${ssrRenderAttr("content", __props.meta.desc)}${_scopeId2}><meta name="twitter:image"${ssrRenderAttr("content", __props.meta.image_tw)}${_scopeId2}>`);
                 } else {
                   return [
                     createVNode("title", null, toDisplayString(__props.meta.title) + " ", 1),
@@ -221,7 +221,7 @@ const _sfc_main = {
                     }, null, 8, ["content"]),
                     createVNode("meta", {
                       name: "twitter:image",
-                      content: __props.meta.image
+                      content: __props.meta.image_tw
                     }, null, 8, ["content"])
                   ];
                 }
@@ -337,7 +337,7 @@ const _sfc_main = {
                   }, null, 8, ["content"]),
                   createVNode("meta", {
                     name: "twitter:image",
-                    content: __props.meta.image
+                    content: __props.meta.image_tw
                   }, null, 8, ["content"])
                 ]),
                 _: 1

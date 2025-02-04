@@ -1,10 +1,10 @@
 import { ref, onMounted, unref, withCtx, createVNode, openBlock, createBlock, Fragment, createTextVNode, withModifiers, withDirectives, withKeys, vModelText, vShow, renderList, toDisplayString, useSSRContext } from "vue";
 import { ssrRenderComponent, ssrRenderAttr, ssrRenderList, ssrInterpolate, ssrRenderStyle } from "vue/server-renderer";
 import { useForm, Head, WhenVisible, router } from "@inertiajs/vue3";
-import _sfc_main$1 from "./Base-D2lUmFxp.js";
+import _sfc_main$1 from "./Base-BXw2IAc-.js";
 import { IconXboxX } from "@tabler/icons-vue";
-import "./Nav-kMGTw3sP.js";
-import "./ToggleDarkMode-JFaivfUX.js";
+import "./Nav-C7ATHS_5.js";
+import "./ToggleDarkMode-B4VrkS93.js";
 import "./Footer-B-2zln9Z.js";
 const _export_sfc = (sfc, props) => {
   const target = sfc.__vccOpts || sfc;
@@ -64,7 +64,7 @@ const _sfc_main = {
       }, {
         default: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(`<meta name="description"${ssrRenderAttr("content", __props.meta.desc)} data-v-17c9fa4f${_scopeId}><meta property="og:title"${ssrRenderAttr("content", __props.meta.title)} data-v-17c9fa4f${_scopeId}><meta property="og:type"${ssrRenderAttr("content", __props.meta.og_type)} data-v-17c9fa4f${_scopeId}><meta property="og:image"${ssrRenderAttr("content", __props.meta.image)} data-v-17c9fa4f${_scopeId}><meta property="og:description"${ssrRenderAttr("content", __props.meta.desc)} data-v-17c9fa4f${_scopeId}><meta name="twitter:title"${ssrRenderAttr("content", __props.meta.title)} data-v-17c9fa4f${_scopeId}><meta name="twitter:card"${ssrRenderAttr("content", __props.meta.tw_card)} data-v-17c9fa4f${_scopeId}><meta name="twitter:description"${ssrRenderAttr("content", __props.meta.desc)} data-v-17c9fa4f${_scopeId}><meta name="twitter:image"${ssrRenderAttr("content", __props.meta.image)} data-v-17c9fa4f${_scopeId}>`);
+            _push2(`<meta name="description"${ssrRenderAttr("content", __props.meta.desc)} data-v-3c328247${_scopeId}><meta property="og:title"${ssrRenderAttr("content", __props.meta.title)} data-v-3c328247${_scopeId}><meta property="og:type"${ssrRenderAttr("content", __props.meta.og_type)} data-v-3c328247${_scopeId}><meta property="og:image"${ssrRenderAttr("content", __props.meta.image)} data-v-3c328247${_scopeId}><meta property="og:description"${ssrRenderAttr("content", __props.meta.desc)} data-v-3c328247${_scopeId}><meta name="twitter:title"${ssrRenderAttr("content", __props.meta.title)} data-v-3c328247${_scopeId}><meta name="twitter:card"${ssrRenderAttr("content", __props.meta.tw_card)} data-v-3c328247${_scopeId}><meta name="twitter:description"${ssrRenderAttr("content", __props.meta.desc)} data-v-3c328247${_scopeId}><meta name="twitter:image"${ssrRenderAttr("content", __props.meta.image)} data-v-3c328247${_scopeId}>`);
           } else {
             return [
               createVNode("meta", {
@@ -111,7 +111,7 @@ const _sfc_main = {
       _push(ssrRenderComponent(_sfc_main$1, null, {
         default: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(`<div data-v-17c9fa4f${_scopeId}><div class="flex flex-col gap-4 mx-4" data-v-17c9fa4f${_scopeId}><form class="flex items-center relative" data-v-17c9fa4f${_scopeId}><input type="text"${ssrRenderAttr("value", unref(form).search)} placeholder="search here" autocomplete="off" class="form-input rounded px-1 py-1 text-sm text-slate-500 w-full focus:ring-1 focus:ring-indigo-500 dark:bg-zinc-800 dark:text-white border border-slate-500" data-v-17c9fa4f${_scopeId}>`);
+            _push2(`<div data-v-3c328247${_scopeId}><div class="flex flex-col gap-4 mx-4" data-v-3c328247${_scopeId}><form class="flex items-center relative" data-v-3c328247${_scopeId}><input type="text"${ssrRenderAttr("value", unref(form).search)} placeholder="search here" autocomplete="off" class="form-input rounded px-1 py-1 text-sm text-slate-500 w-full focus:ring-1 focus:ring-indigo-500 dark:bg-zinc-800 dark:text-white border border-slate-500" data-v-3c328247${_scopeId}>`);
             _push2(ssrRenderComponent(unref(IconXboxX), {
               style: unref(form).search ? null : { display: "none" },
               class: "absolute right-1 size-5 text-slate-800 hover:opacity-60 hover:cursor-pointer",
@@ -119,11 +119,11 @@ const _sfc_main = {
             }, null, _parent2, _scopeId));
             _push2(`</form><!--[-->`);
             ssrRenderList(__props.posts, (post, index) => {
-              _push2(`<div class="hover:opacity-60 flex flex-col border border-slate-100 shadow-xl rounded-xl hover:cursor-pointer overflow-hidden pb-2 bg-white dark:bg-zinc-800 dark:text-white" data-v-17c9fa4f${_scopeId}><div class="w-full mx-auto flex justify-center mt-2" data-v-17c9fa4f${_scopeId}><img class="object-contain rounded-xl h-32 w-32 bg-transparent"${ssrRenderAttr("src", post.thumbnail)}${ssrRenderAttr("alt", post.title)} data-v-17c9fa4f${_scopeId}></div><div class="flex flex-col justify-between px-4 gap-4" data-v-17c9fa4f${_scopeId}><h5 class="mt-2 text-2xl font-bold tracking-tight text-slate-900 dark:text-white" data-v-17c9fa4f${_scopeId}>${ssrInterpolate(post.title)}</h5><p style="${ssrRenderStyle(post.summary !== "" ? null : { display: "none" })}" class="text-base text-slate-700 dark:text-white" data-v-17c9fa4f${_scopeId}>${ssrInterpolate(post.summary)}</p><div class="flex flex-wrap gap-4" data-v-17c9fa4f${_scopeId}><!--[-->`);
+              _push2(`<div class="hover:opacity-60 flex flex-col border border-slate-100 shadow-xl rounded-xl hover:cursor-pointer overflow-hidden pb-2 bg-white dark:bg-zinc-800 dark:text-white" data-v-3c328247${_scopeId}><div class="w-full mx-auto flex justify-center mt-2" data-v-3c328247${_scopeId}><img class="object-contain rounded-xl h-32 w-32 bg-transparent"${ssrRenderAttr("src", post.thumbnail)}${ssrRenderAttr("alt", post.title)} data-v-3c328247${_scopeId}></div><div class="flex flex-col justify-between px-4 gap-4" data-v-3c328247${_scopeId}><h5 class="mt-2 text-2xl font-bold tracking-tight text-slate-900 dark:text-white" data-v-3c328247${_scopeId}>${ssrInterpolate(post.title)}</h5><p style="${ssrRenderStyle(post.summary !== "" ? null : { display: "none" })}" class="text-base text-slate-700 dark:text-white" data-v-3c328247${_scopeId}>${ssrInterpolate(post.summary)}</p><div class="flex flex-wrap gap-4" data-v-3c328247${_scopeId}><!--[-->`);
               ssrRenderList(post.categories, (catName) => {
-                _push2(`<span class="border border-indigo-200 rounded-lg shadow-xl text-sm text-slate-700 dark:text-white font-medium py-1 px-2" data-v-17c9fa4f${_scopeId}>${ssrInterpolate(catName)}</span>`);
+                _push2(`<span class="border border-indigo-200 rounded-lg shadow-xl text-sm text-slate-700 dark:text-white font-medium py-1 px-2" data-v-3c328247${_scopeId}>${ssrInterpolate(catName)}</span>`);
               });
-              _push2(`<!--]--></div><div class="flex justify-between" data-v-17c9fa4f${_scopeId}><p class="text-sm text-slate-900 dark:text-white" data-v-17c9fa4f${_scopeId}> [${ssrInterpolate(index + 1)}] </p><p class="text-sm font-medium underline text-slate-900 dark:text-white" data-v-17c9fa4f${_scopeId}>${ssrInterpolate(post.publishedAt)}</p></div></div></div>`);
+              _push2(`<!--]--></div><div class="flex justify-between" data-v-3c328247${_scopeId}><p class="text-sm text-slate-900 dark:text-white" data-v-3c328247${_scopeId}> [${ssrInterpolate(index + 1)}] </p><p class="text-sm font-medium underline text-slate-900 dark:text-white" data-v-3c328247${_scopeId}>${ssrInterpolate(post.publishedAt)}</p></div></div></div>`);
             });
             _push2(`<!--]-->`);
             _push2(ssrRenderComponent(unref(WhenVisible), {
@@ -140,7 +140,7 @@ const _sfc_main = {
                   if (__props.next_url === null) {
                     _push3(`<!--[--> You have reach the end <!--]-->`);
                   } else {
-                    _push3(`<div class="loader" data-v-17c9fa4f${_scopeId2}></div>`);
+                    _push3(`<div class="loader" data-v-3c328247${_scopeId2}></div>`);
                   }
                 } else {
                   return [
@@ -158,7 +158,7 @@ const _sfc_main = {
             _push2(`<button style="${ssrRenderStyle([
               showFloatingButton.value ? null : { display: "none" },
               { "display": "none" }
-            ])}" class="fixed bottom-5 right-1/4 bg-indigo-100 rounded-full p-3 shadow-lg hover:opacity-60 focus:outline-none z-50" data-v-17c9fa4f${_scopeId}> ⬆️ </button></div></div>`);
+            ])}" class="fixed bottom-5 right-1/4 bg-indigo-100 rounded-full p-3 shadow-lg hover:opacity-60 focus:outline-none z-50" data-v-3c328247${_scopeId}> ⬆️ </button></div></div>`);
           } else {
             return [
               createVNode("div", null, [
@@ -257,7 +257,7 @@ _sfc_main.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Pages/Post/Index.vue");
   return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
 };
-const Index = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-17c9fa4f"]]);
+const Index = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-3c328247"]]);
 export {
   Index as default
 };

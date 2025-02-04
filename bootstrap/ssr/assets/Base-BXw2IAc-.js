@@ -1,9 +1,9 @@
 import { mergeProps, useSSRContext } from "vue";
 import { ssrRenderAttrs, ssrRenderComponent, ssrRenderSlot } from "vue/server-renderer";
-import _sfc_main$1 from "./Nav-kMGTw3sP.js";
+import _sfc_main$1 from "./Nav-C7ATHS_5.js";
 import _sfc_main$2 from "./Footer-B-2zln9Z.js";
 import "@inertiajs/vue3";
-import "./ToggleDarkMode-JFaivfUX.js";
+import "./ToggleDarkMode-B4VrkS93.js";
 import "@tabler/icons-vue";
 const _sfc_main = {
   __name: "Base",

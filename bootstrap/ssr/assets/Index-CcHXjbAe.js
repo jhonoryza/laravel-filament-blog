@@ -1,9 +1,9 @@
 import { withCtx, unref, createVNode, openBlock, createBlock, Fragment, renderList, toDisplayString, useSSRContext } from "vue";
 import { ssrRenderComponent, ssrRenderAttr, ssrRenderList, ssrInterpolate } from "vue/server-renderer";
 import { Head } from "@inertiajs/vue3";
-import _sfc_main$1 from "./Base-D2lUmFxp.js";
-import "./Nav-kMGTw3sP.js";
-import "./ToggleDarkMode-JFaivfUX.js";
+import _sfc_main$1 from "./Base-BXw2IAc-.js";
+import "./Nav-C7ATHS_5.js";
+import "./ToggleDarkMode-B4VrkS93.js";
 import "@tabler/icons-vue";
 import "./Footer-B-2zln9Z.js";
 const _sfc_main = {

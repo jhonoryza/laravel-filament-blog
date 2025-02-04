@@ -9,6 +9,7 @@
         }
     </style>
 
+    @vite('resources/css/app.css')
     @filamentStyles
     @stack('css')
 

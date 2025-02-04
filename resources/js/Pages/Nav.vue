@@ -18,7 +18,7 @@ function closeBread() {
     <nav
         class="bg-white dark:bg-zinc-800 dark:text-white border-b border-zinc-300 h-14 fixed top-0 left-0 right-0 z-50 flex flex-col justify-center items-center max-w-xl mx-auto"
     >
-        <div class="container mx-auto" v-click-away="closeBread">
+        <div class="container mx-auto">
             <div class="mx-2 flex justify-between items-center gap-2">
                 <Link href="/">Home</Link>
                 <div class="flex items-center gap-2">

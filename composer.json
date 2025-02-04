@@ -38,7 +38,7 @@
         "spatie/laravel-sitemap": "^7.3",
         "spatie/laravel-tags": "^4.6",
         "tempest/highlight": "dev-main",
-        "tightenco/ziggy": "^2.4",
+        "tightenco/ziggy": "2.5.1",
         "vcian/pulse-active-sessions": "^1.5"
     },
     "require-dev": {

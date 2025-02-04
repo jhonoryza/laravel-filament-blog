@@ -14,7 +14,6 @@
         <x-footer />
     </div>
     @filamentScripts
-    @vite('resources/js/app.js')
     @stack('js')
 </body>
 

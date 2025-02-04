@@ -37,7 +37,7 @@ const scrollToTop = () => {
             <meta name="twitter:title" :content="meta.title">
             <meta name="twitter:card" :content="meta.tw_card">
             <meta name="twitter:description" :content="meta.desc">
-            <meta name="twitter:image" :content="meta.image">
+            <meta name="twitter:image" :content="meta.image_tw">
         </Head>
         <div class="mx-4 text-lg">
             <Link :href="route('home')" class="p-2 text-primary dark:text-white rounded-lg hover:opacity-60">

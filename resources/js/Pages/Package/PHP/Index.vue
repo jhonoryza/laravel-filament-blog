@@ -4,7 +4,7 @@ import Base from "@/Pages/Base.vue";
 
 const props = defineProps({
     tools: Object,
-    meta: Array,
+    meta: Object,
 });
 
 const gotoLink = (url) => {

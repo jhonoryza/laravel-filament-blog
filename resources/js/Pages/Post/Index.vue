@@ -26,7 +26,7 @@ const props = defineProps({
     posts: Array,
     page: Number,
     next_url: String,
-    meta: Array,
+    meta: Object,
 });
 
 const form = useForm({

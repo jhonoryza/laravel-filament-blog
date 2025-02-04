@@ -1,10 +1,11 @@
+import '../css/app.css';
+
 import { createInertiaApp } from '@inertiajs/vue3';
 import createServer from '@inertiajs/vue3/server';
 import { renderToString } from '@vue/server-renderer';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { createSSRApp, h } from 'vue';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy';
-import VueClickAway from "vue3-click-away";
 
 const appName = 'Blog';
 
@@ -24,8 +25,7 @@ createServer((page) =>
                 .use(ZiggyVue, {
                     ...page.props.ziggy,
                     location: new URL(page.props.ziggy.location),
-                })
-                .use(VueClickAway);
+                });
         },
     }),
 );

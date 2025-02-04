@@ -22,6 +22,8 @@ WORKDIR /app
 COPY . ./
 COPY --from=build /app/public /app/public
 COPY --from=build /app/bootstrap/ssr /app/bootstrap/ssr
+COPY --from=build /usr/local/bin/node /usr/local/bin/node
+COPY --from=build /usr/local/lib/node_modules /usr/local/lib/node_modules
 COPY --from=build /app/node_modules /app/node_modules
 
 # Install dependencies menggunakan Composer

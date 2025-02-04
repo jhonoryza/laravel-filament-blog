@@ -26,3 +26,5 @@ public/sitemap.xml
 public/dist
 public/languages
 public/themes
+public/build
+bootstrap/ssr

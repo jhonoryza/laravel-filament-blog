@@ -142,7 +142,6 @@ return [
                 '#^/pulse$#', // Pulse dashboard...
             ],
         ],
-        \Denniseilander\LogFiles\Recorders\LogFiles::class => [],
         \Vcian\Pulse\PulseActiveSessions\Recorders\PulseActiveSessionRecorder::class => [],
         Recorders\CacheInteractions::class => [
             'enabled' => env('PULSE_CACHE_INTERACTIONS_ENABLED', true),

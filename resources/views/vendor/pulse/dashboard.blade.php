@@ -1,9 +1,7 @@
 <x-pulse>
     <livewire:pulse_active_session cols='8' rows='2' />
 
-    <livewire:pulse.usage cols="4" rows="8" />
-
-    <livewire:pulse.log-files cols="4" rows="8" />
+    <livewire:pulse.usage cols="8" rows="8" />
 
     <livewire:apps-load cols="4" rows="8" />
 

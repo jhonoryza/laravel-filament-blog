@@ -16,7 +16,6 @@
     "require": {
         "php": "^8.1",
         "butschster/meta-tags": "^3.0",
-        "eusonlito/laravel-pulse-apps-load": "dev-master",
         "filament/filament": "^3.0-stable",
         "filament/spatie-laravel-google-fonts-plugin": "^3.0-stable",
         "filament/spatie-laravel-media-library-plugin": "^3.0-stable",
@@ -25,7 +24,6 @@
         "inertiajs/inertia-laravel": "^2.0",
         "laravel/framework": "^11.0",
         "laravel/octane": "^2.6",
-        "laravel/pulse": "^1.0@beta",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.8",
         "league/commonmark": "^2.5",
@@ -38,7 +36,6 @@
         "spatie/laravel-tags": "^4.6",
         "tempest/highlight": "dev-main",
         "tightenco/ziggy": "^2.5.2",
-        "vcian/pulse-active-sessions": "^1.5",
         "wnx/laravel-backup-restore": "^1.6"
     },
     "require-dev": {
